@@ -34,7 +34,7 @@ plugins=(git brew git-flow osx)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:/Users/laurens/.rvm/bin
+export PATH=/usr/local/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:/Users/laurens/.rvm/bin:/usr/bin:/bin
 
 # Set default user
 DEFAULT_USER="laurens"
