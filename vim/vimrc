@@ -105,6 +105,11 @@
 
 	" }}
 	
+	" Sparkup ------------------------------------------------------ {{
+	
+		" Set the default keyboard shortcut
+		let g:sparkupExecuteMapping='<leader>e'
+	
 " }}}
 
 " Text, tabs and indentation ======================================= {{{
