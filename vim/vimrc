@@ -98,6 +98,13 @@
 
 	" }}
 	
+	" vim-latex ---------------------------------------------------- {{
+	
+		" Set filetype of latex files to 'tex'
+		let g:tex_flavor='latex'
+
+	" }}
+	
 " }}}
 
 " Text, tabs and indentation ======================================= {{{
