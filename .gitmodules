@@ -6,7 +6,7 @@
 	url = git://github.com/scrooloose/nerdcommenter.git
 [submodule "vim/bundle/CSScomb-for-Vim"]
 	path = vim/bundle/CSScomb-for-Vim
-	url = git://github.com/miripiruni/CSScomb.git
+	url = git://github.com/miripiruni/CSScomb-for-Vim.git
 [submodule "vim/bundle/ack"]
 	path = vim/bundle/ack
 	url = git://github.com/mileszs/ack.vim.git
@@ -25,3 +25,6 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = git://github.com/robbyrussell/oh-my-zsh.git
+[submodule "vim/bundle/vimwiki"]
+	path = vim/bundle/vimwiki
+	url = git://github.com/vim-scripts/vimwiki.git

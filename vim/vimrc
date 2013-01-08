@@ -90,7 +90,14 @@
 		nnoremap <leader>a :Ack!<space>	
 	
 	" }}
+	
+	" Vimwiki ------------------------------------------------------ {{
 
+		" Set the default wiki
+		let g:vimwiki_list = [{'path': '~/Dropbox/Wiki/'}]
+
+	" }}
+	
 " }}}
 
 " Text, tabs and indentation ======================================= {{{
