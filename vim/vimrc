@@ -64,9 +64,6 @@
 
 	" NERDTree ----------------------------------------------------- {{
 
-		" Open NERDTree when vim starts up
-		autocmd vimenter * if !argc() | NERDTree | endif
-
 		" Show hidden files and folders
 		let NERDTreeShowHidden=1
 
@@ -75,6 +72,9 @@
 
 		" Close vim if only NERDTree is left open
 		autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+		" Map Ctrl + n to bring up NERDTree
+		map <C-n> :NERDTreeToggle<CR>
 
 	" }}
 	
@@ -90,7 +90,26 @@
 		nnoremap <leader>a :Ack!<space>	
 	
 	" }}
+	
+	" Vimwiki ------------------------------------------------------ {{
 
+		" Set the default wiki
+		let g:vimwiki_list = [{'path': '~/Dropbox/Wiki/'}]
+
+	" }}
+	
+	" vim-latex ---------------------------------------------------- {{
+	
+		" Set filetype of latex files to 'tex'
+		let g:tex_flavor='latex'
+
+	" }}
+	
+	" Sparkup ------------------------------------------------------ {{
+	
+		" Set the default keyboard shortcut
+		let g:sparkupExecuteMapping='<leader>e'
+	
 " }}}
 
 " Text, tabs and indentation ======================================= {{{
