@@ -27,22 +27,50 @@
 	" Save when losing focus
 	au FocusLost * :silent! wall
 
-	" Make vim behave in a sane manner
+	" UTF-8 encoding
 	set encoding=utf-8
+
+	" When scrolling, leave the bottom three lines free
 	set scrolloff=3
+
+	" Use indentation scripts for known filetypes
 	set autoindent
+
+	" Let vim show the current mode
 	set showmode
+
+	" Show commands as you type them
 	set showcmd
+
+	" Hide buffers instead of closing them
 	set hidden
+
+	" Use the wildmenu
 	set wildmenu
 	set wildmode=list:longest
+
+	" Disable beeping
 	set visualbell
+
+	" Highlight the line the cursor is on
 	set cursorline
+
+	" Use fast scrolling
 	set ttyfast
+
+	" Show the location in the file
 	set ruler
+
+	" Make backspace work sanely
 	set backspace=indent,eol,start
+
+	" Always show the status line
 	set laststatus=2
+
+	" Use relative line numbers by default
 	set relativenumber
+
+	" Use a persistent undo file
 	set undofile
 
 " }}}
