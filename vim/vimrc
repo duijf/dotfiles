@@ -109,6 +109,15 @@
 	
 		" Set the default keyboard shortcut
 		let g:sparkupExecuteMapping='<leader>e'
+
+	" }}
+	
+	" vim-powerline ------------------------------------------------ {{
+	
+		" Make sure vim uses the powerline symbols
+		let g:Powerline_symbols = 'fancy'
+
+	" }}
 	
 " }}}
 
