@@ -137,6 +137,9 @@
 	set lbr
 	set tw=500
 
+	" Automatically remove trailing whitespace
+	autocmd BufWritePre *.py :%s/\s\+$//e
+
 	set ai "Auto indent
 	set si "Smart indent
 	set wrap "Wrap lines
