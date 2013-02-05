@@ -157,8 +157,9 @@
 	set tabstop=4
 
 	" Linebreak on 500 characters
-	set lbr
-	set tw=500
+	set linebreak
+	set textwidth=0
+	set wrapmargin=0
 
 	" Automatically remove trailing whitespace
 	autocmd BufWritePre *.py :%s/\s\+$//e
