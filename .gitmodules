@@ -7,9 +7,6 @@
 [submodule "vim/bundle/CSScomb-for-Vim"]
 	path = vim/bundle/CSScomb-for-Vim
 	url = git://github.com/miripiruni/CSScomb-for-Vim.git
-[submodule "vim/bundle/ack"]
-	path = vim/bundle/ack
-	url = git://github.com/mileszs/ack.vim.git
 [submodule "vim/bundle/gundo.vim"]
 	path = vim/bundle/gundo.vim
 	url = git://github.com/sjl/gundo.vim.git
@@ -25,9 +22,6 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = git://github.com/robbyrussell/oh-my-zsh.git
-[submodule "vim/bundle/vimwiki"]
-	path = vim/bundle/vimwiki
-	url = git://github.com/vim-scripts/vimwiki.git
 [submodule "vim/bundle/vim-javascript"]
 	path = vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
@@ -37,9 +31,6 @@
 [submodule "vim/bundle/LaTeX-Box"]
 	path = vim/bundle/LaTeX-Box
 	url = git://github.com/LaTeX-Box-Team/LaTeX-Box.git
-[submodule "vim/bundle/taglist"]
-	path = vim/bundle/taglist
-	url = git://github.com/vim-scripts/taglist.vim.git
 [submodule "vim/bundle/vim-easymotion"]
 	path = vim/bundle/vim-easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
