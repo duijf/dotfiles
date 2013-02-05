@@ -73,6 +73,9 @@
 	" Use a persistent undo file
 	set undofile
 
+	" Highlight search
+	set hlsearch
+
 " }}}
 
 " Plugins ========================================================== {{{
