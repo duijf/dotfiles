@@ -233,7 +233,7 @@
 	syntax enable
 
 	" Use dark variant of color scheme
-	set background=dark
+	set background=light
 
 	" Set colorscheme
 	colors solarized
