@@ -76,6 +76,11 @@
 	" Highlight search
 	set hlsearch
 
+	" Invisible character settings
+	set list
+	set listchars=tab:▸\ ,eol:¬
+
+
 " }}}
 
 " Plugins ========================================================== {{{
@@ -236,6 +241,7 @@
 	set background=light
 
 	" Set colorscheme
+	let g:solarized_visibility = "low"
 	colors solarized
 
 	" Use Unix as the standard file type
