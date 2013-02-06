@@ -150,6 +150,15 @@
 		" Map a toggle shortcut to the source code browser
 		nnoremap <silent> <C-m> :TlistToggle<CR>
 
+	" }}
+
+	" Fugitive ----------------------------------------------------- {{
+
+		" Automatically delete unused Fugitive buffers
+		autocmd BufReadPost fugitive://* set bufhidden=delete
+
+	" }}
+
 " }}}
 
 " Text, tabs and indentation ======================================= {{{
