@@ -105,46 +105,46 @@
 		map <C-n> :NERDTreeToggle<CR>
 
 	" }}
-	
+
 	" Gundo -------------------------------------------------------- {{
 
 		nnoremap <F5> :GundoToggle<CR>
-	
+
 	" }}
-	
+
 	" Ack ---------------------------------------------------------- {{
-	
+
 		" Bring up Ack
-		nnoremap <leader>a :Ack!<space>	
-	
+		nnoremap <leader>a :Ack!<space>
+
 	" }}
-	
+
 	" Vimwiki ------------------------------------------------------ {{
 
 		" Set the default wiki
 		let g:vimwiki_list = [{'path': '~/Dropbox/Wiki/'}]
 
 	" }}
-	
+
 	" Sparkup ------------------------------------------------------ {{
-	
+
 		" Set the default keyboard shortcut
 		let g:sparkupExecuteMapping='<leader>e'
 
 	" }}
-	
+
 	" vim-powerline ------------------------------------------------ {{
-	
+
 		" Make sure vim uses the powerline symbols
 		let g:Powerline_symbols = 'fancy'
 
 	" }}
 	
 	" Tagslist ----------------------------------------------------- {{
-	
+
 		" Map a toggle shortcut to the source code browser
 		nnoremap <silent> <C-m> :TlistToggle<CR>
-	
+
 " }}}
 
 " Text, tabs and indentation ======================================= {{{
@@ -172,12 +172,12 @@
 	set wrap "Wrap lines
 
 	" Text wrapping ------------------------------------------------ {{
-	
+
 		set wrap
 		set textwidth=79
 		set formatoptions=qrn1
-		set colorcolumn=85	
-	
+		set colorcolumn=85
+
 	" }}
 
 " }}}
@@ -185,7 +185,7 @@
 " Input ============================================================ {{{
 
 	" Disable arrow key movement ----------------------------------- {{
-	
+
 		nnoremap <up> <nop>
 		nnoremap <down> <nop>
 		nnoremap <left> <nop>
@@ -195,8 +195,8 @@
 		inoremap <left> <nop>
 		inoremap <right> <nop>
 		nnoremap j gj
-		nnoremap k gk	
-	
+		nnoremap k gk
+
 	" }}
 
 " }}}
@@ -237,7 +237,7 @@
 
 	" Set colorscheme
 	colors solarized
-	
+
 	" Use Unix as the standard file type
 	set ffs=unix,dos,mac
 
