@@ -80,6 +80,8 @@
 	set list
 	set listchars=tab:▸\ ,eol:¬
 
+	" Folding remap
+	nnoremap <Space> za
 
 " }}}
 
