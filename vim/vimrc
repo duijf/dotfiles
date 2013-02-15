@@ -153,6 +153,13 @@
 		autocmd BufReadPost fugitive://* set bufhidden=delete
 
 	" }}
+	
+	" CSSLint ------------------------------------------------------ {{
+
+		" Enable CSSLint
+		let g:CSSLint_FileTypeList = ['css', 'less', 'sess'] 
+
+	" }}
 
 " }}}
 
