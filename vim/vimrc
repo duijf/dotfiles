@@ -85,6 +85,18 @@
 
 " }}}
 
+" Filetype specific settings ======================================= {{{
+
+	" HTML & CSS --------------------------------------------------- {{
+
+		" Tab settings
+		autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+		autocmd FileType css setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+
+	" }}
+
+" }}}
+
 " Plugins ========================================================== {{{
 
 	" Pathogen ----------------------------------------------------- {{
