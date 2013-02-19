@@ -17,3 +17,8 @@ export PATH=${PATH}:/usr/local/rvm/bin
 # Source RVM ------------------------------------------------------------------
 
 [[ -s "/usr/local/rvm/scripts/rvm" ]] && . "/usr/local/rvm/scripts/rvm"
+
+# Aliases ---------------------------------------------------------------------
+
+alias tm='tmux -u2'
+alias c='clear'
