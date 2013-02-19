@@ -18,3 +18,7 @@ export PATH=${PATH}:/bin
 export PATH=${PATH}:/usr/sbin
 export PATH=${PATH}:/sbin
 export PATH=${PATH}:/usr/X11/bin
+
+# Source RVM ------------------------------------------------------------------
+
+[[ -s "/usr/local/rvm/scripts/rvm" ]] && . "/usr/local/rvm/scripts/rvm"
