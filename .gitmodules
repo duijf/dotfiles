@@ -40,15 +40,12 @@
 [submodule "vim/bundle/csslint"]
 	path = vim/bundle/csslint
 	url = git://github.com/vim-scripts/csslint.vim.git
-[submodule "vim/bundle/command-t"]
-	path = vim/bundle/command-t
-	url = git://github.com/wincent/Command-T.git
-[submodule "command-t"]
-	path = vim/bundle/command-t
-	url = git://github.com/wincent/Command-T.git
 [submodule "vim/bundle/repeat"]
 	path = vim/bundle/repeat
 	url = git://github.com/tpope/vim-repeat.git
 [submodule "vim/bundle/csscomb"]
 	path = vim/bundle/csscomb
 	url = git://github.com/miripiruni/CSScomb-for-Vim.git
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
+	url = git://github.com/kien/ctrlp.vim.git
