@@ -1,0 +1,20 @@
+export ZSH=$HOME/.lib/oh-my-zsh
+export ZSH_THEME="agnoster"
+export DISABLE_AUTO_UPDATE="true"
+export OH_MY_ZSH_DEBUG="true"
+export DEFAULT_USER="laurens"
+
+plugins=(git command-coloring)
+
+source $ZSH/oh-my-zsh.sh
+
+# Environment variables -------------------------------------------------------
+
+export EDITOR='vim'
+export PATH=/usr/local/rvm/bin
+export PATH=${PATH}:/usr/local/bin
+export PATH=${PATH}:/usr/bin
+export PATH=${PATH}:/bin
+export PATH=${PATH}:/usr/sbin
+export PATH=${PATH}:/sbin
+export PATH=${PATH}:/usr/X11/bin
