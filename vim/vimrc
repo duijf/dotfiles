@@ -273,7 +273,7 @@
 	syntax enable
 
 	" Use dark variant of color scheme
-	set background=light
+	set background=dark
 
 	" Set colorscheme
 	let g:solarized_visibility = "low"
