@@ -73,7 +73,10 @@
 	" Use a persistent undo file
 	set undofile
 
-	" Highlight search
+	" Smarter search settings
+	set incsearch
+	set ignorecase
+	set smartcase
 	set hlsearch
 
 	" Invisible character settings
