@@ -242,7 +242,7 @@
 	nnoremap <F1> <ESC>
 	vnoremap <F1> <ESC>
 
-	nnoremap ; :
+	:nmap ; :CtrlPBuffer<CR>
 
 	inoremap jj <ESC>
 
@@ -251,6 +251,12 @@
 	noremap <C-j> <C-w>j
 	noremap <C-k> <C-w>k
 	noremap <C-l> <C-w>l
+
+	" Press enter to save file in normal mode
+	nmap <CR> :write<CR>
+
+	" Clear search
+	noremap <leader>c :let @/=""<CR>
 
 " }}}
 
