@@ -33,9 +33,6 @@
 	" When scrolling, leave the bottom three lines free
 	set scrolloff=6
 
-	" Use indentation scripts for known filetypes
-	set autoindent
-
 	" Let vim show the current mode
 	set showmode
 
@@ -85,17 +82,6 @@
 
 " }}}
 
-" Filetype specific settings ======================================= {{{
-
-	" HTML & CSS --------------------------------------------------- {{
-
-		" Tab settings
-		autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-		autocmd FileType css setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-
-	" }}
-
-" }}}
 
 " Plugins ========================================================== {{{
 
@@ -207,9 +193,10 @@
 	" Automatically remove trailing whitespace
 	autocmd BufWritePre *.py :%s/\s\+$//e
 
-	set ai "Auto indent
-	set si "Smart indent
-	set wrap "Wrap lines
+	" Indentation and wrapping
+	set autoindent
+	set smartindent
+	set wrap
 
 	" Text wrapping ------------------------------------------------ {{
 
@@ -220,9 +207,21 @@
 
 	" }}
 
+	" Filetype specific settings ----------------------------------- {{
+
+		" HTML & CSS ----------------------------------------------- {
+
+			" Tab settings
+			autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+			autocmd FileType css setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+
+		" }
+
+	" }}
+
 " }}}
 
-" Input ============================================================ {{{
+" Mappings ========================================================= {{{
 
 	" Disable arrow key movement ----------------------------------- {{
 
@@ -239,37 +238,38 @@
 
 	" }}
 
-" }}}
+	" Convenience mappings ----------------------------------------- {{
 
-" Convenience Mappings ============================================= {{{
+		" Remap F1 to ESC
+		inoremap <F1> <ESC>
+		nnoremap <F1> <ESC>
+		vnoremap <F1> <ESC>
 
-	" Remap F1 to ESC
-	inoremap <F1> <ESC>
-	nnoremap <F1> <ESC>
-	vnoremap <F1> <ESC>
+		:nmap ; :CtrlPBuffer<CR>
 
-	:nmap ; :CtrlPBuffer<CR>
+		inoremap jj <ESC>
 
-	inoremap jj <ESC>
+		" Easy buffer navigation
+		noremap <C-h> <C-w>h
+		noremap <C-j> <C-w>j
+		noremap <C-k> <C-w>k
+		noremap <C-l> <C-w>l
 
-	" Easy buffer navigation
-	noremap <C-h> <C-w>h
-	noremap <C-j> <C-w>j
-	noremap <C-k> <C-w>k
-	noremap <C-l> <C-w>l
+		" Press enter to save file in normal mode
+		nmap <CR> :write<CR>
 
-	" Press enter to save file in normal mode
-	nmap <CR> :write<CR>
+	" }}
 
-	" Clear search
-	noremap <leader>c :let @/=""<CR>
 
-" }}}
+	" Leader Mappings ---------------------------------------------- {{
 
-" Leader Mappings ================================================== {{{
+		" Create a new vertical split and switch to it
+		nnoremap <leader>w <C-w>v<C-w>l
 
-	" Create a new vertical split and switch to it
-	nnoremap <leader>w <C-w>v<C-w>l
+		" Clear search
+		noremap <leader>c :let @/=""<CR>
+
+	" }}
 
 " }}}
 
