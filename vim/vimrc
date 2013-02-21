@@ -138,13 +138,6 @@
 
 	" }}
 
-	" Vimwiki ------------------------------------------------------ {{
-
-		" Set the default wiki
-		let g:vimwiki_list = [{'path': '~/Dropbox/Wiki/'}]
-
-	" }}
-
 	" Sparkup ------------------------------------------------------ {{
 
 		" Set the default keyboard shortcut
