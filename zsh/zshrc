@@ -1,5 +1,5 @@
 export ZSH=$HOME/.lib/oh-my-zsh
-export ZSH_THEME="agnoster"
+export ZSH_THEME="bunsen"
 export DISABLE_AUTO_UPDATE="true"
 export OH_MY_ZSH_DEBUG="true"
 export DEFAULT_USER="laurens"
