@@ -1,12 +1,18 @@
-export ZSH=$HOME/.lib/oh-my-zsh
-export ZSH_THEME="bunsen"
-export DISABLE_AUTO_UPDATE="true"
-export OH_MY_ZSH_DEBUG="true"
-export DEFAULT_USER="laurens"
+export ZSH=$HOME/.lib/dotfiles/zsh
+source $ZSH/antigen.zsh
 
-plugins=(git command-coloring)
+# Load core oh-my-zsh-functionality
+antigen-lib
 
-source $ZSH/oh-my-zsh.sh
+# Plugins
+antigen-bundle git
+antigen-bundle osx
+antigen-bundle zsh-users/zsh-syntax-highlighting
+
+# Theme
+antigen-theme af-magic
+
+antigen-apply
 
 # Environment variables -------------------------------------------------------
 
