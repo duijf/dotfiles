@@ -173,17 +173,18 @@
 
 " }}}
 
-" Text, tabs and indentation ======================================= {{{
+" Text, tabs, wrapping and indentation ========================== {{{
 
 	" Use spaces instead of tabs
-	set noexpandtab
+	set expandtab
 
 	" Be smart when using tabs ;)
 	set smarttab
 
 	" 1 tab == 4 spaces
-	set shiftwidth=4
-	set tabstop=4
+	set shiftwidth=2
+	set tabstop=2
+	set softtabstop=2
 
 	" Linebreak on 500 characters
 	set linebreak
@@ -196,14 +197,16 @@
 	" Indentation and wrapping
 	set autoindent
 	set smartindent
-	set wrap
 
 	" Text wrapping ------------------------------------------------ {{
 
-		set wrap
 		set textwidth=79
-		set formatoptions=qrn1
 		set colorcolumn=85
+
+    set wrap
+    set linebreak
+    set nolist
+		set formatoptions=qrn1
 
 	" }}
 
