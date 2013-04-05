@@ -107,7 +107,7 @@
 		let NERDTreeIgnore = ['\.DS_Store$', '\.un\~$', '\.swp$']
 
 		" Map Ctrl + n to bring up NERDTree
-		map <C-n> :NERDTreeToggle<CR>
+		map <C-n> :NERDTreeTabsToggle<CR>
 
 	" }}
 
