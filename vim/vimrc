@@ -18,6 +18,8 @@
 	let mapleader = ","
 	let g:mapleader = ","
 
+  let maplocalleader = "\\"
+
 	" Disable vi compatability
 	set nocompatible
 
@@ -186,6 +188,9 @@
 	set tabstop=2
 	set softtabstop=2
 
+  " Round indent to multiples of shiftwidth
+  set shiftround
+
 	" Linebreak on 500 characters
 	set linebreak
 	set textwidth=0
@@ -264,6 +269,18 @@
 
 		" Press enter to save file in normal mode
 		nmap <CR> :write<CR>
+
+    " Moving lines up and down
+    nnoremap <leader>- ddp
+    nnoremap <leader>_ ddkP
+
+    " Convert CURRENT word to uppercase
+    inoremap <c-d> <esc>lviwU<esc>i
+    nnoremap <c-d> viwU
+
+    " Open .vimrc
+    nnoremap <leader>emv :vsplit ~/.lib/dotfiles/vim/vimrc<cr>
+    nnoremap <leader>sv :source ~/.lib/dotfiles/vim/vimrc<cr>
 
 	" }}
 
