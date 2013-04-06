@@ -250,6 +250,8 @@
 		inoremap <down> <nop>
 		inoremap <left> <nop>
 		inoremap <right> <nop>
+
+    " Sane line switching with j and k
 		nnoremap j gj
 		nnoremap k gk
 
