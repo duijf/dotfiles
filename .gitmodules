@@ -46,9 +46,6 @@
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
-[submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
 [submodule "tmux/powerline"]
 	path = tmux/powerline
 	url = git://github.com/erikw/tmux-powerline.git
