@@ -36,7 +36,7 @@
 	set scrolloff=6
 
 	" Let vim show the current mode
-	set showmode
+	set noshowmode
 
 	" Show commands as you type them
 	set showcmd
