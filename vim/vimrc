@@ -128,10 +128,10 @@
 
 	" }}
 
-	" Sparkup ------------------------------------------------------ {{
+	" Zencoding---------------------------------------------------- {{
 
-		" Set the default keyboard shortcut
-		let g:sparkupExecuteMapping='<leader>e'
+    " Set user zencoding key
+		let g:user_zen_leader_key='<leader>z'
 
 	" }}
 
