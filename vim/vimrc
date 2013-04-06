@@ -144,28 +144,28 @@
     let g:Powerline_colorscheme = 'solarized16'
 
 	" }}
-	
+
 	" Fugitive ----------------------------------------------------- {{
 
 		" Automatically delete unused Fugitive buffers
 		autocmd BufReadPost fugitive://* set bufhidden=delete
 
 	" }}
-	
+
 	" CSSLint ------------------------------------------------------ {{
 
 		" Enable CSSLint
-		let g:CSSLint_FileTypeList = ['css', 'less', 'sess'] 
+		let g:CSSLint_FileTypeList = ['css', 'less', 'sess']
 
 	" }}
-	
+
 	" EasyMotion --------------------------------------------------- {{
 
 		" Toggle EasyMotion with space
 		let g:EasyMotion_leader_key = '<space>'
 
 	" }}
-	
+
 	" CtrlP -------------------------------------------------------- {{
 
 		let g:ctrlp_map = '<Leader>t'
@@ -202,7 +202,7 @@
 	set wrapmargin=0
 
 	" Automatically remove trailing whitespace
-	autocmd BufWritePre *.py :%s/\s\+$//e
+	autocmd BufWritePre * :%s/\s\+$//e
 
 	" Indentation and wrapping
 	set autoindent
@@ -288,7 +288,7 @@
     " Open .vimrc
     nnoremap <leader>emv :vsplit ~/.lib/dotfiles/vim/vimrc<cr>
     nnoremap <leader>sv :source ~/.lib/dotfiles/vim/vimrc<cr>
-    
+
     " Make OS level copy/paste work
     noremap <leader>y "*y
     noremap <leader>yy "*Y
