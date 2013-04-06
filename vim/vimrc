@@ -284,11 +284,13 @@
     " Open .vimrc
     nnoremap <leader>emv :vsplit ~/.lib/dotfiles/vim/vimrc<cr>
     nnoremap <leader>sv :source ~/.lib/dotfiles/vim/vimrc<cr>
+    
+    " Make OS level copy/paste work
+    noremap <leader>y "*y
+    noremap <leader>yy "*Y
 
-	" }}
-
-
-	" Leader Mappings ---------------------------------------------- {{
+    " Preserve indentation while pasting text from the OS X clipboard
+    noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
 		" Create a new vertical split and switch to it
 		nnoremap <leader>w <C-w>v<C-w>l
@@ -315,12 +317,6 @@
 	" Use Unix as the standard file type
 	set ffs=unix,dos,mac
 
-	" Make OS level copy/paste work
-	noremap <leader>y "*y
-	noremap <leader>yy "*Y
-
-	" Preserve indentation while pasting text from the OS X clipboard
-	noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
 	if has('gui_running')
 		" GUI Vim
