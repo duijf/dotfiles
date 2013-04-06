@@ -271,7 +271,7 @@
 		noremap <C-l> <C-w>l
 
 		" Press enter to save file in normal mode
-		nmap <CR> :write<CR>
+		nnoremap <CR> :write<CR>
 
     " Moving lines up and down
     nnoremap <leader>- ddp
