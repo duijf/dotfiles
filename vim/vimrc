@@ -122,13 +122,6 @@
 
 	" }}
 
-	" Ack ---------------------------------------------------------- {{
-
-		" Bring up Ack
-		nnoremap <leader>a :Ack!<space>
-
-	" }}
-
 	" Sparkup ------------------------------------------------------ {{
 
 		" Set the default keyboard shortcut
