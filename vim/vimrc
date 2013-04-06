@@ -118,7 +118,13 @@
 
 	" Gundo -------------------------------------------------------- {{
 
-		nnoremap <F5> :GundoToggle<CR>
+    " Mapping for Gundo
+		nnoremap <leader>gu :GundoToggle<CR>
+
+    " Gundo window layout configuration
+    let g:gundo_width=22
+    let g:gundo_preview_bottom=1
+    let g:gundo_preview_height=10
 
 	" }}
 
