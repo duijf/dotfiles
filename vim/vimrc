@@ -82,6 +82,9 @@
 	set list
 	set listchars=tab:▸\ ,eol:¬
 
+  " Open help in a vertical split
+  cnoremap help vert help
+
 " }}}
 
 
