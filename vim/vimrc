@@ -311,6 +311,10 @@
 
     nnoremap <leader>j :!jekyll<CR><CR>
 
+    nnoremap ,wn <C-w>=
+    nnoremap ,wm <C-w>|
+    nnoremap ,wc <C-w>o
+
 	" }}
 
 " }}}
