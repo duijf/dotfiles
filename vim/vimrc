@@ -85,6 +85,10 @@
   " Open help in a vertical split
   cnoremap help vert help
 
+  " More natural split opening
+  set splitbelow
+  set splitright
+
 " }}}
 
 
