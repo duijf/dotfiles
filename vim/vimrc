@@ -309,6 +309,8 @@
 		" Clear search
 		noremap <leader>c :let @/=""<CR>
 
+    nnoremap <leader>j :!jekyll<CR><CR>
+
 	" }}
 
 " }}}
