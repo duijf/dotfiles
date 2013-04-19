@@ -151,8 +151,11 @@
 
 	" Fugitive ----------------------------------------------------- {{
 
-		" Automatically delete unused Fugitive buffers
-		autocmd BufReadPost fugitive://* set bufhidden=delete
+    " Automatically delete unused Fugitive buffers
+		augroup fugitive
+      autocmd!
+		  autocmd BufReadPost fugitive://* set bufhidden=delete
+    augroup END
 
 	" }}
 
