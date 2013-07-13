@@ -96,14 +96,6 @@
 
 	" Pathogen ----------------------------------------------------- {{
 
-		" Load pathogen.vim
-		runtime bundle/vim-pathogen/autoload/pathogen.vim
-
-		" Initialize pathogen.vim
-		call pathogen#infect()
-
-		" Automatically generate documentation
-		call pathogen#helptags()
 
 	" }}
 
