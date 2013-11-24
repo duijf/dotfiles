@@ -4,9 +4,9 @@ alias full move screenOriginX+15;screenOriginY+15 screenSizeX-30;screenSizeY-70
 alias left move screenOriginX+15;screenOriginY+15 screenSizeX-600;screenSizeY-70
 alias right move screenOriginX+(screenSizeX-570);screenOriginY+15 screenSizeX-884;screenSizeY-70
 
-bind k:ctrl;cmd;shift;alt ${full}
-bind h:ctrl;cmd;shift;alt ${left}
-bind l:ctrl;cmd;shift;alt ${right}
+bind b:ctrl;cmd;shift;alt ${full}
+bind v:ctrl;cmd;shift;alt ${left}
+bind n:ctrl;cmd;shift;alt ${right}
 
 bind c:ctrl;cmd;shift;alt focus "Google Chrome"
 bind t:ctrl;cmd;shift;alt focus "iTerm"
