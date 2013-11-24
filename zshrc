@@ -21,7 +21,7 @@ antigen-apply
 
 # Environment variables -------------------------------------------------------
 
-export EDITOR='mvim'
+export EDITOR='vim'
 export PATH=~/bin:/usr/local/bin:${PATH}
 
 # Aliases ---------------------------------------------------------------------
