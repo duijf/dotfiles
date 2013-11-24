@@ -1,29 +1,28 @@
-export ZSH=$HOME/.lib/dotfiles/zsh
-source $ZSH/antigen.zsh
+# Antigen core ----------------------------------------------------------------
 
-# Load core oh-my-zsh-functionality
-antigen-lib
+export ANTIGEN=$HOME/lib/antigen
+source $ANTIGEN/antigen.zsh
 
-# Plugins
+# Antigen imports -------------------------------------------------------------
+
+# oh-my-zsh core
+antigen-use oh-my-zsh
+
+# Antigen plugins
 antigen-bundle git
 antigen-bundle osx
 antigen-bundle zsh-users/zsh-syntax-highlighting
 
-# Theme
+# Zsh Theme
 antigen-theme af-magic
 
+# Apply configuration
 antigen-apply
 
 # Environment variables -------------------------------------------------------
 
-export EDITOR='vim'
-export PATH=/usr/local/bin:${PATH}
-
-# Source utilities ------------------------------------------------------------
-
-[[ -s "/usr/local/rvm/scripts/rvm" ]] && . "/usr/local/rvm/scripts/rvm"
-
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+export EDITOR='mvim'
+export PATH=~/bin:/usr/local/bin:${PATH}
 
 # Aliases ---------------------------------------------------------------------
 
