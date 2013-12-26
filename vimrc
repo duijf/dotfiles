@@ -265,9 +265,9 @@
   nnoremap <leader>wc <C-w>o
 
   " Open a new buffer with Unite
-  nnoremap <leader>ft :Unite file_rec/async -start-insert -auto-resize -default-action=tabopen<cr>
-  nnoremap <leader>fv :Unite file_rec/async -start-insert -auto-resize -default-action=vsplit<cr>
-  nnoremap <leader>fc :Unite file_rec/async -start-insert -no-split<cr>
+  nnoremap <leader>ft :Unite file -start-insert -auto-resize -default-action=tabopen<cr>
+  nnoremap <leader>fv :Unite file -start-insert -auto-resize -default-action=vsplit<cr>
+  nnoremap <leader>fc :Unite file -no-split<cr>
   nnoremap <leader>bt :Unite buffer -default-action=tabopen<cr>
   nnoremap <leader>bv :Unite buffer -default-action=vsplit<cr>
   nnoremap <leader>bc :Unite buffer -no-split<cr>
