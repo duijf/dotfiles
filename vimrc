@@ -174,6 +174,9 @@
   let g:airline_powerline_fonts = 1
   let g:airline_theme='solarized'
 
+  " Fix numbers.vim on Vim 7.4+
+  set number
+
 " }}}
 
 " Autocommands ==================================================== {{{
