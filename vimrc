@@ -30,6 +30,7 @@
   NeoBundle 'csscomb/CSScomb-for-Vim/'
   NeoBundle 'myusuf3/numbers.vim'
   NeoBundle 'vim-scripts/tComment'
+  NeoBundle 'scrooloose/nerdtree'
 
   " Enable plugins and indent scripts
   filetype plugin on
@@ -150,6 +151,12 @@
 
   " Set NERDTree file filtering patterns
   let NERDTreeIgnore = ['\.DS_Store$', '\.un\~$', '\.swp$']
+
+  " Show NERDTree when no files are specified on opening Vim
+  autocmd vimenter * if !argc() | NERDTree | endif
+
+  " Show NERDTree on Ctrl N
+  map <C-n> :NERDTreeToggle<CR>
 
   " Toggle EasyMotion with space
   let g:EasyMotion_leader_key = '<space>'
