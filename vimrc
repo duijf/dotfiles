@@ -4,10 +4,10 @@
 " Init & plugin install =========================================== {{{
 
   if has('vim_starting')
-    set runtimepath+=~/.lib/dotfiles/vim/bundle/neobundle.vim
+    set runtimepath+=~/lib/vimbundle/neobundle.vim
   endif
 
-  call neobundle#rc(expand('~/.lib/dotfiles/vim/bundle'))
+  call neobundle#rc(expand('~/lib/vimbundle'))
 
   " Manage NeoBundle with NeoBundle
   NeoBundleFetch 'Shougo/neobundle.vim'
@@ -240,8 +240,8 @@
   nnoremap <leader>_ ddkP
 
   " Open .vimrc
-  nnoremap <leader>emv :vsplit ~/.lib/dotfiles/vim/vimrc<cr>
-  nnoremap <leader>sv :source ~/.lib/dotfiles/vim/vimrc<cr>
+  nnoremap <leader>emv :vsplit ~/lib/dotfiles/vimrc<cr>
+  nnoremap <leader>sv :source ~/lib/dotfiles/vimrc<cr>
 
   " Make OS level copy/paste work
   noremap <leader>y "*y
