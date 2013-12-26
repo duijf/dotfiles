@@ -1,13 +1,51 @@
+############
+# Settings #
+############
+
+# Bindings that refer to a specific screen will
+# default to the current screen if the specific
+# screen is not available.
 config defaultToCurrentScreen true
+# Show icons with window hints.
+config windowHintsShowIcons true
+# Show hints for windows on the background.
+config windowHintsIgnoreHiddenWindows false
+config windowHintsBackgroundColor 96;96;64;0.5
+# Add a shadow to the hints for readability.
+config windowHintsSpread true
 
-alias full move screenOriginX+15;screenOriginY+15 screenSizeX-30;screenSizeY-70
-alias left move screenOriginX+15;screenOriginY+15 screenSizeX-600;screenSizeY-70
-alias right move screenOriginX+(screenSizeX-570);screenOriginY+15 screenSizeX-884;screenSizeY-70
+###########################
+# Window Movement aliases #
+###########################
 
-bind b:ctrl;cmd;shift;alt ${full}
-bind v:ctrl;cmd;shift;alt ${left}
-bind n:ctrl;cmd;shift;alt ${right}
+# These aliases will be used in the binding
+# section, they don't get enabled by themselves.
 
-bind c:ctrl;cmd;shift;alt focus "Google Chrome"
-bind t:ctrl;cmd;shift;alt focus "iTerm"
-bind s:ctrl;cmd;shift;alt focus "Spotify"
+# Move commands take a starting point where a
+# window should start, and the size the window
+# should have. There are no spaces allowed
+# between operators and separators.
+
+alias padding 20
+
+alias full          move screenOriginX+${padding};screenOriginY+${padding}                  screenSizeX-${padding}*2;screenSizeY-${padding}*2
+
+alias lefthalf      move screenOriginX+${padding};screenOriginY+${padding}                  screenSizeX/2-${padding}*1.5;screenSizeY-${padding}*2
+alias righthalf     move screenOriginX+screenSizeX/2+${padding};screenOriginY+${padding}    screenSizeX/2-${padding}*1.5;screenSizeY-${padding}*2
+
+#
+# Hyper key alias
+#
+
+alias hyper ctrl;cmd;shift;alt
+
+############################
+# Window Movement bindings #
+############################
+
+bind e:cmd hint ASDFGHJKLQWERTYUIOPCVBN
+
+bind i:${hyper} ${full}
+
+bind h:${hyper} ${lefthalf}
+bind l:${hyper} ${righthalf}
