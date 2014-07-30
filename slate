@@ -29,9 +29,8 @@ config windowHintsSpread true
 alias padding 20
 
 alias full          move screenOriginX+${padding};screenOriginY+${padding}                  screenSizeX-${padding}*2;screenSizeY-${padding}*2
-
 alias lefthalf      move screenOriginX+${padding};screenOriginY+${padding}                  screenSizeX/2-${padding}*1.5;screenSizeY-${padding}*2
-alias righthalf     move screenOriginX+screenSizeX/2+${padding};screenOriginY+${padding}    screenSizeX/2-${padding}*1.5;screenSizeY-${padding}*2
+alias righthalf     move screenOriginX+screenSizeX/2+${padding}*0.5;screenOriginY+${padding}    screenSizeX/2-${padding}*1.5;screenSizeY-${padding}*2
 
 #
 # Hyper key alias
