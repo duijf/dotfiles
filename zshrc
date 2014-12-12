@@ -14,15 +14,17 @@ antigen-bundle osx
 antigen-bundle zsh-users/zsh-syntax-highlighting
 
 # Zsh Theme
-antigen-theme af-magic
+antigen-theme dstufft
 
 # Apply configuration
 antigen-apply
 
 # Environment variables -------------------------------------------------------
 
+export GOPATH=$HOME/projects/go
 export EDITOR='vim'
-export PATH=~/bin:/usr/local/bin:${PATH}
+export VISUAL='mvim'
+export PATH="$HOME/bin:/usr/local/heroku/bin:/usr/local/bin:$GOPATH/bin:$PATH"
 
 # Tools -----------------------------------------------------------------------
 
@@ -39,6 +41,9 @@ eval "$(rbenv init -)"
 alias tm='tmux -u2'
 alias c='clear'
 alias mkl='latexmk.pl -pdf -pvc'
+alias ls="ls -F"
+alias l="ls -Ol | grep -v hidden | awk '{print $10}' | tail -n +2"
+alias ec='/usr/local/Cellar/emacs/24.3/bin/emacsclient'
 
 # Bundle aliases
 alias b="bundle"
@@ -47,16 +52,3 @@ alias bil="bi --local"
 alias bu="b update"
 alias be="b exec"
 alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
-
-# Run on new shell ------------------------------------------------------------
-
-# Run on new shell
-have_fortune=`which fortune`
-if [ -e have_fortune ]; then
-    echo ""
-    fortune
-    echo ""
-fi
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
