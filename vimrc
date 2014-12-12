@@ -13,24 +13,14 @@
   NeoBundleFetch 'Shougo/neobundle.vim'
 
   " Plugin declarations
-  NeoBundle 'Shougo/vimproc', {
-      \   'build' : {
-      \     'windows' : 'make -f make_mingw32.mak',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \   },
-      \ }
   NeoBundle 'altercation/vim-colors-solarized'
   NeoBundle 'Lokaltog/vim-easymotion'
-  NeoBundle 'Shougo/unite.vim'
-  NeoBundle 'bling/vim-airline'
   NeoBundle 'tpope/vim-fugitive'
   NeoBundle 'mattn/emmet-vim'
-  NeoBundle 'csscomb/csscomb-for-vim'
   NeoBundle 'myusuf3/numbers.vim'
   NeoBundle 'vim-scripts/tComment'
   NeoBundle 'scrooloose/nerdtree'
+  NeoBundle 'scrooloose/syntastic'
 
   " Enable plugins and indent scripts
   filetype plugin on
@@ -54,9 +44,6 @@
 
   " Set to auto read when a file is changed from the outside
   set autoread
-
-  " Don't display the current mode (airline is used for that)
-  set noshowmode
 
   " When scrolling, leave the bottom six lines free
   set scrolloff=6
@@ -165,14 +152,11 @@
   syntax enable
 
   " Use dark variant of color scheme
-  set background=dark
+  set background=light
 
   " Set colorscheme
   let g:solarized_visibility = "low"
   colors solarized
-
-  let g:airline_powerline_fonts = 1
-  let g:airline_theme='solarized'
 
   " Fix numbers.vim on Vim 7.4+
   set number
@@ -180,6 +164,8 @@
 " }}}
 
 " Autocommands ==================================================== {{{
+
+  let g:tex_flavor = "latex"
 
   " Automatically remove trailing whitespace
   autocmd BufWritePre * :%s/\s\+$//e
@@ -243,7 +229,7 @@
   nnoremap <leader>_ ddkP
 
   " Open .vimrc
-  nnoremap <leader>emv :vsplit ~/lib/dotfiles/vimrc<cr>
+  nnoremap <leader>ev :vsplit ~/lib/dotfiles/vimrc<cr>
   nnoremap <leader>sv :source ~/lib/dotfiles/vimrc<cr>
 
   " Make OS level copy/paste work
@@ -264,19 +250,13 @@
   nnoremap <leader>wm <C-w>|
   nnoremap <leader>wc <C-w>o
 
-  " Open a new buffer with Unite
-  nnoremap <leader>ft :Unite file -start-insert -auto-resize -default-action=tabopen<cr>
-  nnoremap <leader>fv :Unite file -start-insert -auto-resize -default-action=vsplit<cr>
-  nnoremap <leader>fc :Unite file -no-split<cr>
-  nnoremap <leader>bt :Unite buffer -default-action=tabopen<cr>
-  nnoremap <leader>bv :Unite buffer -default-action=vsplit<cr>
-  nnoremap <leader>bc :Unite buffer -no-split<cr>
-
 " }}}
 
 " VIM Environment (GUI/Console) =================================== {{{
 
   if has('gui_running')
+    " General GUI options
+
     " Set the font
     set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
 
@@ -298,10 +278,9 @@
       set fuoptions=maxvert,maxhorz
 
       " Disable the OS X like shortcuts in MacVim
-      "let macvim_skip_cmd_opt_movement = 1
+      let macvim_skip_cmd_opt_movement = 1
     else
       " Non-MacVim options
-
     end
   else
     " Console Vim settings
@@ -311,9 +290,6 @@
 
     " Force 256 color use.
     set t_Co=256
-
-    " Disable vim-airline plugin in terminal due to bad color support in iTerm
-    " set runtimepath-=~/.lib/dotfiles/vim/bundle/vim-airline
   endif
 
 " }}}
