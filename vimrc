@@ -21,6 +21,12 @@
   NeoBundle 'vim-scripts/tComment'
   NeoBundle 'scrooloose/nerdtree'
   NeoBundle 'scrooloose/syntastic'
+  NeoBundle "MarcWeber/vim-addon-mw-utils"
+  NeoBundle "tomtom/tlib_vim"
+  NeoBundle 'garbas/vim-snipmate'
+  NeoBundle 'honza/vim-snippets'
+  NeoBundle 'elixir-lang/vim-elixir'
+  NeoBundle 'itchyny/lightline.vim'
 
   " Enable plugins and indent scripts
   filetype plugin on
