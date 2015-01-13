@@ -157,6 +157,15 @@
   " Enable syntax highlighting
   syntax enable
 
+  let g:lightline = {
+    \ 'colorscheme': 'solarized',
+    \ 'component': {
+    \ 'readonly': '%{&readonly?"":""}',
+    \ },
+    \ 'separator': { 'left': '', 'right': '' },
+    \ 'subseparator': { 'left': '', 'right': '' }
+    \ }
+
   " Use dark variant of color scheme
   set background=light
 
