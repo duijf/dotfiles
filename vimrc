@@ -26,7 +26,8 @@
   NeoBundle 'garbas/vim-snipmate'
   NeoBundle 'honza/vim-snippets'
   NeoBundle 'elixir-lang/vim-elixir'
-  NeoBundle 'itchyny/lightline.vim'
+  NeoBundle 'bling/vim-airline'
+  NeoBundle 'edkolev/tmuxline.vim'
 
   " Enable plugins and indent scripts
   filetype plugin on
@@ -157,15 +158,6 @@
   " Enable syntax highlighting
   syntax enable
 
-  let g:lightline = {
-    \ 'colorscheme': 'solarized',
-    \ 'component': {
-    \ 'readonly': '%{&readonly?"":""}',
-    \ },
-    \ 'separator': { 'left': '', 'right': '' },
-    \ 'subseparator': { 'left': '', 'right': '' }
-    \ }
-
   " Use dark variant of color scheme
   set background=light
 
@@ -175,6 +167,9 @@
 
   " Fix numbers.vim on Vim 7.4+
   set number
+
+  " Airline
+  let g:airline_powerline_fonts = 1
 
 " }}}
 
