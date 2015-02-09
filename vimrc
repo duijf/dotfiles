@@ -28,6 +28,7 @@
   NeoBundle 'elixir-lang/vim-elixir'
   NeoBundle 'bling/vim-airline'
   NeoBundle 'edkolev/tmuxline.vim'
+  NeoBundle 'ryanss/vim-hackernews'
 
   " Enable plugins and indent scripts
   filetype plugin on
