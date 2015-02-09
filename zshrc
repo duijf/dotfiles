@@ -1,6 +1,6 @@
 # Antigen core ----------------------------------------------------------------
 
-export ANTIGEN=$HOME/lib/antigen
+export ANTIGEN=$HOME/src/checkout/antigen
 source $ANTIGEN/antigen.zsh
 
 # Antigen imports -------------------------------------------------------------
@@ -41,6 +41,7 @@ eval "$(rbenv init -)"
 alias tm='tmux -u2'
 alias c='clear'
 alias mkl='latexmk.pl -pdf -pvc'
+alias mklc='latexmk.pl -c'
 alias ls="ls -F"
 alias l="ls -Ol | grep -v hidden | awk '{print $10}' | tail -n +2"
 alias ec='/usr/local/Cellar/emacs/24.3/bin/emacsclient'
