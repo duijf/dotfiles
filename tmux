@@ -25,6 +25,9 @@ bind - split-window -v
 # Make the current window the first window
 bind T swap-window -t 1
 
+# Tmux scrollback
+set -g terminal-overrides 'xterm*:smcup@:rmcup@'
+
 # map Vi movement keys as pane movement keys
 bind h select-pane -L
 bind j select-pane -D
