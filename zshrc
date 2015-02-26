@@ -12,9 +12,7 @@ antigen-use oh-my-zsh
 antigen-bundle git
 antigen-bundle osx
 antigen-bundle zsh-users/zsh-syntax-highlighting
-
-# Zsh Theme
-antigen-theme dstufft
+antigen bundle sindresorhus/pure
 
 # Apply configuration
 antigen-apply
