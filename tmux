@@ -15,18 +15,21 @@ set -sg escape-time 1
 set-option -g base-index 1
 setw -g pane-base-index 1
 
+# bind key to ^A
+set-option -g prefix C-a
+unbind-key C-b
+bind-key a send-prefix
+
 # reload ~/.tmux.conf using PREFIX r
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
 # use PREFIX | to split window horizontally and PREFIX - to split vertically
-bind | split-window -h
-bind - split-window -v
+bind | split-window -c "#{pane_current_path}"
+bind - split-window -h -c "#{pane_current_path}"
+bind n new-window -c "#{pane_current_path}"
 
 # Make the current window the first window
 bind T swap-window -t 1
-
-# Tmux scrollback
-set -g terminal-overrides 'xterm*:smcup@:rmcup@'
 
 # map Vi movement keys as pane movement keys
 bind h select-pane -L
