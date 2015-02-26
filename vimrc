@@ -56,9 +56,6 @@
 
 " Sane configuration ============================================== {{{
 
-  " Behave as a normal editor
-  set nocompatible
-
   " Make backspace work sanely
   set backspace=indent,eol,start
 
@@ -143,7 +140,7 @@
   set smartindent
 
   set textwidth=79
-  set colorcolumn=85
+  set colorcolumn=79
 
   " Normal formatting and wrapping options
   set wrap
@@ -181,8 +178,7 @@
   set background=light
 
   " Set colorscheme
-  let g:solarized_visibility = "low"
-  colors solarized
+  colorscheme gotham
 
   " Fix numbers.vim on Vim 7.4+
   set number
@@ -193,8 +189,6 @@
 " }}}
 
 " Autocommands ==================================================== {{{
-
-  let g:tex_flavor = "latex"
 
   " Automatically remove trailing whitespace
   autocmd BufWritePre * :%s/\s\+$//e
@@ -229,7 +223,7 @@
   inoremap <left> <nop>
   inoremap <right> <nop>
 
-  " Sane line switching with j and k
+  " Make j and k function like normal on wrapped lines
   nnoremap j gj
   nnoremap k gk
 
