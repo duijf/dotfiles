@@ -4,19 +4,23 @@
 " Init & plugin install =========================================== {{{
 
   if has('vim_starting')
+    " Behave like a normal editor
+    if &compatible
+      set nocompatible
+    endif
+
     set runtimepath+=~/etc/vimbundle/neobundle.vim
   endif
 
-  call neobundle#rc(expand('~/etc/vimbundle'))
+  " Begin NeoBundle declarations
+  call neobundle#begin(expand('~/etc/vimbundle'))
 
   " Manage NeoBundle with NeoBundle
   NeoBundleFetch 'Shougo/neobundle.vim'
 
-  " Plugin declarations
-  NeoBundle 'altercation/vim-colors-solarized'
+  " Utilities
   NeoBundle 'Lokaltog/vim-easymotion'
   NeoBundle 'tpope/vim-fugitive'
-  NeoBundle 'mattn/emmet-vim'
   NeoBundle 'myusuf3/numbers.vim'
   NeoBundle 'vim-scripts/tComment'
   NeoBundle 'scrooloose/nerdtree'
@@ -25,14 +29,28 @@
   NeoBundle "tomtom/tlib_vim"
   NeoBundle 'garbas/vim-snipmate'
   NeoBundle 'honza/vim-snippets'
-  NeoBundle 'elixir-lang/vim-elixir'
+  NeoBundle 'sjl/gundo.vim'
+
+  " Appearance plugins
   NeoBundle 'bling/vim-airline'
+  NeoBundle 'whatyouhide/vim-gotham'
   NeoBundle 'edkolev/tmuxline.vim'
-  NeoBundle 'ryanss/vim-hackernews'
+
+  " Language plugins
+  NeoBundle 'csscomb/vim-csscomb'
+  NeoBundle 'kchmck/vim-coffee-script'
+  NeoBundle 'elixir-lang/vim-elixir'
+  NeoBundle 'mattn/emmet-vim'
+
+  " End of bundle declarations
+  call neobundle#end()
 
   " Enable plugins and indent scripts
   filetype plugin on
   filetype indent on
+
+  " Check if everything went correctly. Prompts for uninstalled bundles.
+  NeoBundleCheck
 
 " }}}
 
