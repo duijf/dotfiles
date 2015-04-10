@@ -23,13 +23,17 @@
   NeoBundle 'tpope/vim-fugitive'
   NeoBundle 'myusuf3/numbers.vim'
   NeoBundle 'vim-scripts/tComment'
-  NeoBundle 'scrooloose/nerdtree'
   NeoBundle 'scrooloose/syntastic'
   NeoBundle "MarcWeber/vim-addon-mw-utils"
   NeoBundle "tomtom/tlib_vim"
   NeoBundle 'garbas/vim-snipmate'
   NeoBundle 'honza/vim-snippets'
   NeoBundle 'sjl/gundo.vim'
+  NeoBundle 'kien/ctrlp.vim'
+  NeoBundle 'Raimondi/delimitMate'
+  NeoBundle 'terryma/vim-expand-region'
+  NeoBundle 'maxbrunsfeld/vim-yankstack'
+  NeoBundle 'terryma/vim-multiple-cursors'
 
   " Appearance plugins
   NeoBundle 'bling/vim-airline'
@@ -37,9 +41,8 @@
   NeoBundle 'edkolev/tmuxline.vim'
 
   " Language plugins
+  NeoBundle 'sheerun/vim-polyglot'
   NeoBundle 'csscomb/vim-csscomb'
-  NeoBundle 'kchmck/vim-coffee-script'
-  NeoBundle 'elixir-lang/vim-elixir'
   NeoBundle 'mattn/emmet-vim'
 
   " End of bundle declarations
@@ -156,17 +159,6 @@
 
 " Plugins ========================================================= {{{
 
-  " Show hidden files and folders in NERDTree
-  let NERDTreeShowHidden=1
-
-  " Set NERDTree file filtering patterns
-  let NERDTreeIgnore = ['\.DS_Store$', '\.un\~$', '\.swp$']
-
-  " Show NERDTree when no files are specified on opening Vim
-  autocmd vimenter * if !argc() | NERDTree | endif
-
-  " Show NERDTree on Ctrl N
-  map <C-n> :NERDTreeToggle<CR>
 
   " Toggle EasyMotion with space
   let g:EasyMotion_leader_key = '<space>'
@@ -185,6 +177,8 @@
 
   " Airline
   let g:airline_powerline_fonts = 1
+
+  let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " }}}
 
@@ -244,6 +238,13 @@
   noremap <C-k> <C-w>k
   noremap <C-l> <C-w>l
 
+  " Just <Tab> to switch buffers
+  nmap <Tab> :bn<CR>
+  nmap <S-Tab> :bp<CR>
+
+  " ZZ to write and close buffer
+  nnoremap ZZ :write<CR> :bd<CR>
+
   " Press enter to save file in normal mode
   nnoremap <CR> :write<CR>
 
@@ -302,6 +303,11 @@
 
       " Disable the OS X like shortcuts in MacVim
       let macvim_skip_cmd_opt_movement = 1
+
+      set transparency=15
+
+      " Use option as meta
+      set macmeta
     else
       " Non-MacVim options
     end
