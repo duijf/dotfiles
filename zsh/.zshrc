@@ -15,7 +15,8 @@ antigen-apply
 
 export EDITOR='vim'
 export VISUAL='mvim'
-export PATH="$HOME/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # Tools -----------------------------------------------------------------------
 
@@ -30,7 +31,8 @@ alias tm='tmux -u2'
 alias c='clear'
 alias mkl='latexmk.pl -pdf -pvc'
 alias mklc='latexmk.pl -c'
-alias ls="ls -F"
+alias ls="ls -F --color=auto --ignore='.*.un~'"
+alias lsa='ls -la'
 
 # Bundle aliases
 alias b="bundle"
