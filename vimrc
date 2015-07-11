@@ -242,8 +242,8 @@
   nmap <Tab> :bn<CR>
   nmap <S-Tab> :bp<CR>
 
-  " ZZ to write and close buffer
-  nnoremap ZZ :write<CR> :bd<CR>
+  " <leader>d to write and close buffer, but keep the session
+  nnoremap <leader>d :write<CR> :bd<CR>
 
   " Press enter to save file in normal mode
   nnoremap <CR> :write<CR>
@@ -273,6 +273,9 @@
   nnoremap <leader>wn <C-w>=
   nnoremap <leader>wm <C-w>|
   nnoremap <leader>wc <C-w>o
+
+  " Run the current Elixir test file
+  nnoremap <leader>t :!mix test --no-color %<CR>
 
 " }}}
 
