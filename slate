@@ -32,6 +32,9 @@ alias full          move screenOriginX+${padding};screenOriginY+${padding}      
 alias lefthalf      move screenOriginX+${padding};screenOriginY+${padding}                      screenSizeX/2-${padding}*1.5;screenSizeY-${padding}*2
 alias righthalf     move screenOriginX+screenSizeX/2+${padding}*0.5;screenOriginY+${padding}    screenSizeX/2-${padding}*1.5;screenSizeY-${padding}*2
 
+alias top           move screenOriginX+${padding};screenOriginY+${padding} screenSizeX/2-${padding}*1.5;screenSizeY/2-${padding}*1.5
+alias bottom        move screenOriginX+${padding};screenOriginY+screenSizeY/2+${padding}*0.5 screenSizeX/2-${padding}*1.5;screenSizeY/2-${padding}*2
+
 #
 # Hyper key alias
 #
@@ -48,3 +51,5 @@ bind i:${hyper} ${full}
 
 bind h:${hyper} ${lefthalf}
 bind l:${hyper} ${righthalf}
+bind k:${hyper} ${top}
+bind j:${hyper} ${bottom}
