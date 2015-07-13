@@ -2,7 +2,6 @@
 	name = Laurens Duijvesteijn
 	email = l.duijvesteijn@gmail.com
 [core]
-	excludesfile = /Users/duijf/.gitignore_global
-	editor = mvim -f
+	excludesfile = ~/.gitignore_global
 [push]
 	default = simple

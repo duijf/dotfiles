@@ -7,6 +7,8 @@ antigen-use oh-my-zsh
 antigen-bundle git
 antigen-bundle osx
 antigen-bundle zsh-users/zsh-syntax-highlighting
+
+antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 
 antigen-apply
@@ -14,16 +16,7 @@ antigen-apply
 # Environment variables -------------------------------------------------------
 
 export EDITOR='vim'
-export VISUAL='mvim'
 export PATH="$HOME/bin:/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-
-# Tools -----------------------------------------------------------------------
-
-# Use homebrew direcotry as rbenv root
-export RBENV_ROOT=/usr/local/var/rbenv
-# Load rbenv
-eval "$(rbenv init -)"
 
 # Aliases ---------------------------------------------------------------------
 
@@ -40,3 +33,16 @@ alias bi="b install --path vendor"
 alias bil="bi --local"
 alias bu="b update"
 alias be="b exec"
+
+# Configuration for OS X -----------------------------------------------------
+
+if [ "$OSTYPE" = *"darwin"* ]; then
+    # Use homebrew direcotry as rbenv root
+    export RBENV_ROOT=/usr/local/var/rbenv
+    # Load rbenv
+    eval "$(rbenv init -)"
+    
+
+    export VISUAL='mvim'
+    export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+fi
