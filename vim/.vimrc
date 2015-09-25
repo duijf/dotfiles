@@ -33,10 +33,12 @@
   NeoBundle 'terryma/vim-expand-region'
   NeoBundle 'maxbrunsfeld/vim-yankstack'
   NeoBundle 'terryma/vim-multiple-cursors'
+  NeoBundle 'airblade/vim-gitgutter'
 
   " Appearance plugins
   NeoBundle 'bling/vim-airline'
   NeoBundle 'edkolev/tmuxline.vim'
+  NeoBundle 'chriskempson/base16-vim'
 
   " Language plugins
   NeoBundle 'sheerun/vim-polyglot'
@@ -174,6 +176,10 @@
   let g:airline_powerline_fonts = 1
 
   let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+  " Git gutter
+  let g:gitgutter_highlight_lines = 1
+  " nonumber needs to come after git gutter
 
 " }}}
 
