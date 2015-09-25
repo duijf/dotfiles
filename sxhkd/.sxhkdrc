@@ -1,0 +1,71 @@
+super + Q
+  pkill swm
+
+super + Return
+  urxvt
+
+super + space
+  dmenu_run
+
+super + R
+  pkill -USR1 sxhkd
+
+super + Down
+  wmv 0 20 $(pfw)
+
+super + Up
+  wmv 0 -20 $(pfw)
+
+super + Right
+  wmv 20 0 $(pfw)
+
+super + Left
+  wmv -20 0 $(pfw)
+
+super + alt + Up
+  wrs 0 -20 $(pfw)
+
+super + alt + Down
+  wrs 0 20 $(pfw)
+
+super + alt + Right
+  wrs 20 0 $(pfw)
+
+super + alt + Left
+  wrs -20 0 $(pfw)
+
+super + H
+  wtp 20 20 580 1024 $(pfw)
+
+super + L
+  wtp 640 20 1240 1024 $(pfw)
+
+super + I
+  wtp 20 20 1860 1024 $(pfw)
+
+super + !button{1,3}
+  {wmv, wrs} -a %1 %1 $(pfw)
+
+XF86MonBrightnessUp
+  xbacklight -inc 10
+
+XF86MonBrightnessDown
+  xbacklight -dec 10
+
+super + n
+  focus.sh next
+
+super + p
+  focus.sh prev
+
+super + f
+  fullscreen.sh $(pfw)
+
+super + m
+  switch_grid.sh
+
+super + t
+  tile.sh
+
+super + {h, j, k, l}
+  closest.sh {h, j, k, l}
