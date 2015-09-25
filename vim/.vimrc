@@ -9,11 +9,11 @@
       set nocompatible
     endif
 
-    set runtimepath+=~/etc/vimbundle/neobundle.vim
+    set runtimepath+=~/.vim/bundle/neobundle.vim
   endif
 
   " Begin NeoBundle declarations
-  call neobundle#begin(expand('~/etc/vimbundle'))
+  call neobundle#begin(expand('~/.vim/bundle'))
 
   " Manage NeoBundle with NeoBundle
   NeoBundleFetch 'Shougo/neobundle.vim'
