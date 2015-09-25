@@ -21,7 +21,6 @@
   " Utilities
   NeoBundle 'Lokaltog/vim-easymotion'
   NeoBundle 'tpope/vim-fugitive'
-  NeoBundle 'myusuf3/numbers.vim'
   NeoBundle 'vim-scripts/tComment'
   NeoBundle 'scrooloose/syntastic'
   NeoBundle "MarcWeber/vim-addon-mw-utils"
@@ -37,7 +36,6 @@
 
   " Appearance plugins
   NeoBundle 'bling/vim-airline'
-  NeoBundle 'whatyouhide/vim-gotham'
   NeoBundle 'edkolev/tmuxline.vim'
 
   " Language plugins
@@ -103,8 +101,8 @@
   " Use a persistent undo file
   set undofile
 
-  " Use relative line numbers by default
-  set relativenumber
+  " Disable line numbers
+  set nonumber
 
   " Highlight the line the cursor is on
   set cursorline
@@ -167,13 +165,10 @@
   syntax enable
 
   " Use dark variant of color scheme
-  set background=light
+  set background=dark
 
   " Set colorscheme
-  colorscheme gotham
-
-  " Fix numbers.vim on Vim 7.4+
-  set number
+  colorscheme base16-default
 
   " Airline
   let g:airline_powerline_fonts = 1
@@ -253,8 +248,8 @@
   nnoremap <leader>_ ddkP
 
   " Open .vimrc
-  nnoremap <leader>ev :vsplit ~/etc/dotfiles/vimrc<cr>
-  nnoremap <leader>sv :source ~/etc/dotfiles/vimrc<cr>
+  nnoremap <leader>ev :vsplit ~/.vimrc<cr>
+  nnoremap <leader>sv :source ~/.vimrc<cr>
 
   " Make OS level copy/paste work
   noremap <leader>y "*y
