@@ -159,7 +159,6 @@
 
 " Plugins ========================================================= {{{
 
-
   " Toggle EasyMotion with space
   let g:EasyMotion_leader_key = '<space>'
 
@@ -182,10 +181,13 @@
   " I want my own mappings
   let g:gitgutter_map_keys = 0
 
-  " Git gutter mappings
-  nmap <leader>ha <Plug>GitGutterStageHunk
-  nmap <leader>hu <Plug>GitGutterRevertHunk
-  nmap <leader>hv <Plug>GitGutterPreviewHunk
+  " Git mappings
+  nnoremap <leader>gs <Plug>GitGutterStageHunk
+  nnoremap <leader>gu <Plug>GitGutterRevertHunk
+  nnoremap <leader>gv <Plug>GitGutterPreviewHunk
+  nnoremap <leader>gn <Plug>GitGutterNextHunk
+  nnoremap <leader>gp <Plug>GitGutterPrevHunk
+  nnoremap <leader>gc :Gcommit<CR>
 
 " }}}
 
