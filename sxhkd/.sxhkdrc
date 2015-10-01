@@ -11,37 +11,40 @@ super + R
   pkill -USR1 sxhkd
 
 super + Down
-  wmv 0 20 $(pfw)
+ move.sh 0 20 $(pfw)
 
 super + Up
-  wmv 0 -20 $(pfw)
+  move.sh 0 -20 $(pfw)
 
 super + Right
-  wmv 20 0 $(pfw)
+  move.sh 20 0 $(pfw)
 
 super + Left
-  wmv -20 0 $(pfw)
+  move.sh wmv -20 0 $(pfw)
 
 super + alt + Up
-  wrs 0 -20 $(pfw)
+  resize.sh 0 -20 $(pfw)
 
 super + alt + Down
-  wrs 0 20 $(pfw)
+  resize.sh 0 20 $(pfw)
 
 super + alt + Right
-  wrs 20 0 $(pfw)
+  resize.sh 20 0 $(pfw)
 
 super + alt + Left
-  wrs -20 0 $(pfw)
+  resize.sh -20 0 $(pfw)
 
 super + H
-  wtp 20 20 580 1024 $(pfw)
+  teleport.sh 20 20 910 1024 $(pfw)
 
 super + L
-  wtp 640 20 1240 1024 $(pfw)
+  teleport.sh 980 20 910 1024 $(pfw)
 
 super + I
-  wtp 20 20 1860 1024 $(pfw)
+  teleport.sh 20 20 1860 1024 $(pfw)
+
+super + f
+  fullscreen.sh $(pfw)
 
 super + !button{1,3}
   {wmv, wrs} -a %1 %1 $(pfw)
@@ -58,14 +61,11 @@ super + n
 super + p
   focus.sh prev
 
-super + f
-  fullscreen.sh $(pfw)
+super + shift + {1,2,3,4,5}
+  groups.sh -s {1,2,3,4,5} $(pfw)
 
-super + m
-  switch_grid.sh
+super + {1,2,3,4,5}
+  groups.sh -M {1,2,3,4,5}
 
-super + t
-  tile.sh
-
-super + {h, j, k, l}
-  closest.sh {h, j, k, l}
+super + shift + d
+  groups.sh -c $(pfw)

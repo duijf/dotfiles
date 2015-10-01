@@ -182,12 +182,12 @@
   let g:gitgutter_map_keys = 0
 
   " Git mappings
-  nnoremap <leader>gs <Plug>GitGutterStageHunk
-  nnoremap <leader>gu <Plug>GitGutterRevertHunk
-  nnoremap <leader>gv <Plug>GitGutterPreviewHunk
-  nnoremap <leader>gn <Plug>GitGutterNextHunk
-  nnoremap <leader>gp <Plug>GitGutterPrevHunk
-  nnoremap <leader>gc :Gcommit<CR>
+  nmap <leader>gs <Plug>GitGutterStageHunk
+  nmap <leader>gu <Plug>GitGutterRevertHunk
+  nmap <leader>gv <Plug>GitGutterPreviewHunk
+  nmap <leader>gn <Plug>GitGutterNextHunk
+  nmap <leader>gp <Plug>GitGutterPrevHunk
+  nmap <leader>gc :Gcommit<CR>
 
 " }}}
 
