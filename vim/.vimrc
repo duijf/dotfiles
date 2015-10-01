@@ -177,9 +177,15 @@
 
   let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
-  " Git gutter
+  " Highlight git gutter lines
   let g:gitgutter_highlight_lines = 1
-  " nonumber needs to come after git gutter
+  " I want my own mappings
+  let g:gitgutter_map_keys = 0
+
+  " Git gutter mappings
+  nmap <leader>ha <Plug>GitGutterStageHunk
+  nmap <leader>hu <Plug>GitGutterRevertHunk
+  nmap <leader>hv <Plug>GitGutterPreviewHunk
 
 " }}}
 
