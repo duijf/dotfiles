@@ -20,7 +20,7 @@ super + Right
   move.sh 20 0 $(pfw)
 
 super + Left
-  move.sh wmv -20 0 $(pfw)
+  move.sh -20 0 $(pfw)
 
 super + alt + Up
   resize.sh 0 -20 $(pfw)
@@ -35,13 +35,13 @@ super + alt + Left
   resize.sh -20 0 $(pfw)
 
 super + H
-  teleport.sh 20 20 910 1024 $(pfw)
+  teleport.sh 20 40 910 1014 $(pfw)
 
 super + L
-  teleport.sh 980 20 910 1024 $(pfw)
+  teleport.sh 970 40 910 1014 $(pfw)
 
 super + I
-  teleport.sh 20 20 1860 1024 $(pfw)
+  teleport.sh 20 40 1860 1014 $(pfw)
 
 super + f
   fullscreen.sh $(pfw)
