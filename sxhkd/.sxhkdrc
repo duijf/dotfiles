@@ -35,13 +35,13 @@ super + alt + Left
   resize.sh -20 0 $(pfw)
 
 super + H
-  teleport.sh 20 40 910 1014 $(pfw)
+  teleport.sh 20 40 910 1004 $(pfw)
 
 super + L
-  teleport.sh 970 40 910 1014 $(pfw)
+  teleport.sh 970 40 910 1004 $(pfw)
 
 super + I
-  teleport.sh 20 40 1860 1014 $(pfw)
+  teleport.sh 20 40 1860 1004 $(pfw)
 
 super + f
   fullscreen.sh $(pfw)
