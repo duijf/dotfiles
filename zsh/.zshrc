@@ -5,7 +5,7 @@ fpath=("$HOME/.zsh" $fpath)
 # Environment variables -------------------------------------------------------
 
 export EDITOR='vim'
-export PATH="$HOME/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$HOME/.gem/ruby/2.2.0/bin:$HOME/bin:/usr/local/bin:$PATH"
 export SSH_ENV="$HOME/.ssh/environment"
 
 # Prompt ----------------------------------------------------------------------
@@ -42,3 +42,17 @@ if [ -f "${SSH_ENV}" ]; then
 else
   start_agent
 fi
+
+# NVM ------------------------------------------------------------------------
+
+export NVM_DIR="/home/duijf/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+# rbenv ----------------------------------------------------------------------
+
+eval "$(rbenv init -)"
+
+. /etc/profile.d/fzf.zsh
+alias f='fzf'
+
+alias be='bundle exec'
