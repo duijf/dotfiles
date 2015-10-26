@@ -179,11 +179,10 @@
   " Highlight git gutter lines
   let g:gitgutter_highlight_lines = 1
   " I want my own mappings
-  let g:gitgutter_map_keys = 0
+  "let g:gitgutter_map_keys = 0
 
   " Git mappings
   nmap <leader>gs <Plug>GitGutterStageHunk
-  nmap <leader>gu <Plug>GitGutterRevertHunk
   nmap <leader>gv <Plug>GitGutterPreviewHunk
   nmap <leader>gn <Plug>GitGutterNextHunk
   nmap <leader>gp <Plug>GitGutterPrevHunk
