@@ -14,6 +14,8 @@ autoload -Uz promptinit
 promptinit
 prompt pure
 
+RPROMPT="$(battery.py)"
+
 # Aliases ---------------------------------------------------------------------
 
 alias c='clear'
