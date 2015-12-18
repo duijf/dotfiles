@@ -20,14 +20,12 @@
 
   " Utilities
   NeoBundle 'Lokaltog/vim-easymotion'
-  NeoBundle 'tpope/vim-fugitive'
   NeoBundle 'vim-scripts/tComment'
   NeoBundle 'scrooloose/syntastic'
   NeoBundle "MarcWeber/vim-addon-mw-utils"
   NeoBundle "tomtom/tlib_vim"
   NeoBundle 'garbas/vim-snipmate'
   NeoBundle 'honza/vim-snippets'
-  NeoBundle 'sjl/gundo.vim'
   NeoBundle 'kien/ctrlp.vim'
   NeoBundle 'Raimondi/delimitMate'
   NeoBundle 'terryma/vim-expand-region'
@@ -37,7 +35,6 @@
 
   " Appearance plugins
   NeoBundle 'bling/vim-airline'
-  NeoBundle 'edkolev/tmuxline.vim'
   NeoBundle 'chriskempson/base16-vim'
 
   " Language plugins
@@ -59,7 +56,7 @@
 
 " Sane configuration ============================================== {{{
 
-  " Make backspace work sanely
+  " Make backspace work sanely across lines
   set backspace=indent,eol,start
 
   " Sets how many lines of history VIM has to remember
@@ -201,12 +198,6 @@
 
   " Tab settings for LaTeX
   autocmd FileType plaintex setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-
-  " Automatically delete unused Fugitive buffers
-  augroup fugitive
-    autocmd!
-    autocmd BufReadPost fugitive://* set bufhidden=delete
-  augroup END
 
   " markdown filetype file
   au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=mkd
