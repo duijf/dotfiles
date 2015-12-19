@@ -58,11 +58,15 @@ XF86MonBrightnessDown
 super + n
   focus.sh next
 
+# add window to a group
 super + shift + {1,2,3,4,5}
-  groups.sh -s {1,2,3,4,5} $(pfw)
+    groaw -d all; \
+    groaw -a {1,2,3,4,5}
 
+# toggle groups' visibility
 super + {1,2,3,4,5}
-  groups.sh -M {1,2,3,4,5}
+    groaw -t {1,2,3,4,5}
 
-super + shift + d
-  groups.sh -c $(pfw)
+# remove window from all groups
+super + Backspace
+    groaw -d all
