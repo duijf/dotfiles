@@ -16,4 +16,5 @@ sxhkd -c ~/.sxhkdrc > /dev/null 2>&1 &
 sh ~/.fehbg &
 xcape &
 python ~/bin/battery.py &
+wew | yawee &
 exec swm
