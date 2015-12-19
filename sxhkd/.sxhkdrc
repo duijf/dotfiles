@@ -58,9 +58,6 @@ XF86MonBrightnessDown
 super + n
   focus.sh next
 
-super + p
-  focus.sh prev
-
 super + shift + {1,2,3,4,5}
   groups.sh -s {1,2,3,4,5} $(pfw)
 
