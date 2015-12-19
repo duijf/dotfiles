@@ -28,10 +28,10 @@
   NeoBundle 'honza/vim-snippets'
   NeoBundle 'kien/ctrlp.vim'
   NeoBundle 'Raimondi/delimitMate'
+  NeoBundle 'tpope/vim-fugitive'
   NeoBundle 'terryma/vim-expand-region'
   NeoBundle 'maxbrunsfeld/vim-yankstack'
   NeoBundle 'terryma/vim-multiple-cursors'
-  NeoBundle 'airblade/vim-gitgutter'
 
   " Appearance plugins
   NeoBundle 'bling/vim-airline'
@@ -179,11 +179,11 @@
   "let g:gitgutter_map_keys = 0
 
   " Git mappings
-  nmap <leader>gs <Plug>GitGutterStageHunk
-  nmap <leader>gv <Plug>GitGutterPreviewHunk
-  nmap <leader>gn <Plug>GitGutterNextHunk
-  nmap <leader>gp <Plug>GitGutterPrevHunk
-  nmap <leader>gc :Gcommit<CR>
+  nnoremap <leader>gc :Gcommit<CR>
+  nnoremap <leader>gs :Gstatus<CR>
+  nnoremap <leader>gd :Gdiff<CR>
+  nnoremap <leader>gb :Gblame<CR>
+  nnoremap <leader>gh :Gbrowse<CR>
 
 " }}}
 
