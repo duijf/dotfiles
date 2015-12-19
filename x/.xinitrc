@@ -14,4 +14,6 @@ fi
 xrdb -merge ~/.Xresources
 sxhkd -c ~/.sxhkdrc > /dev/null 2>&1 &
 sh ~/.fehbg &
+xcape &
+python ~/bin/battery.py &
 exec swm
