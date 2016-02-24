@@ -166,7 +166,7 @@
   set background=dark
 
   " Set colorscheme
-  colorscheme base16-default
+  colorscheme base16-grayscale
 
   " Airline
   let g:airline_powerline_fonts = 1
@@ -256,11 +256,10 @@
   nnoremap <leader>sv :source ~/.vimrc<cr>
 
   " Make OS level copy/paste work
-  noremap <leader>y "+y
-  noremap <leader>yy "+Y
+  nnoremap <leader><leader>y ggVG"+y
 
-  " Preserve indentation while pasting text from the OS X clipboard
-  noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+  " Preserve indentation while pasting text from the system clipboard
+  noremap <leader>p :set paste<CR>:put  +<CR>:set nopaste<CR>
 
   " Create a new vertical split and switch to it
   nnoremap <leader>vs <C-w>v<C-w>l
@@ -275,6 +274,10 @@
 
   " Run the current Elixir test file
   nnoremap <leader>t :!mix test --no-color %<CR>
+
+  " Playback q register with backspace in normal and visual
+  nnoremap <bs> @q
+  vnoremap <silent> <bs> :norm @q<cr>
 
 " }}}
 

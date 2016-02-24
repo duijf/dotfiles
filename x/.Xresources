@@ -42,4 +42,4 @@
 
 URxvt.internalBorder: 20
 URxvt.scrollBar:      false
-URxvt.font: xft:Source Code Pro-11
+URxvt.font: xft:Source Code Pro-13
