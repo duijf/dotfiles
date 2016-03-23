@@ -26,16 +26,19 @@
   NeoBundle "tomtom/tlib_vim"
   NeoBundle 'garbas/vim-snipmate'
   NeoBundle 'honza/vim-snippets'
-  NeoBundle 'kien/ctrlp.vim'
+  NeoBundle 'ctrlpvim/ctrlp.vim'
   NeoBundle 'Raimondi/delimitMate'
   NeoBundle 'tpope/vim-fugitive'
   NeoBundle 'terryma/vim-expand-region'
   NeoBundle 'maxbrunsfeld/vim-yankstack'
   NeoBundle 'terryma/vim-multiple-cursors'
+  NeoBundle 'cohama/agit.vim'
 
   " Appearance plugins
   NeoBundle 'bling/vim-airline'
+  NeoBundle 'vim-airline/vim-airline-themes'
   NeoBundle 'chriskempson/base16-vim'
+  NeoBundle 'ryanoasis/vim-devicons'
 
   " Language plugins
   NeoBundle 'sheerun/vim-polyglot'
@@ -166,24 +169,29 @@
   set background=dark
 
   " Set colorscheme
-  colorscheme base16-grayscale
+  colorscheme base16-tomorrow
 
   " Airline
   let g:airline_powerline_fonts = 1
+  let g:airline_left_sep = ''
+  let g:airline_right_sep = ''
+  let g:airline_left_alt_sep = '⎢'
+  let g:airline_right_alt_sep = '⎢'
+  let g:airline_mode_map = {
+                           \ '__' : '-',
+                           \ 'n'  : 'N',
+                           \ 'i'  : 'I',
+                           \ 'R'  : 'R',
+                           \ 'c'  : 'C',
+                           \ 'v'  : 'V',
+                           \ 'V'  : 'V-L',
+                           \ 's'  : 'S',
+                           \ 'S'  : 'S',
+                           \}
+
+  let g:airline#extensions#tabline#enabled = 1
 
   let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
-  " Highlight git gutter lines
-  let g:gitgutter_highlight_lines = 1
-  " I want my own mappings
-  "let g:gitgutter_map_keys = 0
-
-  " Git mappings
-  nnoremap <leader>gc :Gcommit<CR>
-  nnoremap <leader>gs :Gstatus<CR>
-  nnoremap <leader>gd :Gdiff<CR>
-  nnoremap <leader>gb :Gblame<CR>
-  nnoremap <leader>gh :Gbrowse<CR>
 
 " }}}
 
@@ -192,15 +200,16 @@
   " Automatically remove trailing whitespace
   autocmd BufWritePre * :%s/\s\+$//e
 
-  " Tab settings for HTML and CSS
-  autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-  autocmd FileType css setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-
-  " Tab settings for LaTeX
+  " Tab settings
+  autocmd FileType html     setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+  autocmd FileType css      setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
   autocmd FileType plaintex setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
   " markdown filetype file
-  au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=mkd
+  au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=mkd
+
+  " Tabs and Makefiles
+  autocmd FileType make setlocal noexpandtab
 
 " }}}
 
@@ -242,7 +251,7 @@
   nmap <S-Tab> :bp<CR>
 
   " <leader>d to write and close buffer, but keep the session
-  nnoremap <leader>d :write<CR> :bd<CR>
+  nnoremap <C-w> :bd<CR>
 
   " Press enter to save file in normal mode
   nnoremap <CR> :write<CR>
@@ -287,10 +296,13 @@
     " General GUI options
 
     " Set the font
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+    set guifont=Sauce\ Code\ Pro:h12
 
     " Remove the toolbar
     set guioptions-=T
+
+    " Remove the menu
+    set guioptions-=m
 
     " Remove the left scrollbars
     set guioptions-=l
