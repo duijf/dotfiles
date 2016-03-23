@@ -22,6 +22,8 @@ alias mklc='latexmk -c'
 alias ls="ls -F --color=auto --ignore='.*.un~'"
 alias lsa='ls -la'
 alias gst='git status'
+alias compress_jpg='ocnvert -strip -interlace Plane -gaussian-blur 0.05 -quality 85%'
+alias lk='i3lock -i ~/wallpapers/new-york-9.png'
 
 # SSH agent ------------------------------------------------------------------
 
