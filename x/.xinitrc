@@ -13,8 +13,9 @@ fi
 
 xrdb -merge ~/.Xresources
 sxhkd -c ~/.sxhkdrc > /dev/null 2>&1 &
-sh ~/.fehbg &
-xcape &
-python ~/bin/battery.py &
-wew | yawee &
-exec swm
+# sh ~/.fehbg &
+xmodmap -e "keycode 66 = Control_L" &
+xcape -e '#66=Escape' &
+
+exec cinnamon-session
+#exec swm
