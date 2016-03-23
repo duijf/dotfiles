@@ -28,13 +28,14 @@ flashplugin
 geary
 gvim
 htop
+i3lock
 inotify-tools
 iw
 lastpass
 minecraft
-monodevelop-debugger-gdb
 mpv
 mupdf
+ntfs-3g
 net-tools
 opensc
 openssh
@@ -47,6 +48,7 @@ pygmentize
 rsync
 rxvt-unicode
 scrot
+spotify
 stow
 sxhkd
 traceroute
@@ -63,7 +65,6 @@ wkhtmltopdf-static
 wget
 xcape
 xclip
-xdotool
 xorg-xinit
 zip
 zsh
