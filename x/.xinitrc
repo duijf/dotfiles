@@ -16,6 +16,7 @@ sxhkd -c ~/.sxhkdrc > /dev/null 2>&1 &
 # sh ~/.fehbg &
 xmodmap -e "keycode 66 = Control_L" &
 xcape -e '#66=Escape' &
+plank &
 
 exec cinnamon-session
 #exec swm
