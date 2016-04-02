@@ -24,6 +24,8 @@ alias lsa='ls -la'
 alias gst='git status'
 alias compress_jpg='ocnvert -strip -interlace Plane -gaussian-blur 0.05 -quality 85%'
 alias lk='i3lock -i ~/wallpapers/new-york-9.png'
+alias be='bundle exec'
+alias vim='nvim'
 
 # SSH agent ------------------------------------------------------------------
 
@@ -49,3 +51,8 @@ fi
 
 export NVM_DIR="/home/duijf/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+# Rbenv ----------------------------------------------------------------------
+
+eval "$(rbenv init -)"
+
