@@ -1,38 +1,8 @@
-super + Q
-  pkill swm
-
 super + Return
   urxvt
 
-super + space
-  dmenu_run
-
 super + R
   pkill -USR1 sxhkd
-
-super + Down
- move.sh 0 20 $(pfw)
-
-super + Up
-  move.sh 0 -20 $(pfw)
-
-super + Right
-  move.sh 20 0 $(pfw)
-
-super + Left
-  move.sh -20 0 $(pfw)
-
-super + alt + Up
-  resize.sh 0 -20 $(pfw)
-
-super + alt + Down
-  resize.sh 0 20 $(pfw)
-
-super + alt + Right
-  resize.sh 20 0 $(pfw)
-
-super + alt + Left
-  resize.sh -20 0 $(pfw)
 
 super + H
   teleport.sh 20 50 910 1004 $(pfw)
@@ -53,4 +23,4 @@ XF86MonBrightnessDown
   xbacklight -dec 10
 
 super + l
-    i3lock -i ~/wallpapers/new-york-9.png
+  i3lock -i ~/wallpapers/new-york-9.png
