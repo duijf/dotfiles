@@ -26,6 +26,7 @@ alias compress_jpg='ocnvert -strip -interlace Plane -gaussian-blur 0.05 -quality
 alias lk='i3lock -i ~/wallpapers/new-york-9.png'
 alias be='bundle exec'
 alias vim='nvim'
+alias gp='git push'
 
 # SSH agent ------------------------------------------------------------------
 
@@ -47,11 +48,6 @@ else
   start_agent
 fi
 
-# NVM ------------------------------------------------------------------------
-
-export NVM_DIR="/home/duijf/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-
 # Emacs ----------------------------------------------------------------------
 
 if [ -n "$INSIDE_EMACS" ]; then
@@ -60,7 +56,14 @@ if [ -n "$INSIDE_EMACS" ]; then
   print -P "\033AnSiTc %d"
 fi
 
+# Edit commands in external editor -------------------------------------------
+
+export VISUAL=nvim
+autoload edit-command-line; zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 # Rbenv ----------------------------------------------------------------------
 
 eval "$(rbenv init -)"
 
+. $HOME/.asdf/asdf.sh
