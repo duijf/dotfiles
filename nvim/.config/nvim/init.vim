@@ -7,44 +7,40 @@
   set runtimepath^=~/.dein
   call dein#begin(expand('~/.cache/dein'))
 
-  " Manage dein with dein
-  call dein#add('~/.dein')
-
   " Motions
   call dein#add('Lokaltog/vim-easymotion')
-  call dein#add('tomtom/tlib_vim')
   call dein#add('vim-scripts/tComment')
 
   " Completion and snippets
-  call dein#add('Shougo/deoplete.nvim')
+  call dein#add('tomtom/tlib_vim')
+  call dein#add('marcweber/vim-addon-mw-utils')
+  call dein#add('honza/vim-snippets')
+  call dein#add('garbas/vim-snipmate')
 
   " Elixir
   call dein#add('elixir-lang/vim-elixir')
   call dein#add('archSeer/elixir.nvim')
+  call dein#add('mattn/emmet-vim')
+
+  " Unite
+  call dein#add('Shougo/unite.vim')
+  call dein#add('Shougo/neoyank.vim')
+  call dein#add('Shougo/neomru.vim')
 
   " Colors
-  call dein#add('chriskempson/base16-vim')
+  call dein#add('tomelm/Smyck-Color-Scheme')
 
   " Languages
-  " NeoBundle 'honza/vim-snippets'
   " NeoBundle 'ctrlpvim/ctrlp.vim'
   " NeoBundle 'Raimondi/delimitMate'
   " NeoBundle 'tpope/vim-fugitive'
   " NeoBundle 'terryma/vim-expand-region'
-  " NeoBundle 'maxbrunsfeld/vim-yankstack'
-  " NeoBundle 'terryma/vim-multiple-cursors'
   " NeoBundle 'cohama/agit.vim'
-  "
-  " " Appearance plugins
-  " NeoBundle 'bling/vim-airline'
-  " NeoBundle 'vim-airline/vim-airline-themes'
-  " NeoBundle 'ryanoasis/vim-devicons'
 
-  " " Language plugins
+  " Language plugins
   " NeoBundle 'sheerun/vim-polyglot'
   " NeoBundle 'csscomb/vim-csscomb'
-  " NeoBundle 'mattn/emmet-vim'
-  "
+
   call dein#end()
 
   " Enable plugins and indent scripts
@@ -92,10 +88,6 @@
 
   " Always show the status line
   set laststatus=2
-
-  " Invisible character settings
-  " set list
-  " set listchars=tab:»,trail:·,eol:¬
 
   " Use spaces instead of tabs
   set expandtab
@@ -150,29 +142,7 @@
   set background=dark
 
   " " Set colorscheme
-  colorscheme base16-tomorrow
-
-  " " Airline
-  " let g:airline_powerline_fonts = 1
-  " let g:airline_left_sep = ''
-  " let g:airline_right_sep = ''
-  " let g:airline_left_alt_sep = '⎢'
-  " let g:airline_right_alt_sep = '⎢'
-  " let g:airline_mode_map = {
-  "                          \ '__' : '-',
-  "                          \ 'n'  : 'N',
-  "                          \ 'i'  : 'I',
-  "                          \ 'R'  : 'R',
-  "                          \ 'c'  : 'C',
-  "                          \ 'v'  : 'V',
-  "                          \ 'V'  : 'V-L',
-  "                          \ 's'  : 'S',
-  "                          \ 'S'  : 'S',
-  "                          \}
-  "
-  " let g:airline#extensions#tabline#enabled = 1
-  "
-  " let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+  colorscheme smyck
 
 " }}}
 
@@ -181,12 +151,7 @@
   " Automatically remove trailing whitespace
   autocmd BufWritePre * :%s/\s\+$//e
 
-  " Tab settings
-  autocmd FileType html     setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-  autocmd FileType css      setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-  autocmd FileType plaintex setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-
-  " markdown filetype file
+  " Markdown filetype
   au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=mkd
 
   " Tabs and Makefiles
@@ -242,7 +207,7 @@
   nnoremap <leader>_ ddkP
 
   " Open neovim configuration
-  nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
+  nnoremap <leader>ev :e ~/.config/nvim/init.vim<cr>
   nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
 
   " Copy whole file to OS clipboard
@@ -262,11 +227,37 @@
   nnoremap <leader>wm <C-w>|
   nnoremap <leader>wc <C-w>o
 
-  " Run the current Elixir test file
-  nnoremap <leader>t :!mix test --no-color %<CR>
-
   " Playback q register with backspace in normal and visual
   nnoremap <bs> @q
   vnoremap <silent> <bs> :norm @q<cr>
+
+" }}}
+
+
+" Unite =========================================================== {{{
+
+  " Thanks to http://www.codeography.com/2013/06/17/replacing-all-the-things-with-unite-vim.html
+
+  " Enable yank history
+  let g:unite_source_history_yank_enable = 1
+
+  " Use the Unite fuzzy matcher
+  call unite#filters#matcher_default#use(['matcher_fuzzy'])
+
+  nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
+  nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
+  nnoremap <leader>r :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
+  nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
+  nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
+
+  " Custom mappings for the unite buffer
+  autocmd FileType unite call s:unite_settings()
+  function! s:unite_settings()
+    " Exit unite
+    nmap <buffer> <Esc> <Plug>(unite_all_exit)
+    " Enable navigation with control-j and control-k in insert mode
+    imap <buffer> <C-j> <Plug>(unite_select_next_line)
+    imap <buffer> <C-k> <Plug>(unite_select_previous_line)
+  endfunction
 
 " }}}
