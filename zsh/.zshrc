@@ -28,6 +28,7 @@ alias lk='i3lock -i ~/wallpapers/new-york-9.png'
 alias be='bundle exec'
 alias vim='nvim'
 alias gp='git push'
+alias open='xdg-open'
 
 # SSH agent ------------------------------------------------------------------
 
