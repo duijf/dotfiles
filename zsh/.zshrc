@@ -4,7 +4,8 @@ fpath=("$HOME/.zsh" $fpath)
 
 # Environment variables -------------------------------------------------------
 
-export EDITOR='vim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export SSH_ENV="$HOME/.ssh/environment"
 
@@ -58,12 +59,9 @@ fi
 
 # Edit commands in external editor -------------------------------------------
 
-export VISUAL=nvim
 autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
-# Rbenv ----------------------------------------------------------------------
-
-eval "$(rbenv init -)"
+# Version managers -----------------------------------------------------------
 
 . $HOME/.asdf/asdf.sh
