@@ -31,6 +31,9 @@
   " Colors
   call dein#add('tomelm/Smyck-Color-Scheme')
 
+  " Tmux integration
+  call dein#add('christoomey/vim-tmux-navigator')
+
   " Languages
   " NeoBundle 'ctrlpvim/ctrlp.vim'
   " NeoBundle 'Raimondi/delimitMate'
@@ -228,12 +231,14 @@
   nnoremap <leader>wm <C-w>|
   nnoremap <leader>wc <C-w>o
 
-  " Playback q register with backspace in normal and visual
-  nnoremap <bs> @q
-  vnoremap <silent> <bs> :norm @q<cr>
+  " Fix C-h in neovim. For more info see:
+  " https://github.com/neovim/neovim/issues/2048#issuecomment-78045837
+
+  if has('nvim')
+    nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
+  endif
 
 " }}}
-
 
 " Unite =========================================================== {{{
 
