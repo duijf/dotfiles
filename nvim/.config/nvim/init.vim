@@ -10,6 +10,7 @@
   " Motions
   call dein#add('Lokaltog/vim-easymotion')
   call dein#add('vim-scripts/tComment')
+  call dein#add('bkad/CamelCaseMotion')
 
   " Completion and snippets
   call dein#add('tomtom/tlib_vim')
@@ -238,6 +239,16 @@
   if has('nvim')
     nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
   endif
+
+  " Make w, b, e, and eg work with camel and snake case
+  map <silent> w <Plug>CamelCaseMotion_w
+  map <silent> b <Plug>CamelCaseMotion_b
+  map <silent> e <Plug>CamelCaseMotion_e
+  map <silent> ge <Plug>CamelCaseMotion_ge
+  sunmap w
+  sunmap b
+  sunmap e
+  sunmap ge
 
 " }}}
 
