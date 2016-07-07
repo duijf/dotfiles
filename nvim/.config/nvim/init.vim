@@ -211,10 +211,6 @@
   " Press enter to save file in normal mode
   nnoremap <CR> :write<CR>
 
-  " Moving lines up and down
-  nnoremap <leader>- ddp
-  nnoremap <leader>_ ddkP
-
   " Open neovim configuration
   nnoremap <leader>ev :e ~/.config/nvim/init.vim<cr>
   nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
