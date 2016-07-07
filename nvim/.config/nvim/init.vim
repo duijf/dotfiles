@@ -233,8 +233,9 @@
   nnoremap <leader>wm <C-w>|
   nnoremap <leader>wc <C-w>o
 
-  " Fix C-h in neovim. For more info see:
-  " https://github.com/neovim/neovim/issues/2048#issuecomment-78045837
+  " Beginning and end of line with H and L
+  nnoremap H ^
+  nnoremap L $
 
   if has('nvim')
     nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
