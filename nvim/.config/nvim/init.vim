@@ -237,8 +237,15 @@
   nnoremap H ^
   nnoremap L $
 
+  " Seamless tmux pane switching
   if has('nvim')
+    " Fix C-h in neovim. For more info see:
+    " https://github.com/neovim/neovim/issues/2048#issuecomment-78045837
     nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
+
+    nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+    nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+    nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
   endif
 
   " Make w, b, e, and eg work with camel and snake case
