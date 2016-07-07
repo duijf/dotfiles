@@ -161,6 +161,12 @@
   " Tabs and Makefiles
   autocmd FileType make setlocal noexpandtab
 
+  " Automatically maximize help windows
+  augroup filetype_help
+    autocmd!
+    autocmd BufWinEnter * if &l:buftype ==# 'help' | wincmd _ | endif
+  augroup END
+
 " }}}
 
 " Mappings ======================================================== {{{
@@ -188,7 +194,6 @@
   au FocusLost * :silent! wall
 
   " Open help in a vertical split
-  cnoremap help vert help
 
   " Easy buffer navigation
   noremap <C-h> <C-w>h
