@@ -60,9 +60,27 @@ fi
 
 # Edit commands in external editor -------------------------------------------
 
+bindkey -v
 autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd V edit-command-line
 
-# Version managers -----------------------------------------------------------
+# Virtualenv -----------------------------------------------------------------
 
-. $HOME/.asdf/asdf.sh
+# A function to load a virtualenv without sourcing madness.
+# Based on https://gist.github.com/datagrok/2199506.
+function workon {
+  export VIRTUAL_ENV="$HOME/env/$1"
+  export PATH="$VIRTUAL_ENV/bin:$PATH"
+  unset PYTHON_HOME
+  zsh
+}
+
+# Autocomplete the "workon" command with directories in ~/env.
+compdef '_path_files -/ -g "$HOME/env/*" -W "$HOME/env/"' workon
+
+# Store the name of the current virtualenv for use in the prompt.
+if [ -f $VIRTUAL_ENV ]; then
+  virtualenv_prompt=""
+else
+  virtualenv_prompt="$(basename "$VIRTUAL_ENV") "
+fi
