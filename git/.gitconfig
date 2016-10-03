@@ -5,3 +5,5 @@
 	excludesfile = ~/.gitignore_global
 [push]
 	default = simple
+[pull]
+	rebase = true
