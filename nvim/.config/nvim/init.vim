@@ -227,10 +227,6 @@
   nnoremap <leader>wm <C-w>|
   nnoremap <leader>wc <C-w>o
 
-  " Beginning and end of line with H and L
-  nnoremap H ^
-  nnoremap L $
-
   " Seamless tmux pane switching
   if has('nvim')
     " Fix C-h in neovim. For more info see:
