@@ -66,6 +66,15 @@ bindkey -v
 autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd V edit-command-line
 
+# C-r for history search
+bindkey "^R" history-incremental-search-backward
+
+# Version managers -----------------------------------------------------------
+
+if [ -d "$HOME/.asdf" ]; then
+  . $HOME/.asdf
+fi
+
 # Virtualenv -----------------------------------------------------------------
 
 # A function to load a virtualenv without sourcing madness.
