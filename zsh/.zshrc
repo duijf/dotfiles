@@ -60,9 +60,11 @@ if [ -n "$INSIDE_EMACS" ]; then
   print -P "\033AnSiTc %d"
 fi
 
-# Edit commands in external editor -------------------------------------------
+# Bindkeys -------------------------------------------------------------------
 
+# Edit command in editor with V
 bindkey -v
+
 autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd V edit-command-line
 
