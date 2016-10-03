@@ -209,7 +209,7 @@
   nmap <S-Tab> :bp<CR>
 
   " <leader>d to write and close buffer, but keep the session
-  nnoremap <C-w> :bd<CR>
+  nnoremap <leader>d :bd<CR>
 
   " Press enter to save file in normal mode
   nnoremap <CR> :write<CR>
