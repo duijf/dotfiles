@@ -37,16 +37,7 @@
   " Tmux integration
   call dein#add('christoomey/vim-tmux-navigator')
 
-  " Languages
-  " NeoBundle 'ctrlpvim/ctrlp.vim'
-  " NeoBundle 'Raimondi/delimitMate'
-  " NeoBundle 'tpope/vim-fugitive'
-  " NeoBundle 'terryma/vim-expand-region'
-  " NeoBundle 'cohama/agit.vim'
 
-  " Language plugins
-  " NeoBundle 'sheerun/vim-polyglot'
-  " NeoBundle 'csscomb/vim-csscomb'
 
   call dein#end()
 
