@@ -40,6 +40,9 @@
   " Utilities
   call dein#add('junegunn/vim-easy-align')
 
+  " Distration free writing
+  call dein#add('junegunn/goyo.vim')
+  call dein#add('junegunn/limelight.vim')
 
   call dein#end()
 
