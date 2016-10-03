@@ -187,7 +187,8 @@
   " Save when losing focus
   au FocusLost * :silent! wall
 
-  " Open help in a vertical split
+  " Search for selected text
+  vnoremap // y/<C-R>"<CR>
 
   " Easy buffer navigation
   noremap <C-h> <C-w>h
