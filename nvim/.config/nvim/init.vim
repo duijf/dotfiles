@@ -37,6 +37,8 @@
   " Tmux integration
   call dein#add('christoomey/vim-tmux-navigator')
 
+  " Utilities
+  call dein#add('junegunn/vim-easy-align')
 
 
   call dein#end()
@@ -240,6 +242,12 @@
 
   " Enable camelCaseMotion mappings
   call camelcasemotion#CreateMotionMappings('<leader>')
+
+  " Start interactive EasyAlign in visual mode (e.g. vipga)
+  xmap ga <Plug>(EasyAlign)
+
+  " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+  nmap ga <Plug>(EasyAlign)
 
 " }}}
 
