@@ -206,7 +206,7 @@
   " Press enter to save file in normal mode
   nnoremap <CR> :write<CR>
 
-  " Open neovim configuration
+  " Quickly edit configuration
   nnoremap <leader>ev :e ~/.config/nvim/init.vim<cr>
   nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
 
