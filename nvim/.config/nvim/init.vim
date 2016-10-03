@@ -7,6 +7,8 @@
   set runtimepath^=~/.dein
   call dein#begin(expand('~/.cache/dein'))
 
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
   " Motions
   call dein#add('Lokaltog/vim-easymotion')
   call dein#add('vim-scripts/tComment')
