@@ -71,6 +71,9 @@ bindkey -M vicmd V edit-command-line
 # C-r for history search
 bindkey "^R" history-incremental-search-backward
 
+# Disable C-s as terminal freeze
+stty -ixon
+
 # Version managers -----------------------------------------------------------
 
 if [ -d "$HOME/.asdf" ]; then
