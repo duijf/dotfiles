@@ -20,10 +20,11 @@
   call dein#add('honza/vim-snippets')
   call dein#add('garbas/vim-snipmate')
 
-  " Elixir
+  " Languages
   call dein#add('elixir-lang/vim-elixir')
   call dein#add('archSeer/elixir.nvim')
   call dein#add('mattn/emmet-vim')
+  call dein#add('elmcast/elm-vim')
 
   " Unite
   call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
