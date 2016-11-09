@@ -83,9 +83,6 @@
   " Disable line numbers
   set nonumber
 
-  " Highlight the line the cursor is on
-  set cursorline
-
   " Show the location in the file
   set ruler
 
