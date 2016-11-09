@@ -279,3 +279,16 @@
   endfunction
 
 " }}}
+
+" Appearance ====================================================== {{{
+
+  " Change highlight color of vsplit to same as background
+  hi VertSplit cterm=none ctermbg=none ctermfg=3
+
+  " Statusline color tweaks
+  hi StatusLine ctermbg=236 ctermfg=3
+  hi StatusLineNC ctermbg=none ctermfg=8
+
+  hi ColorColumn ctermbg=236
+
+" }}}
