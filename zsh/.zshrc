@@ -77,7 +77,7 @@ stty -ixon
 # Version managers -----------------------------------------------------------
 
 if [ -d "$HOME/.asdf" ]; then
-  . $HOME/.asdf
+  . $HOME/.asdf/asdf.sh
 fi
 
 # Virtualenv -----------------------------------------------------------------
@@ -92,7 +92,9 @@ function workon {
 }
 
 # Autocomplete the "workon" command with directories in ~/env.
-compdef '_path_files -/ -g "$HOME/env/*" -W "$HOME/env/"' workon
+if [ -d "$HOME/env" ]; then
+  compdef '_path_files -/ -g "$HOME/env/*" -W "$HOME/env/"' workon
+fi
 
 # Store the name of the current virtualenv for use in the prompt.
 if [ -f $VIRTUAL_ENV ]; then
