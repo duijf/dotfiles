@@ -4,7 +4,7 @@
 " Init & plugin install =========================================== {{{
 
   " Add dein installation to the runtimepath and set it's cache
-  set runtimepath^=~/.dein
+  set runtimepath+=~/.dein/repos/github.com/Shougo/dein.vim
   call dein#begin(expand('~/.cache/dein'))
 
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
