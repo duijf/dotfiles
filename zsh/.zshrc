@@ -87,6 +87,7 @@ fi
 function workon {
   export VIRTUAL_ENV="$HOME/env/$1"
   export PATH="$VIRTUAL_ENV/bin:$PATH"
+  export RPROMPT="$1"
   unset PYTHON_HOME
   zsh
 }
@@ -102,3 +103,6 @@ if [ -f $VIRTUAL_ENV ]; then
 else
   virtualenv_prompt="$(basename "$VIRTUAL_ENV") "
 fi
+
+# added by travis gem
+[ -f /home/laurens/.travis/travis.sh ] && source /home/laurens/.travis/travis.sh
