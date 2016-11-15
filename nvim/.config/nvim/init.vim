@@ -164,6 +164,13 @@
     autocmd BufWinEnter * if &l:buftype ==# 'help' | wincmd _ | endif
   augroup END
 
+  augroup python
+    au!
+    autocmd FileType python set textwidth=99
+    autocmd FileType python set colorcolumn=100
+  augroup END
+
+
 " }}}
 
 " Mappings ======================================================== {{{
