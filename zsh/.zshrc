@@ -32,6 +32,11 @@ alias ga='git add'
 alias gc='git commit'
 alias open='xdg-open'
 
+# Go to git toplevel dir
+function gtl {
+  cd $(git rev-parse --show-toplevel)
+}
+
 # SSH agent ------------------------------------------------------------------
 
 function start_agent {
