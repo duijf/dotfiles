@@ -4,7 +4,7 @@
 " Init & plugin install =========================================== {{{
 
   " Add dein installation to the runtimepath and set it's cache
-  set runtimepath+=~/.dein/repos/github.com/Shougo/dein.vim
+  set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
   call dein#begin(expand('~/.cache/dein'))
 
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -40,6 +40,7 @@
 
   " Utilities
   call dein#add('junegunn/vim-easy-align')
+  call dein#add('tpope/vim-fugitive')
 
   " Distration free writing
   call dein#add('junegunn/goyo.vim')
