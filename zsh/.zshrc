@@ -109,5 +109,6 @@ else
   virtualenv_prompt="$(basename "$VIRTUAL_ENV") "
 fi
 
-# added by travis gem
-[ -f /home/laurens/.travis/travis.sh ] && source /home/laurens/.travis/travis.sh
+if [ -f /home/laurens/.travis/travis.sh ]; then
+  source /home/laurens/.travis/travis.sh
+fi
