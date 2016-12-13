@@ -30,6 +30,7 @@ alias vim='nvim'
 alias gp='git push'
 alias ga='git add'
 alias gc='git commit'
+alias gl='git log --oneline'
 alias open='xdg-open'
 
 # Go to git toplevel dir
