@@ -25,6 +25,9 @@
   call dein#add('archSeer/elixir.nvim')
   call dein#add('mattn/emmet-vim')
   call dein#add('elmcast/elm-vim')
+  call dein#add('vim-scripts/alex.vim')
+  call dein#add('alx741/vim-hindent')
+  call dein#add('rust-lang/rust.vim')
 
   " Unite
   call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
@@ -41,6 +44,7 @@
   " Utilities
   call dein#add('junegunn/vim-easy-align')
   call dein#add('tpope/vim-fugitive')
+  call dein#add('maxbrunsfeld/vim-yankstack')
 
   " Distration free writing
   call dein#add('junegunn/goyo.vim')
@@ -145,6 +149,12 @@
 
   " " Set colorscheme
   colorscheme smyck
+
+  " hindent options
+  let g:hindent_line_length = 79
+
+  " Autoformat Rust on save
+  let g:rustfmt_autosave = 1
 
 " }}}
 
