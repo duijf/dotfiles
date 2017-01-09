@@ -303,9 +303,142 @@
   " Change highlight color of vsplit to same as background
   hi VertSplit cterm=none ctermbg=none ctermfg=3
 
+  " Status line largely stolen from Jorge Israel Peña
+  " http://www.blaenkdenum.com/posts/a-simpler-vim-statusline/
+  function! Status(winnum)
+    let active = a:winnum == winnr()
+    let bufnum = winbufnr(a:winnum)
+
+    let stat = ''
+
+    " this function just outputs the content colored by the
+    " supplied colorgroup number, e.g. num = 2 -> User2
+    " it only colors the input if the window is the currently
+    " focused one
+
+    function! Color(active, num, content)
+      if a:active
+        return '%' . a:num . '*' . a:content . '%*'
+      else
+        return a:content
+      endif
+    endfunction
+
+    " this handles alternative statuslines
+    let usealt = 0
+    let altstat = Color(active, 4, ' »')
+
+    let type = getbufvar(bufnum, '&buftype')
+    let name = bufname(bufnum)
+
+    if type ==# 'help'
+      let altstat .= ' ' . fnamemodify(name, ':t:r')
+      let usealt = 1
+    endif
+
+    if usealt
+      let altstat .= Color(active, 4, ' «')
+      return altstat
+    endif
+
+    function! Column()
+      let vc = virtcol('.')
+      let ruler_width = max([strlen(line('$')), (&numberwidth - 1)])
+      let column_width = strlen(vc)
+      let padding = ruler_width - column_width
+      let column = ''
+
+      if padding <= 0
+        let column .= vc
+      else
+        " + 1 becuase for some reason vim eats one of the spaces
+        let column .= vc . repeat(' ', padding)
+      endif
+
+      return column
+    endfunction
+
+    " This largely duplicates Column(), but I don't know enough about vimscript
+    " to care.
+    function! Line()
+      let max_line = strlen(line('$'))
+      let padding = max_line - strlen(line('.'))
+      let line = ''
+
+      if padding <= 0
+        let line .= line('.')
+      else
+        " + 1 becuase for some reason vim eats one of the spaces
+        let line .= repeat(' ', padding) . line('.')
+      endif
+
+      return line
+    endfunction
+
+    " file name
+    let stat .= Color(active, 4, active ? ' »' : ' «')
+    let stat .= ' %<'
+    let stat .= '%f'
+    let stat .= ' ' . Color(active, 4, active ? '«' : '»')
+
+    " file modified
+    let modified = getbufvar(bufnum, '&modified')
+    let stat .= Color(active, 2, modified ? ' +' : '')
+
+    " read only
+    let readonly = getbufvar(bufnum, '&readonly')
+    let stat .= Color(active, 2, readonly ? ' ‼' : '')
+
+    " paste
+    if active && &paste
+      let stat .= ' %2*' . 'P' . '%*'
+    endif
+
+    " right side
+    let stat .= '%='
+
+    " git branch
+    if exists('*fugitive#head')
+      let head = fugitive#head()
+
+      if empty(head) && exists('*fugitive#detect') && !exists('b:git_dir')
+        call fugitive#detect(getcwd())
+        let head = fugitive#head()
+      endif
+    endif
+
+    if !empty(head)
+      let stat .= Color(active, 3, ' ← ') . head . ' '
+    endif
+
+    let stat .= '%1*'
+    let stat .= '%{Line()}'
+    let stat .= ':'
+    let stat .= '%{Column()}'
+    let stat .= '%*'
+
+    return stat
+  endfunction
+
+  " Statusline autocommands
+  function! s:RefreshStatus()
+    for nr in range(1, winnr('$'))
+      call setwinvar(nr, '&statusline', '%!Status(' . nr . ')')
+    endfor
+  endfunction
+
+  augroup status
+    autocmd!
+    autocmd VimEnter,WinEnter,BufWinEnter * call <SID>RefreshStatus()
+  augroup END
+
   " Statusline color tweaks
-  hi StatusLine ctermbg=236 ctermfg=3
-  hi StatusLineNC ctermbg=none ctermfg=8
+  hi StatusLine   ctermfg=7   ctermbg=236
+  hi StatusLineNC ctermfg=8   ctermbg=236
+  hi User1        ctermfg=8   ctermbg=236
+  hi User2        ctermfg=125 ctermbg=236
+  hi User3        ctermfg=64  ctermbg=236
+  hi User4        ctermfg=10  ctermbg=236
 
   hi ColorColumn ctermbg=236
 
