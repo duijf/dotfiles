@@ -26,7 +26,6 @@
   call dein#add('mattn/emmet-vim')
   call dein#add('elmcast/elm-vim')
   call dein#add('vim-scripts/alex.vim')
-  call dein#add('alx741/vim-hindent')
   call dein#add('rust-lang/rust.vim')
 
   " Unite
