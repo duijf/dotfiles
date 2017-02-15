@@ -32,6 +32,7 @@ alias ga='git add'
 alias gc='git commit'
 alias gl='git log --oneline'
 alias open='xdg-open'
+alias tunnel='ssh -C2qTnN -D 7890'
 
 # Go to git toplevel dir
 function gtl {
