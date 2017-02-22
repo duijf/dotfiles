@@ -28,12 +28,6 @@
   call dein#add('vim-scripts/alex.vim')
   call dein#add('rust-lang/rust.vim')
 
-  " Unite
-  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
-  call dein#add('Shougo/unite.vim')
-  call dein#add('Shougo/neoyank.vim')
-  call dein#add('Shougo/neomru.vim')
-
   " Colors
   call dein#add('tomelm/Smyck-Color-Scheme')
 
@@ -275,9 +269,6 @@
 
   " Enable yank history
   let g:unite_source_history_yank_enable = 1
-
-  " Use the Unite fuzzy matcher
-  call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
   nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
   nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
