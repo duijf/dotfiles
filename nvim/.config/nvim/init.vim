@@ -28,6 +28,10 @@
   call dein#add('vim-scripts/alex.vim')
   call dein#add('rust-lang/rust.vim')
 
+  " Unite
+  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+  call dein#add('Shougo/unite.vim')
+
   " Colors
   call dein#add('tomelm/Smyck-Color-Scheme')
 
