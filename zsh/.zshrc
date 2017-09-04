@@ -6,7 +6,7 @@ fpath=("$HOME/.zsh" $fpath)
 
 export EDITOR='nvim'
 export VISUAL='nvim'
-export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/go/bin:$PATH"
 export SSH_ENV="$HOME/.ssh/environment"
 
 # Prompt ----------------------------------------------------------------------
