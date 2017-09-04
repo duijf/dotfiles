@@ -92,11 +92,7 @@ fi
 # A function to load a virtualenv without sourcing madness.
 # Based on https://gist.github.com/datagrok/2199506.
 function workon {
-  export VIRTUAL_ENV="$HOME/env/$1"
-  export PATH="$VIRTUAL_ENV/bin:$PATH"
-  export RPROMPT="$1"
-  unset PYTHON_HOME
-  zsh
+  source "$HOME/env/$1/bin/activate"
 }
 
 # Autocomplete the "workon" command with directories in ~/env.
