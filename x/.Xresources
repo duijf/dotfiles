@@ -38,7 +38,7 @@ URxvt.foreground: #F8F8F2
 
 URxvt.internalBorder: 20
 URxvt.scrollBar:      false
-URxvt.font: xft:Sauce Code Pro-12
+URxvt.font: xft:Ubuntu Mono-11
 
 URxvt.perl-ext-common: fullscreen
 URxvt.keysym.F11: perl:fullscreen:switch
