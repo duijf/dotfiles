@@ -39,6 +39,14 @@ function gtl {
   cd $(git rev-parse --show-toplevel)
 }
 
+# History --------------------------------------------------------------------
+
+export HISTSIZE=20000000
+export HISTFILE="$HOME/.history"
+export SAVEHIST=20000000
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+
 # SSH agent ------------------------------------------------------------------
 
 function start_agent {
