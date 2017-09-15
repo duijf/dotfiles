@@ -27,6 +27,7 @@
   call dein#add('elmcast/elm-vim')
   call dein#add('vim-scripts/alex.vim')
   call dein#add('rust-lang/rust.vim')
+  call dein#add('purescript-contrib/purescript-vim')
 
   " Unite
   call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
@@ -424,6 +425,20 @@
   augroup status
     autocmd!
     autocmd VimEnter,WinEnter,BufWinEnter * call <SID>RefreshStatus()
+  augroup END
+
+  " Make directories before saving
+  function s:MkNonExDir(file, buf)
+    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
+      let dir=fnamemodify(a:file, ':h')
+      if !isdirectory(dir)
+        call mkdir(dir, 'p')
+      endif
+    endif
+  endfunction
+  augroup BWCCreateDir
+    autocmd!
+    autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
   augroup END
 
   " Statusline color tweaks
