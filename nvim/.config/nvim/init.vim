@@ -3,52 +3,54 @@
 
 " Init & plugin install =========================================== {{{
 
-  " Add dein installation to the runtimepath and set it's cache
-  set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-  call dein#begin(expand('~/.cache/dein'))
+  if !empty(glob("~/.cache/dein"))
+    " Add dein installation to the runtimepath and set it's cache
+    set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+    call dein#begin(expand('~/.cache/dein'))
 
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-  " Motions
-  call dein#add('Lokaltog/vim-easymotion')
-  call dein#add('vim-scripts/tComment')
-  call dein#add('bkad/CamelCaseMotion')
+    " Motions
+    call dein#add('Lokaltog/vim-easymotion')
+    call dein#add('vim-scripts/tComment')
+    call dein#add('bkad/CamelCaseMotion')
 
-  " Completion and snippets
-  call dein#add('tomtom/tlib_vim')
-  call dein#add('marcweber/vim-addon-mw-utils')
-  call dein#add('honza/vim-snippets')
-  call dein#add('garbas/vim-snipmate')
+    " Completion and snippets
+    call dein#add('tomtom/tlib_vim')
+    call dein#add('marcweber/vim-addon-mw-utils')
+    call dein#add('honza/vim-snippets')
+    call dein#add('garbas/vim-snipmate')
 
-  " Languages
-  call dein#add('elixir-lang/vim-elixir')
-  call dein#add('archSeer/elixir.nvim')
-  call dein#add('mattn/emmet-vim')
-  call dein#add('elmcast/elm-vim')
-  call dein#add('vim-scripts/alex.vim')
-  call dein#add('rust-lang/rust.vim')
-  call dein#add('purescript-contrib/purescript-vim')
+    " Languages
+    call dein#add('elixir-lang/vim-elixir')
+    call dein#add('archSeer/elixir.nvim')
+    call dein#add('mattn/emmet-vim')
+    call dein#add('elmcast/elm-vim')
+    call dein#add('vim-scripts/alex.vim')
+    call dein#add('rust-lang/rust.vim')
+    call dein#add('purescript-contrib/purescript-vim')
 
-  " Unite
-  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
-  call dein#add('Shougo/unite.vim')
+    " Unite
+    call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+    call dein#add('Shougo/unite.vim')
 
-  " Colors
-  call dein#add('tomelm/Smyck-Color-Scheme')
+    " Colors
+    call dein#add('tomelm/Smyck-Color-Scheme')
 
-  " Tmux integration
-  call dein#add('christoomey/vim-tmux-navigator')
+    " Tmux integration
+    call dein#add('christoomey/vim-tmux-navigator')
 
-  " Utilities
-  call dein#add('junegunn/vim-easy-align')
-  call dein#add('tpope/vim-fugitive')
-  call dein#add('maxbrunsfeld/vim-yankstack')
+    " Utilities
+    call dein#add('junegunn/vim-easy-align')
+    call dein#add('tpope/vim-fugitive')
+    call dein#add('maxbrunsfeld/vim-yankstack')
 
-  " Distration free writing
-  call dein#add('junegunn/goyo.vim')
-  call dein#add('junegunn/limelight.vim')
+    " Distration free writing
+    call dein#add('junegunn/goyo.vim')
+    call dein#add('junegunn/limelight.vim')
 
-  call dein#end()
+    call dein#end()
+  endif
 
   " Enable plugins and indent scripts
   filetype plugin indent on
@@ -145,8 +147,11 @@
   " Use dark variant of color scheme
   set background=dark
 
-  " " Set colorscheme
-  colorscheme smyck
+  try
+    " Set colorscheme
+    colorscheme smyck
+  catch
+  endtry
 
   " hindent options
   let g:hindent_line_length = 79
@@ -258,7 +263,9 @@
   endif
 
   " Enable camelCaseMotion mappings
-  call camelcasemotion#CreateMotionMappings('<leader>')
+  if exists("*camelcasemotion#CreateMotionMappings")
+    call camelcasemotion#CreateMotionMappings('<leader>')
+  endif
 
   " Start interactive EasyAlign in visual mode (e.g. vipga)
   xmap ga <Plug>(EasyAlign)
@@ -400,10 +407,10 @@
         call fugitive#detect(getcwd())
         let head = fugitive#head()
       endif
-    endif
 
-    if !empty(head)
-      let stat .= Color(active, 3, ' ← ') . head . ' '
+      if !empty(head)
+        let stat .= Color(active, 3, ' ← ') . head . ' '
+      endif
     endif
 
     let stat .= '%1*'
