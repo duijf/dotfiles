@@ -12,4 +12,3 @@ setxkbmap -option ctrl:nocaps
 xcape &
 
 exec gnome-session
-#exec swm
