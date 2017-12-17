@@ -118,3 +118,21 @@ fi
 if [ -f /home/laurens/.travis/travis.sh ]; then
   source /home/laurens/.travis/travis.sh
 fi
+
+# Notes ----------------------------------------------------------------------
+
+# `note meeting xyz` will open a file `~/notes/$(date)-meeting-xyz.md`.
+function note {
+  if (( $# == 0 )) then
+    echo usage: note filename supporting bare words
+  fi
+
+  filename="$HOME/notes/$(date -Idate)"
+  for i do
+    filename+="-$i"
+  done
+  filename+=".md"
+
+  touch $filename
+  vim $filename
+}
