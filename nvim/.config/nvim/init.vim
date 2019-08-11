@@ -9,6 +9,7 @@
     call dein#begin(expand('~/.cache/dein'))
 
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+    let g:black_linelength = 80
 
     " Motions
     call dein#add('Lokaltog/vim-easymotion')
@@ -27,8 +28,12 @@
     call dein#add('mattn/emmet-vim')
     call dein#add('elmcast/elm-vim')
     call dein#add('vim-scripts/alex.vim')
+    call dein#add('vim-scripts/happy.vim')
     call dein#add('rust-lang/rust.vim')
     call dein#add('purescript-contrib/purescript-vim')
+    call dein#add('vmchale/dhall-vim')
+    call dein#add('LnL7/vim-nix')
+    call dein#add('ambv/black')
 
     " Unite
     call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
@@ -158,6 +163,7 @@
 
   " Autoformat Rust on save
   let g:rustfmt_autosave = 1
+  let g:rustfmt_command = "rustup run nightly rustfmt --unstable-features"
 
 " }}}
 
@@ -168,6 +174,9 @@
 
   " Markdown filetype
   au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=mkd
+
+  " Happy files
+  au BufRead,BufNewFile *.{y} set filetype=happy
 
   " Tabs and Makefiles
   autocmd FileType make setlocal noexpandtab
@@ -180,8 +189,9 @@
 
   augroup python
     au!
-    autocmd FileType python set textwidth=99
-    autocmd FileType python set colorcolumn=100
+    autocmd FileType python set textwidth=80
+    autocmd FileType python set colorcolumn=80
+    autocmd BufWritePre *.py execute ':Black'
   augroup END
 
 

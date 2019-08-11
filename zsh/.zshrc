@@ -6,7 +6,8 @@ fpath=("$HOME/.zsh" $fpath)
 
 export EDITOR='nvim'
 export VISUAL='nvim'
-export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/go/bin:$PATH"
+#export PATH="$HOME/.cargo/bin:$HOME/bin:$HOME/.local/bin:$HOME/.yarn/bin:/usr/local/bin:/usr/local/go/bin:$PATH"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin"
 export SSH_ENV="$HOME/.ssh/environment"
 
 # Prompt ----------------------------------------------------------------------
@@ -20,11 +21,11 @@ prompt pure
 alias c='clear'
 alias mkl='latexmk -pdf -pvc'
 alias mklc='latexmk -c'
-alias ls="ls -F --color=auto --ignore='.*.un~'"
+alias ls="ls -F --color=auto --group-directories-first --ignore='.*.un~'"
 alias lsa='ls -la'
 alias gst='git status'
 alias compress_jpg='ocnvert -strip -interlace Plane -gaussian-blur 0.05 -quality 85%'
-alias lk='i3lock -i ~/wallpapers/new-york-9.png'
+alias lk='i3lock -i ~/wallpaper.png'
 alias be='bundle exec'
 alias vim='nvim'
 alias gp='git push'
@@ -32,7 +33,10 @@ alias ga='git add'
 alias gc='git commit'
 alias gl='git log --oneline'
 alias open='xdg-open'
-alias tunnel='ssh -C2qTnN -D 7890'
+
+function tunnel {
+  gcloud compute ssh --ssh-flag="-C2qTnN -D 7890" $1 &
+}
 
 # Go to git toplevel dir
 function gtl {
@@ -67,14 +71,6 @@ else
   start_agent
 fi
 
-# Emacs ----------------------------------------------------------------------
-
-if [ -n "$INSIDE_EMACS" ]; then
-  chpwd() { print -P "\033AnSiTc %d" }
-  print -P "\033AnSiTu %n"
-  print -P "\033AnSiTc %d"
-fi
-
 # Bindkeys -------------------------------------------------------------------
 
 # Edit command in editor with V
@@ -89,12 +85,6 @@ bindkey "^R" history-incremental-search-backward
 # Disable C-s as terminal freeze
 stty -ixon
 
-# Version managers -----------------------------------------------------------
-
-if [ -d "$HOME/.asdf" ]; then
-  . $HOME/.asdf/asdf.sh
-fi
-
 # Virtualenv -----------------------------------------------------------------
 
 # A function to load a virtualenv without sourcing madness.
@@ -105,7 +95,7 @@ function workon {
 
 # Autocomplete the "workon" command with directories in ~/env.
 if [ -d "$HOME/env" ]; then
-  compdef '_path_files -/ -g "$HOME/env/*" -W "$HOME/env/"' workon
+  # compdef '_path_files -/ -g "$HOME/env/*" -W "$HOME/env/"' workon
 fi
 
 # Store the name of the current virtualenv for use in the prompt.
@@ -113,10 +103,6 @@ if [ -f $VIRTUAL_ENV ]; then
   virtualenv_prompt=""
 else
   virtualenv_prompt="$(basename "$VIRTUAL_ENV") "
-fi
-
-if [ -f /home/laurens/.travis/travis.sh ]; then
-  source /home/laurens/.travis/travis.sh
 fi
 
 # Notes ----------------------------------------------------------------------
@@ -136,3 +122,5 @@ function note {
   touch $filename
   vim $filename
 }
+
+export PATH="/nix/store/hbhdjn5ik3byg642d1m11k3k3s0kn3py-nix-2.2.2/bin/:$PATH"
