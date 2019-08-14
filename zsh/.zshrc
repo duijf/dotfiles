@@ -6,6 +6,7 @@ fpath=("$HOME/.zsh" $fpath)
 
 export EDITOR='nvim'
 export VISUAL='nvim'
+export PATH="$HOME/dotfiles/bin:$PATH"
 
 # Prompt ----------------------------------------------------------------------
 
@@ -25,6 +26,7 @@ alias open='xdg-open'
 # Git -------------------------------------------------------------------------
 
 alias gst='git status'
+alias gd='git diff'
 alias gp='git push'
 alias ga='git add'
 alias gc='git commit'
