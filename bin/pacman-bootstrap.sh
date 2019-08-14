@@ -6,6 +6,7 @@ sudo pacman -S  \
 	openssh \
 	stow \
 	tar \
+	tmux \
 	tree \
 	ufw \
 	unzip \
