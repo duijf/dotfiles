@@ -4,8 +4,8 @@ fpath=("$HOME/.zsh" $fpath)
 
 # Environment variables -------------------------------------------------------
 
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR='vim'
+export VISUAL='vim'
 export PATH="$HOME/dotfiles/bin:$PATH"
 
 # Prompt ----------------------------------------------------------------------
