@@ -10,6 +10,7 @@ sudo pacman -S  \
 	tree \
 	ufw \
 	unzip \
+	vim \
 	wget \
 	zip \
 	zsh
