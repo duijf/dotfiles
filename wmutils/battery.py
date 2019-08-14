@@ -1,8 +1,6 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
-import subprocess, time
-from operator import methodcaller
+# Change window border when battery is low.
 
 minimum = 15
 pause   = 0.1
