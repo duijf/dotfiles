@@ -1,6 +1,6 @@
 [user]
 	name = Laurens Duijvesteijn
-	email = l.duijvesteijn@gmail.com
+	email = git@duijf.io
 [core]
 	excludesfile = ~/.gitignore_global
 [push]
