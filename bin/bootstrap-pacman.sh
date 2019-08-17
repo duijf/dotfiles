@@ -2,18 +2,22 @@
 
 sudo pacman -Syu
 sudo pacman -S  \
-	htop \
-	i3lock \
-	openssh \
-	alacritty \
-	stow \
-	tar \
-	tmux \
-	tree \
-	ufw \
-	unzip \
-	vim \
-	wget \
-	xcape \
-	zip \
-	zsh
+    alacritty \
+    bat \
+    fd \
+    htop \
+    i3lock \
+    openssh \
+    ripgrep \
+    stow \
+    strace \
+    tar \
+    tmux \
+    tree \
+    ufw \
+    unzip \
+    vim \
+    wget \
+    xcape \
+    zip \
+    zsh
