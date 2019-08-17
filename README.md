@@ -14,7 +14,16 @@ files that you want. You can find a tutorial [here].
 ```
 $ git clone https://github.com/duijf/dotfiles.git
 $ ./bin/bootstrap-pacman.sh
-$ stow tmux zsh git
+$ stow tmux zsh git ...
 ```
+
+## Wishes and todos
+
+ - Port Nord for the `bat` syntax highlighter.
+ - Get powerline symbols working for the MPlus font.
+ - Fix the colors of the Tmux Nord theme.
+ - Figure out a good FZF / skim configuration.
+ - See if exa is worth using as an `ls` alternative.
+ - Look into tmux-thumbs
 
   [here]:http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html
