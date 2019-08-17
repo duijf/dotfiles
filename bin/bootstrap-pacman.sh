@@ -5,7 +5,7 @@ sudo pacman -S  \
 	htop \
 	i3lock \
 	openssh \
-	rxvt-unicode \
+	alacritty \
 	stow \
 	tar \
 	tmux \
