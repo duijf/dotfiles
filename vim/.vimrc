@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'arcticicestudio/nord-vim'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 set nocompatible
