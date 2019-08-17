@@ -8,11 +8,13 @@ export EDITOR='vim'
 export VISUAL='vim'
 export PATH="$HOME/dotfiles/bin:$PATH"
 
-# Prompt ----------------------------------------------------------------------
+# Prompt and theme ------------------------------------------------------------
 
 autoload -Uz promptinit
 promptinit
 prompt pure
+
+eval $(dircolors ~/.dir_colors)
 
 # Basic Aliases ---------------------------------------------------------------
 
