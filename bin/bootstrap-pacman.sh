@@ -3,7 +3,9 @@
 sudo pacman -Syu
 sudo pacman -S  \
 	htop \
+	i3lock \
 	openssh \
+	rxvt-unicode \
 	stow \
 	tar \
 	tmux \
@@ -12,5 +14,6 @@ sudo pacman -S  \
 	unzip \
 	vim \
 	wget \
+	xcape \
 	zip \
 	zsh
