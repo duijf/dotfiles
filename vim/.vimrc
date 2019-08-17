@@ -17,3 +17,7 @@ let mapleader = ","
 
 nnoremap <leader>ce :edit ~/.vimrc<CR>
 nnoremap <leader>cs :source ~/.vimrc<CR>
+
+nnoremap <CR> :w<CR>
+nnoremap <TAB> :bn<CR>
+nnoremap <S-TAB> :bp<CR>
