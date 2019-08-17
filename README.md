@@ -25,5 +25,6 @@ $ stow tmux zsh git ...
  - Figure out a good FZF / skim configuration.
  - See if exa is worth using as an `ls` alternative.
  - Look into tmux-thumbs
+ - Create a Gnome theme for my colors
 
   [here]:http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html
