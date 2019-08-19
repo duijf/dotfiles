@@ -25,3 +25,6 @@ nnoremap <leader>cs :source ~/.vimrc<CR>
 nnoremap <CR> :w<CR>
 nnoremap <TAB> :bn<CR>
 nnoremap <S-TAB> :bp<CR>
+
+nnoremap j gj
+nnoremap k gk
