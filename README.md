@@ -20,7 +20,6 @@ $ stow tmux zsh git ...
 ## Wishes and todos
 
  - Port Nord for the `bat` syntax highlighter.
- - Get powerline symbols working for the MPlus font.
  - Fix the colors of the Tmux Nord theme.
  - Figure out a good FZF / skim configuration.
  - See if exa is worth using as an `ls` alternative.
