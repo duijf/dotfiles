@@ -5,6 +5,7 @@ sudo pacman -S  \
     alacritty \
     bat \
     fd \
+    fzf \
     htop \
     i3lock \
     openssh \
@@ -12,6 +13,7 @@ sudo pacman -S  \
     stow \
     strace \
     tar \
+    tig \
     tmux \
     tree \
     ufw \
@@ -19,5 +21,6 @@ sudo pacman -S  \
     vim \
     wget \
     xcape \
+    xclip \
     zip \
     zsh
