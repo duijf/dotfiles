@@ -5,6 +5,7 @@ call plug#end()
 
 set nocompatible
 set hidden
+let mapleader = ","
 
 set ignorecase
 set smartcase
@@ -16,7 +17,6 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 
-let mapleader = ","
 
 nnoremap <leader>ce :edit ~/.vimrc<CR>
 nnoremap <leader>cs :source ~/.vimrc<CR>
