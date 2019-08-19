@@ -10,6 +10,11 @@ let mapleader = ","
 set ignorecase
 set smartcase
 
+set incsearch
+set hlsearch
+set showmatch
+noremap <leader><space> :let @/=""<CR>
+
 syntax on
 colorscheme nord
 
