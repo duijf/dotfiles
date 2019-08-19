@@ -15,6 +15,8 @@ set hlsearch
 set showmatch
 noremap <leader><space> :let @/=""<CR>
 
+set gdefault
+
 syntax on
 colorscheme nord
 
