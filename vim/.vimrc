@@ -6,6 +6,9 @@ call plug#end()
 set nocompatible
 set hidden
 
+set ignorecase
+set smartcase
+
 syntax on
 colorscheme nord
 
