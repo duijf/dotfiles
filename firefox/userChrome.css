@@ -48,3 +48,11 @@
 :root #TabsToolbar {
     background: #222;
 }
+
+/*
+ * Hide scrollbars on all pages, including new-tab.
+ */
+:root #browser browser {
+    margin-right: -14px !important;
+    margin-bottom: -14px !important;
+}
