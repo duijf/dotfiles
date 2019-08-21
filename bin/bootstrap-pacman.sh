@@ -10,6 +10,7 @@ sudo pacman -S  \
     i3lock \
     openssh \
     ripgrep \
+    rustup \
     stow \
     strace \
     tar \
