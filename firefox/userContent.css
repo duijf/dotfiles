@@ -1,0 +1,8 @@
+/*
+ * Attempt to get a fully dark new tab page/no flash of white.
+ */
+@-moz-document url-prefix(about) {
+    html > body:empty {
+        background-color: #222;
+    }
+}

@@ -6,4 +6,5 @@ set -efuo pipefail
 # with head and grep as suggested in `gh://sharkdp/fd/i/303`
 FIREFOX_PROFILE=$(fd --type d '.*default-release$' ~/.mozilla/firefox | head -n 1 | grep ".")
 mkdir -p "$FIREFOX_PROFILE/chrome"
-ln -s "$HOME/dotfiles/firefox/userChrome.css" "$FIREFOX_PROFILE/chrome/userChrome.css"
+ln -fs "$HOME/dotfiles/firefox/userChrome.css" "$FIREFOX_PROFILE/chrome/userChrome.css"
+ln -fs "$HOME/dotfiles/firefox/userContent.css" "$FIREFOX_PROFILE/chrome/userContent.css"
