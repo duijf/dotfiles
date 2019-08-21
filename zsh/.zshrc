@@ -112,6 +112,16 @@ else
   virtualenv_prompt="$(basename "$VIRTUAL_ENV") "
 fi
 
+# FZF -------------------------------------------------------------------------
+
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_ALT_C_COMMAND="fd --type d . '$HOME'"
+
+bindkey '^Y' fzf-cd-widget
+
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
 # Notes ----------------------------------------------------------------------
 
 # `note meeting xyz` will open a file `~/notes/$(date)-meeting-xyz.md`.
