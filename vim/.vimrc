@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'arcticicestudio/nord-vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-vinegar'
 call plug#end()
 
@@ -37,3 +38,5 @@ nnoremap <S-TAB> :bp<CR>
 
 nnoremap j gj
 nnoremap k gk
+
+let g:rustfmt_autosave = 1
