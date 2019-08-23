@@ -120,8 +120,8 @@ export FZF_ALT_C_COMMAND="fd --type d . '$HOME'"
 
 bindkey '^Y' fzf-cd-widget
 
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+source "$HOME/.zsh/fzf-key-bindings.zsh"
+source "$HOME/.zsh/fzf-completion.zsh"
 
 # Use fd for file and directory completions with `**`
 _fzf_compgen_path() {
