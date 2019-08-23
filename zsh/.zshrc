@@ -149,3 +149,12 @@ function note {
   touch $filename
   vim $filename
 }
+
+function pr {
+    git_branch=$(git rev-parse --abbrev-ref HEAD)
+    origin_url=$(git remote get-url origin)
+    origin_url_stripped_github=${origin_url#"git@github.com:"}
+    origin_repo=${origin_url_stripped_github%".git"}
+
+    open "https://github.com/$origin_repo/compare/$git_branch?expand=1"
+}
