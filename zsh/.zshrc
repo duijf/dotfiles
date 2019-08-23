@@ -53,7 +53,7 @@ function gtunnel {
 }
 
 function gssh {
-  gcloud compute ssh 
+  gcloud compute ssh $@
 }
 
 export SSH_ENV="$HOME/.ssh/environment"
