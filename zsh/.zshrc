@@ -114,7 +114,7 @@ fi
 
 # FZF -------------------------------------------------------------------------
 
-export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_COMMAND='fd --type f --hidden'
 export FZF_ALT_C_COMMAND="fd --type d . '$HOME'"
 
 bindkey '^Y' fzf-cd-widget
