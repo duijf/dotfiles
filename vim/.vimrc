@@ -45,4 +45,5 @@ nnoremap k gk
 let g:rustfmt_autosave = 1
 
 autocmd FileType haskell setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+
 autocmd BufWritePre * %s/\s\+$//e
