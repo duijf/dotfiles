@@ -40,6 +40,7 @@ alias gdf='git diff --name-only'
 alias gp='git push'
 alias ga='git add'
 alias gc='git commit'
+alias gca='git commit --amend'
 alias gl='git log --oneline'
 
 function gtl {
