@@ -87,7 +87,7 @@ setopt hist_ignore_space
 
 # Bindkeys -------------------------------------------------------------------
 
-# Use the vim keybindings 
+# Use the vim keybindings
 bindkey -v
 
 # Edit command in editor with V
