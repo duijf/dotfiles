@@ -6,7 +6,7 @@ fpath=("$HOME/.zsh" $fpath)
 
 export EDITOR='vim'
 export VISUAL='vim'
-export PATH="$HOME/dotfiles/bin:$PATH"
+export PATH="$HOME/dotfiles/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
 
 # Prompt and theme ------------------------------------------------------------
 
