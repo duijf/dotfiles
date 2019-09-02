@@ -4,6 +4,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf.vim'
 Plug 'rust-lang/rust.vim'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-vinegar'
 call plug#end()
 
