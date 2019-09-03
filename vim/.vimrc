@@ -5,6 +5,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-commentary'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-vinegar'
 call plug#end()
 
@@ -47,3 +48,9 @@ let g:rustfmt_autosave = 1
 autocmd FileType haskell setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 autocmd BufWritePre * %s/\s\+$//e
+
+" Refresh files with changes from disk if the file does not contain
+" modifications. Also auto write on focus lost.
+set autoread
+au FocusGained,BufEnter * :silent! !
+au FocusLost,WinLeave * w
