@@ -43,6 +43,7 @@ alias gc='git commit'
 alias gca='git commit --amend'
 alias gcf='git commit --fixup'
 alias grc='git rebase --continue'
+alias grim='git rebase -i master'
 alias gl='git log --oneline'
 
 function gtl {
