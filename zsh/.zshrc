@@ -41,6 +41,8 @@ alias gp='git push'
 alias ga='git add'
 alias gc='git commit'
 alias gca='git commit --amend'
+alias gcf='git commit --fixup'
+alias grc='git rebase --continue'
 alias gl='git log --oneline'
 
 function gtl {
