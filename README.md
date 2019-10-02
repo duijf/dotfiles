@@ -26,7 +26,7 @@ $ stow tmux zsh git ...
  - Look into tmux-thumbs
  - Create a Gnome theme for my colors
  - Systemd user units for common things?
- - Language servers and Vim integration
+ - Language servers and Vim integration a la https://www.kieranbamforth.me/post/vim-lsp
  - iwd for wireless connections
 
   [here]:http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html
