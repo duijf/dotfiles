@@ -34,6 +34,7 @@ alias open='xdg-open'
 # Git -------------------------------------------------------------------------
 
 alias gst='git status'
+alias gb='git branch'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gdf='git diff --name-only'
@@ -50,6 +51,11 @@ function gtl {
   cd $(git rev-parse --show-toplevel)
 }
 
+# Remove merged local branches
+function grmb {
+    git branch --merged | grep -v "master" | while read i; do git branch -d $i; done
+}
+
 # SSH and SCP -----------------------------------------------------------------
 
 function gtunnel {
@@ -58,6 +64,10 @@ function gtunnel {
 
 function gssh {
   gcloud compute ssh $@
+}
+
+function gscp {
+  gcloud compute scp $@
 }
 
 export SSH_ENV="$HOME/.ssh/environment"
