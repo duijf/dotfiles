@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'LnL7/vim-nix'
 Plug 'arcticicestudio/nord-vim'
+Plug 'cespare/vim-toml'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf.vim'
 Plug 'rust-lang/rust.vim'
