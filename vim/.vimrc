@@ -54,7 +54,7 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd BufWritePre * %s/\s\+$//e
 
 " Refresh files with changes from disk if the file does not contain
-" modifications. Also auto write on focus lost.
+" modifications. The autoread option by itself is not enough. You need to
+" make vim check. That's what the autocommand does.
 set autoread
 au FocusGained,BufEnter * :silent! !
-au FocusLost,WinLeave * w
