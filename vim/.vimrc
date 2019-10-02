@@ -47,9 +47,9 @@ nnoremap k gk
 let g:rustfmt_autosave = 1
 
 autocmd FileType haskell setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-
 
 autocmd BufWritePre * %s/\s\+$//e
 
@@ -58,3 +58,6 @@ autocmd BufWritePre * %s/\s\+$//e
 " make vim check. That's what the autocommand does.
 set autoread
 au FocusGained,BufEnter * :silent! !
+
+set undodir=~/.vim/undo
+set undofile
