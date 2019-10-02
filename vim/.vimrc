@@ -3,10 +3,11 @@ Plug 'LnL7/vim-nix'
 Plug 'arcticicestudio/nord-vim'
 Plug 'cespare/vim-toml'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf.vim'
 Plug 'rust-lang/rust.vim'
-Plug 'tpope/vim-commentary'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-vinegar'
 call plug#end()
 
@@ -61,3 +62,10 @@ au FocusGained,BufEnter * :silent! !
 
 set undodir=~/.vim/undo
 set undofile
+
+let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_smartcase = 1
+nmap <Space>s <Plug>(easymotion-overwin-f)
+nmap <Space>w <Plug>(easymotion-overwin-w)
+nmap <Space>r <Plug>(easymotion-lineanywhere)
+nmap <Space>j <Plug>(easymotion-overwin-line)
