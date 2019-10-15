@@ -145,6 +145,18 @@ _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 
+fzf-git-branch-widget() {
+  local branches branch
+  branches=$(git --no-pager branch -vv) &&
+  branch=$(echo "$branches" | fzf +m) &&
+  printf "\n" &&
+  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+  zle fzf-redraw-prompt
+}
+
+zle     -N   fzf-git-branch-widget
+bindkey '^B' fzf-git-branch-widget
+
 # Notes ----------------------------------------------------------------------
 
 # `note meeting xyz` will open a file `~/notes/$(date)-meeting-xyz.md`.
