@@ -129,9 +129,7 @@ fi
 # FZF -------------------------------------------------------------------------
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden'
-export FZF_ALT_C_COMMAND="fd --type d . '$HOME'"
 
-bindkey '^Y' fzf-cd-widget
 
 source "$HOME/.zsh/fzf-key-bindings.zsh"
 source "$HOME/.zsh/fzf-completion.zsh"
@@ -145,10 +143,23 @@ _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 
+fzf-cd-from-home() {
+  setopt localoptions pipefail 2> /dev/null
+  local dir="$(eval "fd --type d . '$HOME'" | fzf --prompt="cd > " --reverse +m)"
+  if [[ -z "$dir" ]]; then
+    zle redisplay
+    return 0
+  fi
+  cd "$dir"
+  local ret=$?
+  zle fzf-redraw-prompt
+  return $ret
+}
+
 fzf-git-branch-widget() {
   local branches branch
   branches=$(git --no-pager branch -vv) &&
-  branch=$(echo "$branches" | fzf +m) &&
+  branch=$(echo "$branches" | fzf --prompt="git checkout > " --reverse +m) &&
   printf "\n" &&
   git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
   zle fzf-redraw-prompt
@@ -156,6 +167,9 @@ fzf-git-branch-widget() {
 
 zle     -N   fzf-git-branch-widget
 bindkey '^B' fzf-git-branch-widget
+
+zle     -N   fzf-cd-from-home
+bindkey '^Y' fzf-cd-from-home
 
 # Notes ----------------------------------------------------------------------
 
