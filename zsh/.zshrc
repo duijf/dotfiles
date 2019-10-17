@@ -35,6 +35,7 @@ alias open='xdg-open'
 
 alias gst='git status'
 alias gb='git branch'
+alias gcb='git checkout -b'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gdf='git diff --name-only'
@@ -45,6 +46,7 @@ alias gca='git commit --amend'
 alias gcf='git commit --fixup'
 alias grc='git rebase --continue'
 alias grim='git rebase -i master'
+alias gm='git merge --no-ff'
 alias gl='git log --oneline'
 
 function gtl {
