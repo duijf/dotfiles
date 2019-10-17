@@ -149,7 +149,7 @@ fzf-cd-from-home() {
   setopt localoptions pipefail 2> /dev/null
   local dir="$(eval "fd --type d . '$HOME'" | fzf --prompt="cd > " --reverse +m)"
   if [[ -z "$dir" ]]; then
-    zle redisplay
+    zle fzf-redraw-prompt
     return 0
   fi
   cd "$dir"
