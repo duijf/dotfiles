@@ -30,3 +30,6 @@
 [diff-so-fancy]
 	rulerWidth = 47
 	markEmptyLines = false
+	stripLeadingSymbols = false
+[commit]
+	verbose = true
