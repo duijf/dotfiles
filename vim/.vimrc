@@ -70,3 +70,6 @@ nmap <Space>s <Plug>(easymotion-overwin-f)
 nmap <Space>w <Plug>(easymotion-overwin-w)
 nmap <Space>r <Plug>(easymotion-lineanywhere)
 nmap <Space>j <Plug>(easymotion-overwin-line)
+
+set autoindent
+set smartindent
