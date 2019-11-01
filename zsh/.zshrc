@@ -33,6 +33,7 @@ alias open='xdg-open'
 
 # Git -------------------------------------------------------------------------
 
+alias gs='git show'
 alias gst='git status'
 alias gb='git branch'
 alias gcb='git checkout -b'
