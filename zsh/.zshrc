@@ -244,3 +244,5 @@ function gm {
 }
 
 export PATH="/nix/store/hbhdjn5ik3byg642d1m11k3k3s0kn3py-nix-2.2.2/bin/:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
