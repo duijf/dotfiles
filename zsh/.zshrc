@@ -243,6 +243,22 @@ function gm {
     fi
 }
 
+# Nix -------------------------------------------------------------------------
+
 export PATH="/nix/store/hbhdjn5ik3byg642d1m11k3k3s0kn3py-nix-2.2.2/bin/:$PATH"
+
+# Alias for `nix run -c`.
+function nr {
+    nix run -c $@
+}
+
+# Nix run while passing a target. This is useful when the
+# `default.nix` derivation expects an attrset with a `target`
+# member.
+function nrt {
+    target=$1
+    shift
+    nix run --argstr target $target -c $@
+}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
