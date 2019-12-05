@@ -32,3 +32,5 @@
 	stripLeadingSymbols = false
 [commit]
 	verbose = true
+[tag]
+	sort = version:refname
