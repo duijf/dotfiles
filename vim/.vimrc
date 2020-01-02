@@ -10,6 +10,7 @@ Plug 'mattn/emmet-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
 Plug 'vmchale/dhall-vim'
 call plug#end()
