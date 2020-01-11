@@ -248,7 +248,7 @@ function gm {
 
 # Alias for `nix run -c`.
 function nr {
-    nix run -c $@
+    nix run -c "$@"
 }
 
 # Nix run while passing a target. This is useful when the
@@ -259,5 +259,3 @@ function nrt {
     shift
     nix run --argstr target $target -c $@
 }
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
