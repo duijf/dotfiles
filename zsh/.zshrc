@@ -63,7 +63,7 @@ function grmb {
 # SSH and SCP -----------------------------------------------------------------
 
 function gtunnel {
-  gcloud compute ssh --ssh-flag="-C2qTnN -D 7890" $1 &
+  gcloud compute ssh --ssh-flag="-C2qTnN -D 7890" $1
 }
 
 function gssh {
