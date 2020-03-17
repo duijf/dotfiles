@@ -40,6 +40,9 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
+" Enable mouse support
+set mouse=a
+
 set ttyfast
 
 nnoremap <leader>ce :edit ~/.vimrc<CR>
