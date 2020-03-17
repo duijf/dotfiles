@@ -252,6 +252,11 @@ function nr {
     nix run -c "$@"
 }
 
+# Pure version of nr
+function nrp {
+    nix run --unset PATH -c $@
+}
+
 # Nix run while passing a target. This is useful when the
 # `default.nix` derivation expects an attrset with a `target`
 # member.
