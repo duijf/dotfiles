@@ -49,6 +49,7 @@ alias grc='git rebase --continue'
 alias grim='git rebase -i master'
 alias gl='git log --oneline'
 alias glv='git log --patch'
+alias g-='git checkout -'
 
 function gtl {
   cd $(git rev-parse --show-toplevel)
