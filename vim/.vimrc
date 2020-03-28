@@ -77,6 +77,7 @@ let g:fzf_colors =
 let g:rustfmt_autosave = 1
 
 autocmd FileType haskell setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+autocmd FileType cabal setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd FileType nix setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
