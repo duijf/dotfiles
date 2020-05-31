@@ -108,4 +108,3 @@ nmap <Space>r <Plug>(easymotion-lineanywhere)
 nmap <Space>j <Plug>(easymotion-overwin-line)
 
 set autoindent
-set smartindent
