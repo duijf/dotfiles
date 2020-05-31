@@ -1,47 +1,4 @@
 /*
- * Hide tab bar and navigation normally, make way way for the content without
- * reflowing the page.
- *
- * Many thanks to https://www.reddit.com/r/FirefoxCSS/comments/bhbvhj/c/elrzrq3/
- * I've adapted the code from Reddit user anon803 their by removing all the
- * fullscreen specific selectors. 
- */
-
-:root #navigator-toolbox {
-    z-index: 1;
-    margin-top: calc(-39px - var(--tab-min-height));
-}
-:root #navigator-toolbox::after {
-    visibility: hidden;
-}
-:root #navigator-toolbox,
-:root #navigator-toolbox::after {
-    transition: all .2s ease .5s !important;
-}
-:root #navigator-toolbox:focus-within,
-:root #navigator-toolbox:hover {
-    transition-delay: 0s !important;
-    margin-top: 0;
-}
-:root #navigator-toolbox:focus-within::after,
-:root #navigator-toolbox:hover::after {
-    transition-delay: 0s !important;
-    visibility: visible;
-}
-:root #content-deck {
-    position: fixed;
-    z-index: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-}
-:root #content-deck > #browser {
-    width: 100%;
-    height: 100%;
-}
-/* End styling from Reddit user anon803 */
-
-/*
  * Add a dark background to the tab bar. It would be transparent otherwise.
  */
 
@@ -53,6 +10,5 @@
  * Hide scrollbars on all pages, including new-tab.
  */
 :root #browser browser {
-    margin-right: -14px !important;
-    margin-bottom: -14px !important;
+    /* margin-right: -14px !important; */
 }
