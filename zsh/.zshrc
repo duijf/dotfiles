@@ -265,3 +265,5 @@ function nrt {
     shift
     nix run --argstr target $target -c $@
 }
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
