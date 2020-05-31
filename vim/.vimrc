@@ -7,6 +7,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
+Plug 'purescript-contrib/purescript-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-commentary'
@@ -78,6 +79,7 @@ let g:rustfmt_autosave = 1
 
 autocmd FileType haskell setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd FileType cabal setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+autocmd FileType purescript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd FileType nix setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
