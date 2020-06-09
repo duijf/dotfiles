@@ -41,3 +41,5 @@
 [user "personal"]
 	name = Laurens Duijvesteijn
 	email = git@duijf.io
+[checkout]
+	defaultRemote = origin
