@@ -59,6 +59,8 @@ nnoremap k gk
 nnoremap <C-e> :Files<CR>
 nnoremap <C-b> :Buffers<CR>
 nnoremap <C-f> :Lines<CR>
+nnoremap <C-s> :Rg<CR>
+nnoremap <C-t> :GFiles<CR>
 
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
