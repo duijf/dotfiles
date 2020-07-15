@@ -27,7 +27,6 @@ alias c='clear'
 alias ls="ls -F --color=auto --group-directories-first --ignore='.*.un~'"
 alias lsa='ls -la'
 alias lk='i3lock -i ~/img/bulbs.png'
-alias cat='bat'
 
 alias open='xdg-open'
 
