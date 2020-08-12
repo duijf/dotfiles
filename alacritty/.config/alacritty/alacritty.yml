@@ -3,6 +3,8 @@ window:
     columns: 0
     lines: 0
 
+  dynamic_title: true
+
   padding:
     x: 10
     y: 10
@@ -60,7 +62,7 @@ colors:
     cyan:    '0x8FBCBB'
     white:   '0xECEFF4'
 
-visual_bell:
+bell:
   duration: 0
 
 mouse_bindings:
@@ -78,8 +80,6 @@ mouse:
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
   save_to_clipboard: false
-
-dynamic_title: true
 
 cursor:
   style: Block
