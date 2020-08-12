@@ -232,7 +232,7 @@ function gm {
 
     if [ $commit_count -gt 1 ]; then
         echo "There are $commit_count commits, performing no-ff merge"
-        git merge --no-ff "$merge_branch"
+        git merge --no-ff "$merge_branch" -em "merge: <PR title> #<PR number>"
         return $?
     elif [ $commit_count -eq 1 ]; then
         echo "There is exactly one commit, performing ff merge"
