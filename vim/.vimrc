@@ -84,6 +84,7 @@ autocmd FileType cabal setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd FileType purescript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd FileType nix setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+autocmd FileType json setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 au! BufNewFile,BufReadPost *.{dhall} set filetype=dhall
 autocmd FileType dhall setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
