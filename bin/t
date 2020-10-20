@@ -12,21 +12,38 @@ def print_todos():
         if not entry.is_file():
             continue
 
-        if entry.name == "done.txt":
+        if entry.suffix != ".txt":
             continue
 
-        print(entry)
+        if entry.name == "done.txt":
+            continue
 
         with entry.open(mode="r") as f:
             lines = f.readlines()
 
-        lines.sort()
+        lines = [line for line in sorted(lines) if not line.startswith("x ")]
 
-        for todo in lines:
-            if todo.startswith("x "):
-                continue
+        if len(lines) > 0:
+            print(entry)
+            print("".join(lines))
 
-            print(todo, end="")
+
+def print_done():
+    for entry in TODO_DIR.iterdir():
+        if not entry.is_file():
+            continue
+
+        if entry.suffix != ".txt":
+            continue
+
+        with entry.open(mode="r") as f:
+            lines = f.readlines()
+
+        lines = [line for line in sorted(lines) if line.startswith("x ")]
+
+        if len(lines) > 0:
+            print(entry)
+            print("".join(lines))
 
 
 if __name__ == "__main__":
@@ -34,6 +51,8 @@ if __name__ == "__main__":
 
     if progname.endswith("t"):
         print_todos()
+    if progname.endswith("td"):
+        print_done()
     elif progname.endswith("te"):
         if len(args) != 1:
             print("usage: te TODO_FILE")
