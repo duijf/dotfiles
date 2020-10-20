@@ -9,10 +9,13 @@ TODO_DIR = pathlib.Path.home() / "todo"
 
 def print_todos():
     for entry in TODO_DIR.iterdir():
-        print(entry)
-
         if not entry.is_file():
             continue
+
+        if entry.name == "done.txt":
+            continue
+
+        print(entry)
 
         with entry.open(mode="r") as f:
             lines = f.readlines()
