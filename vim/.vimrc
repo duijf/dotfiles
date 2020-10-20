@@ -48,6 +48,7 @@ set ttyfast
 
 nnoremap <leader>ce :edit ~/.vimrc<CR>
 nnoremap <leader>cs :source ~/.vimrc<CR>
+nnoremap <leader>ts :%sort<CR>
 
 nnoremap <CR> :w<CR>
 nnoremap <TAB> :bn<CR>
