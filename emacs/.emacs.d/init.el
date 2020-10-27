@@ -135,3 +135,19 @@
   :after evil
   :config
   (evil-collection-init))
+
+;; Project management and stuff
+(use-package projectile
+  :init
+  (setq projectile-switch-project-action #'projectile-dired)
+  (setq projectile-project-search-path '("~/repos/duijf" "~/repos/nixos"))
+
+  :bind-keymap
+  ("C-c p" . projectile-command-map)
+
+  :custom
+  ((projectile-completion-system 'ivy))
+
+  :config
+  (projectile-mode)
+  (setq projectile-indexing-method 'alien))
