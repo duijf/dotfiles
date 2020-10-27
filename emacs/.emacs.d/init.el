@@ -151,3 +151,17 @@
   :config
   (projectile-mode)
   (setq projectile-indexing-method 'alien))
+
+(use-package minimap
+  :custom
+  ((minimap-window-location 'right)
+   (minimap-width-fraction 0.05)
+   (minimap-minimum-width 20))
+
+  :config
+  (define-advice minimap-new-minimap (:after () hide-truncation-indicators)
+    "Hide truncation fringe indicators in the minimap buffer."
+    (with-current-buffer minimap-buffer-name
+      (push '(truncation nil nil) fringe-indicator-alist)))
+
+  (minimap-mode))
