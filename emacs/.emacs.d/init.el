@@ -51,6 +51,11 @@
 ;; Make sure escape quits prompts.
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
+;; Allow increasing and decreasing the font size with standard
+;; shortcuts.
+(global-set-key (kbd "C-=") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+
 ;; Ivy autocompletion
 (use-package ivy
   :config
@@ -91,9 +96,42 @@
   :init
   (ivy-rich-mode 1))
 
+;; Better help screens
+(use-package helpful
+  :custom
+  (counsel-describe-function-function #'helpful-callable)
+  (counsel-describe-variable-function #'helpful-variable)
+  :bind
+  ([remap describe-function] . counsel-describe-function)
+  ([remap describe-command] . helpful-command)
+  ([remap describe-variable] . counsel-describe-variable)
+  ([remap describe-key] . helpful-key))
+
 ;; Actually use counsel M-x for the M-x screen. This also
 ;; uses Ivy in some way. Not sure how these are related.
 (use-package counsel
   :bind (("M-x" . counsel-M-x))
   :config
   (setq ivy-initial-inputs-alist nil))
+
+;; Vim keybindings to maintain sanity.
+(use-package evil
+  :init
+  (setq evil-want-integration t)
+  (setq evil-want-keybinding nil)
+
+  ;; Use Ctrl-u and Ctrl-d to scroll the buffer.
+  (setq evil-want-C-u-scroll t)
+  (setq evil-want-C-d-scroll t)
+  :config
+  (evil-mode 1)
+  ;; Equivalent to `nnoremap j gj` and `nnoremap k gk`.
+  (evil-global-set-key 'motion "j" 'evil-next-visual-line)
+  (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
+  (evil-set-initial-state 'messages-buffer-mode 'normal))
+
+;; Enable better evil integrations with other modes.
+(use-package evil-collection
+  :after evil
+  :config
+  (evil-collection-init))
