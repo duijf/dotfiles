@@ -114,6 +114,8 @@
   :config
   (setq ivy-initial-inputs-alist nil))
 
+(use-package undo-fu)
+
 ;; Vim keybindings to maintain sanity.
 (use-package evil
   :init
@@ -123,6 +125,10 @@
   ;; Use Ctrl-u and Ctrl-d to scroll the buffer.
   (setq evil-want-C-u-scroll t)
   (setq evil-want-C-d-scroll t)
+
+  ;; Get redo to work with Evil.
+  (setq evil-undo-system 'undo-fu)
+
   :config
   (evil-mode 1)
   ;; Equivalent to `nnoremap j gj` and `nnoremap k gk`.
