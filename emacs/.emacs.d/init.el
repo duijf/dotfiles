@@ -146,7 +146,7 @@
 (use-package projectile
   :init
   (setq projectile-switch-project-action #'projectile-dired)
-  (setq projectile-project-search-path '("~/repos/duijf" "~/repos/nixos"))
+  (setq projectile-project-search-path '("~/repos/duijf" "~/repos/nixos" "~"))
 
   :bind-keymap
   ("C-c p" . projectile-command-map)
