@@ -131,6 +131,17 @@
 
   :config
   (evil-mode 1)
+
+  (define-key evil-motion-state-map (kbd "C-h") #'evil-window-left)
+  (define-key evil-motion-state-map (kbd "C-j") #'evil-window-down)
+  (define-key evil-motion-state-map (kbd "C-k") #'evil-window-up)
+  (define-key evil-motion-state-map (kbd "C-l") #'evil-window-right)
+
+  ;; :q should kill the current buffer rather than quitting emacs entirely
+  (evil-ex-define-cmd "q" 'evil-window-delete)
+  ;; Need to type out :quit to close emacs
+  (evil-ex-define-cmd "quit" 'evil-quit)
+
   ;; Equivalent to `nnoremap j gj` and `nnoremap k gk`.
   (evil-global-set-key 'motion "j" 'evil-next-visual-line)
   (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
@@ -158,23 +169,45 @@
   (projectile-mode)
   (setq projectile-indexing-method 'alien))
 
-(use-package minimap
-  :custom
-  ((minimap-window-location 'right)
-   (minimap-width-fraction 0.05)
-   (minimap-minimum-width 20))
-
-  :config
-  (define-advice minimap-new-minimap (:after () hide-truncation-indicators)
-    "Hide truncation fringe indicators in the minimap buffer."
-    (with-current-buffer minimap-buffer-name
-      (push '(truncation nil nil) fringe-indicator-alist)))
-
-  (minimap-mode))
-
 (use-package magit
   :custom
   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
 
 (use-package evil-magit
   :after magit)
+
+(use-package org
+  :config
+  (setq org-ellipsis " ▾")
+
+  (setq org-agenda-start-with-log-mode t)
+  (setq org-log-done 'time)
+  (setq org-log-into-drawer t)
+
+  (setq org-agenda-files (directory-files "~/todo" t ".org$"))
+
+  (setq org-tag-alist
+	'((:startgroup)
+	  (:endgroup)
+	  ("work" . ?w)
+	  ("personal" . ?p)
+	  ("comms" . ?c)
+	  ("home" . ?h))))
+
+(use-package org-bullets
+  :after org
+  :hook (org-mode . org-bullets-mode)
+  :custom
+  (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
+
+(use-package evil-org
+  :after org-mode
+  :config
+  (add-hook 'org-mode-hook 'evil-org-mode)
+  (add-hook 'evil-org-mode-hook
+            (lambda ()
+              (evil-org-set-key-theme)))
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys))
+
+(define-key evil-normal-state-map (kbd "C-a \\") 'split-window-right)
