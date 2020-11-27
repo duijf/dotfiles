@@ -19,6 +19,6 @@ behind = "↓"
 ahead = "↑"
 
 [nix_shell]
-symbol = ""
-impure_msg = "I"
-pure_msg = "P"
+format = "via [$name \\[$state\\]]($style) "
+impure_msg = "i"
+pure_msg = "p"
