@@ -10,15 +10,7 @@ export PATH="$HOME/dotfiles/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
 
 # Prompt and theme ------------------------------------------------------------
 
-export PURE_PROMPT_SYMBOL="$"
-export PURE_PROMPT_VICMD_SYMBOL="|"
-export PURE_GIT_DOWN_ARROW="↓"
-export PURE_GIT_UP_ARROW="↑"
-
-autoload -Uz promptinit
-promptinit
-prompt pure
-
+eval "$(starship init zsh)"
 eval $(dircolors ~/.dir_colors)
 
 # Basic Aliases ---------------------------------------------------------------
