@@ -22,6 +22,10 @@ alias lk='i3lock -i ~/img/bulbs.png'
 
 alias open='xdg-open'
 
+# Force tmux to write UTF8. It doens't seem to detect LC_ stuff properly and
+# I don't want to figure out why.
+alias tmux='tmux -u'
+
 # Git -------------------------------------------------------------------------
 
 alias gs='git show'
