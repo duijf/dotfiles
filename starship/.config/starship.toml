@@ -22,3 +22,6 @@ ahead = "↑"
 format = "via [$name \\[$state\\]]($style) "
 impure_msg = "i"
 pure_msg = "p"
+
+[cmd_duration]
+format = "[$duration]($style) "
