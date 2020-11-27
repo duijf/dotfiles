@@ -1,0 +1,19 @@
+[character]
+success_symbol = "[\\$](bold purple)"
+error_symbol = "[\\$](bold red)"
+vicmd_symbol = "[|](bold blue)"
+
+[directory]
+truncate_to_repo = false
+style = "blue"
+truncation_length = 8
+truncation_symbol = ".../"
+
+[git_branch]
+style = "dimmed white"
+
+[git_status]
+format = '([$all_status]($style) )([$ahead_behind](blue) )'
+diverged = "↓↑"
+behind = "↓"
+ahead = "↑"
