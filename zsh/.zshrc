@@ -248,6 +248,8 @@ function nrp {
     nix run --unset PATH -c $@
 }
 
+alias ns='nix-shell --command zsh'
+
 # Nix run while passing a target. This is useful when the
 # `default.nix` derivation expects an attrset with a `target`
 # member.
