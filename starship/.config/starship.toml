@@ -25,3 +25,6 @@ pure_msg = "p"
 
 [cmd_duration]
 format = "[$duration]($style) "
+
+[battery]
+disabled = true
