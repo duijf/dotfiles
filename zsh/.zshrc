@@ -15,6 +15,9 @@ eval $(dircolors ~/.dir_colors)
 
 # Basic Aliases ---------------------------------------------------------------
 
+# Let's dive in deep and see if we can actually get used to using emacs for stuff.
+alias vim='emacsclient -t'
+
 alias c='clear'
 alias ls="ls -F --color=auto --group-directories-first --ignore='.*.un~'"
 alias lsa='ls -la'
