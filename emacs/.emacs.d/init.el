@@ -7,6 +7,9 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 
+;; Enable mouse in the terminal
+(xterm-mouse-mode 1)
+
 ;; Remove padding where the scroll bar was.
 (set-fringe-mode 0)
 
