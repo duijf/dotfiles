@@ -114,6 +114,10 @@
 ;; uses Ivy in some way. Not sure how these are related.
 (use-package counsel
   :bind (("M-x" . counsel-M-x))
+  ;; By default C-x C-b displays a list of open buffers.
+  ;; Alias it to `counsel-switch-buffer` to avoid mistyping
+  ;; it.
+  :bind (("C-x C-b" . counsel-switch-buffer))
   :config
   (setq ivy-initial-inputs-alist nil))
 
