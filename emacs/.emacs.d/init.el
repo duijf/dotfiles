@@ -16,6 +16,11 @@
 ;; Use visual-bell instead of making noise.
 (setq visual-bell t)
 
+;; By default, Emacs creates a "backup" file when saving a buffer with the
+;; contents of the buffer before saving. (Those are the files ending with a
+;; `~` character.) I don't have a usecase for this, so disable this feature.
+(setq make-backup-files nil)
+
 ;; Better font.
 (set-face-attribute 'default nil :font "M+ 2m" :height 120)
 
