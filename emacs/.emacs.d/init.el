@@ -235,6 +235,12 @@
 	  ("comms" . ?c)
 	  ("home" . ?h))))
 
+(use-package org-roam
+  :hook
+  (after-init . org-roam-mode)
+  :custom
+  (org-roam-directory "~/notes"))
+
 (use-package org-bullets
   :after org
   :hook (org-mode . org-bullets-mode)

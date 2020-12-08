@@ -2,3 +2,6 @@ elpa/
 custom.el
 transient/
 projectile-bookmarks.eld
+.org-id-locations
+bookmarks
+org-roam.db
