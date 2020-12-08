@@ -126,7 +126,18 @@
   :config
   (setq ivy-initial-inputs-alist nil))
 
+;; Use the `undo-fu` undo system instead of `undo-tree` which is what
+;; evil uses by default. `undo-tree` was quite buggy and didn't work
+;; great for me. Let's try this.
 (use-package undo-fu)
+
+;; Persistent undo support for `undo-fu`. This should hopefully make
+;; undo / redo more like Vim's persistent undo which I'm missing a lot.
+(use-package undo-fu-session
+  :config
+  (setq undo-fu-session-incompatible-files '("/COMMIT_EDITMSG\\'" "/git-rebase-todo\\'")))
+
+(global-undo-fu-session-mode)
 
 ;; Vim keybindings to maintain sanity.
 (use-package evil
