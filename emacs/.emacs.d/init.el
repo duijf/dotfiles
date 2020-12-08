@@ -163,8 +163,16 @@
 ;; Project management and stuff
 (use-package projectile
   :init
-  (setq projectile-switch-project-action #'projectile-dired)
+  ;; Launch dired for the project root in the dired-single buffer.
+  (defun duijf-projectile-dired ()
+    (interactive)
+    (dired-single-magic-buffer (projectile-acquire-root)))
+
+  (setq projectile-switch-project-action 'duijf-projectile-dired)
   (setq projectile-project-search-path '("~/repos/duijf" "~/repos/nixos" "~"))
+
+  ;; Overwrite projectile-dired with duijf-projectile-dired.
+  :bind (:map projectile-command-map ("D" . duijf-projectile-dired))
 
   :bind-keymap
   ("C-c p" . projectile-command-map)
@@ -266,7 +274,9 @@
   :hook (dired-mode . dired-hide-details-mode)
   :commands (dired dired-jump)
   ;; `dired-jump` opens the directory of the current file in a dired buffer.
-  :bind (("C-x C-d" . dired-jump))
+  :bind (("C-x C-d" . (lambda ()
+			(interactive)
+			(dired-single-magic-buffer default-directory))))
   ;; Flags for `ls`. Here's what the short flags do:
   ;;   `-a` - Show hidden files and folders
   ;;   `-h` - Human readable file sizes (1M instead of number of bytes)
