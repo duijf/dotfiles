@@ -218,6 +218,9 @@
   :after magit)
 
 (use-package org
+  :bind
+  (:map org-mode-map ("C-c o l" . org-toggle-link-display))
+
   :config
   (setq org-ellipsis " ▾")
 
