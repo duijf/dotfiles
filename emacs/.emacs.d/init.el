@@ -245,3 +245,36 @@
 
 ;; Show only one active window when opening multiple files at the same time.
 (add-hook 'window-setup-hook 'delete-other-windows)
+
+;; Dired tweaks
+
+;; `dired-single` ensures that dired does not open a ton of buffers
+;; when you navigate parent/ child folders.
+(use-package dired-single
+  ;; Remap the dired navigation functions to the `dired-single` variants.
+  :hook (dired-mode . (lambda ()
+		      (define-key dired-mode-map [remap dired-find-file]
+			'dired-single-buffer)
+		      (define-key dired-mode-map [remap dired-mouse-find-file-other-window]
+			'dired-single-buffer-mouse)
+		      (define-key dired-mode-map [remap dired-up-directory]
+			'dired-single-up-directory))))
+
+(use-package dired
+  :ensure nil
+  ;; Hide details like modification time and permissions by default.
+  :hook (dired-mode . dired-hide-details-mode)
+  :commands (dired dired-jump)
+  ;; `dired-jump` opens the directory of the current file in a dired buffer.
+  :bind (("C-x C-d" . dired-jump))
+  ;; Flags for `ls`. Here's what the short flags do:
+  ;;   `-a` - Show hidden files and folders
+  ;;   `-h` - Human readable file sizes (1M instead of number of bytes)
+  ;;   `-g` - Do not print file owner.
+  ;;   `-o` - Do not print file group.
+  :custom ((dired-listing-switches "-ahgo --group-directories-first")))
+
+(use-package dired-hide-dotfiles
+  :config
+  (evil-collection-define-key 'normal 'dired-mode-map
+    "H" 'dired-hide-dotfiles-mode))
