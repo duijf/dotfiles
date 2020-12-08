@@ -133,6 +133,10 @@
   (setq evil-want-C-u-scroll t)
   (setq evil-want-C-d-scroll t)
 
+  ;; Disable C-i in evil. In the terminal, this is indistinguisable
+  ;; from TAB meaning that it conflicts with TAB in org mode.
+  (setq evil-want-C-i-jump nil)
+
   ;; Get redo to work with Evil.
   (setq evil-undo-system 'undo-fu)
 
