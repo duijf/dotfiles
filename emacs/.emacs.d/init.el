@@ -231,9 +231,12 @@
 ;; Makes *scratch* empty.
 (setq initial-scratch-message "")
 
-;; Removes *scratch* from buffer after the mode has been set.
+;; Removes *scratch* buffer after the mode has been set and there
+;; are other buffers besides *scratch*.
 (defun remove-scratch-buffer ()
-  (if (get-buffer "*scratch*")
+  (if (and
+        (get-buffer "*scratch*")
+        (< 1 (length (buffer-list))))
       (kill-buffer "*scratch*")))
 (add-hook 'after-change-major-mode-hook 'remove-scratch-buffer)
 
