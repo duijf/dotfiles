@@ -66,6 +66,12 @@
 
 ;; Ivy autocompletion
 (use-package ivy
+  :bind
+  ;; By default, TAB autocompletes, but also functions as RET when
+  ;; there is only a single result left. Don't do that, it's really
+  ;; annoying to switch what keys do depending on context.
+  (:map ivy-minibuffer-map ("TAB" . ivy-partial))
+
   :config
   (ivy-mode 1))
 
