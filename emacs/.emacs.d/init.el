@@ -338,3 +338,6 @@
 
 (use-package nix-mode
   :mode "\\.nix\\'")
+
+;; Disable annoying indentation when typing `:` in assembly files.
+(define-key asm-mode-map ":" nil)
