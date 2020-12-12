@@ -256,12 +256,6 @@
   :custom
   (org-roam-directory "~/notes"))
 
-(use-package org-bullets
-  :after org
-  :hook (org-mode . org-bullets-mode)
-  :custom
-  (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
-
 (use-package evil-org
   :after org-mode
   :config
