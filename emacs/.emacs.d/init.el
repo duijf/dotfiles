@@ -332,3 +332,6 @@
   :config
   (evil-collection-define-key 'normal 'dired-mode-map
     "H" 'dired-hide-dotfiles-mode))
+
+(use-package json-mode
+  :mode "\\.json\\'")
