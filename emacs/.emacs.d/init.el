@@ -24,6 +24,15 @@
 ;; Better font.
 (set-face-attribute 'default nil :font "M+ 2m" :height 120)
 
+;; Prefer spaces over tabs.
+(setq-default indent-tabs-mode nil)
+(setq-default c-basic-offset 4)
+(setq tab-stop-list '(4 9 14 19 24 29 34 39 44 49 54 59 64 69 74 79))
+
+;; Disable the default indentation mode. It's really really annoying.
+(electric-indent-mode -1)
+(add-hook 'after-change-major-mode-hook (lambda() (electric-indent-mode -1)))
+
 ;; Make emacs' customization system write settings to the
 ;; (unloaded) custom.el.
 (setq custom-file (concat user-emacs-directory "/custom.el"))
@@ -148,6 +157,9 @@
 ;; Vim keybindings to maintain sanity.
 (use-package evil
   :init
+  ;; Disable indentation in Evil mode when inserting new lines.
+  (setq evil-auto-indent nil)
+
   (setq evil-want-integration t)
   (setq evil-want-keybinding nil)
 
