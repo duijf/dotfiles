@@ -33,6 +33,9 @@
 (electric-indent-mode -1)
 (add-hook 'after-change-major-mode-hook (lambda() (electric-indent-mode -1)))
 
+;; Remove trailing whitespace on file save
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 ;; Make emacs' customization system write settings to the
 ;; (unloaded) custom.el.
 (setq custom-file (concat user-emacs-directory "/custom.el"))
