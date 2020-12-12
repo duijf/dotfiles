@@ -335,3 +335,6 @@
 
 (use-package json-mode
   :mode "\\.json\\'")
+
+(use-package nix-mode
+  :mode "\\.nix\\'")
