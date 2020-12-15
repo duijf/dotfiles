@@ -343,4 +343,7 @@
   :mode "\\.nix\\'")
 
 ;; Disable annoying indentation when typing `:` in assembly files.
-(define-key asm-mode-map ":" nil)
+(use-package asm-mode
+  :ensure nil
+  :config
+  (define-key asm-mode-map ":" nil))
