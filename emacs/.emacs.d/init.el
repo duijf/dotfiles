@@ -36,6 +36,9 @@
 ;; Remove trailing whitespace on file save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; Always add a trailing newline
+(setq-default require-final-newline t)
+
 ;; Make emacs' customization system write settings to the
 ;; (unloaded) custom.el.
 (setq custom-file (concat user-emacs-directory "/custom.el"))
