@@ -241,6 +241,7 @@
 
   :config
   (setq org-ellipsis " ▾")
+  (set-face-foreground 'org-ellipsis "colour-245")
 
   (setq org-agenda-start-with-log-mode t)
   (setq org-log-done 'time)
