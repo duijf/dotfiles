@@ -254,7 +254,10 @@
 	  ("work" . ?w)
 	  ("personal" . ?p)
 	  ("comms" . ?c)
-	  ("home" . ?h))))
+	  ("home" . ?h)))
+
+  (setq org-todo-keywords
+        '((sequence "TODO" "STRETCH" "|" "DONE" "MOVED" "CANCELLED"))))
 
 (use-package org-roam
   :hook
