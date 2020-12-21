@@ -247,7 +247,7 @@
   (setq org-log-done 'time)
   (setq org-log-into-drawer t)
 
-  (setq org-agenda-files (directory-files "~/notes/journal" t ".org$"))
+  (setq org-agenda-files (directory-files "~/notes" t ".org$"))
 
   (setq org-tag-alist
 	'((:startgroup)
@@ -258,7 +258,19 @@
 	  ("home" . ?h)))
 
   (setq org-todo-keywords
-        '((sequence "TODO" "STRETCH" "|" "DONE" "MOVED" "CANCELLED"))))
+        '((sequence "TODO" "STRETCH" "|" "DONE" "MOVED" "CANCELLED")))
+
+  (setq org-refile-use-outline-path 'file)
+  (setq org-outline-path-complete-in-steps nil)
+  (setq org-refile-targets
+      '(("~/notes/projects.org" :level . 1)
+        ("~/notes/inbox.org" :level . 1)
+        ("~/notes/journal.org" :level . 1)))
+
+  ;; Save open org buffers after doing a refiling action.
+  (advice-add 'org-refile :after
+              (lambda (&rest _)
+                (org-save-all-org-buffers))))
 
 (use-package org-roam
   :hook
