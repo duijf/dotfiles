@@ -237,7 +237,8 @@
 
 (use-package org
   :bind
-  (:map org-mode-map ("C-c o l" . org-toggle-link-display))
+  (("C-c c" . org-capture)
+   (:map org-mode-map ("C-c o l" . org-toggle-link-display)))
 
   :config
   (setq org-ellipsis " ▾")
@@ -266,6 +267,10 @@
       '(("~/notes/projects.org" :level . 1)
         ("~/notes/inbox.org" :level . 1)
         ("~/notes/journal.org" :level . 1)))
+
+  (setq org-capture-templates
+        '(("i" "Task to Inbox" entry (file "~/notes/inbox.org")
+           "* TODO %?")))
 
   ;; Save open org buffers after doing a refiling action.
   (advice-add 'org-refile :after
