@@ -265,8 +265,8 @@
   (setq org-outline-path-complete-in-steps nil)
   (setq org-refile-targets
       '(("~/notes/projects.org" :level . 1)
-        ("~/notes/inbox.org" :level . 1)
-        ("~/notes/journal.org" :level . 1)))
+        ("~/notes/inbox.org" :level . 0)
+        ("~/notes/journal.org" :level . 3)))
 
   (setq org-capture-templates
         '(("i" "Task to Inbox" entry (file "~/notes/inbox.org")
