@@ -246,7 +246,7 @@
   (setq org-log-done 'time)
   (setq org-log-into-drawer t)
 
-  (setq org-agenda-files (directory-files "~/todo" t ".org$"))
+  (setq org-agenda-files (directory-files "~/notes/journal" t ".org$"))
 
   (setq org-tag-alist
 	'((:startgroup)
