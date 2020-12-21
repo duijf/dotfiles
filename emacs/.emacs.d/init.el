@@ -263,7 +263,31 @@
   :hook
   (after-init . org-roam-mode)
   :custom
-  (org-roam-directory "~/notes"))
+  (org-roam-directory "~/notes")
+  :config
+  (setq org-roam-dailies-directory "journal")
+
+  (setq org-roam-dailies-capture-templates
+      '(("i" "inbox" entry
+         #'org-roam-capture--get-point
+         "** %?"
+         :file-name "journal/%<%Y-%m-%d>"
+         :head "#+title: %<%Y-%m-%d>\n\n"
+         :olp ("Inbox"))
+
+        ("e" "event" entry
+         #'org-roam-capture--get-point
+         "** %?"
+         :file-name "journal/%<%Y-%m-%d>"
+         :head "#+title: %<%Y-%m-%d>\n\n"
+         :olp ("Events"))
+
+        ("p" "planning" entry
+         #'org-roam-capture--get-point
+         "** %?"
+         :file-name "journal/%<%Y-%m-%d>"
+         :head "#+title: %<%Y-%m-%d>\n\n"
+         :olp ("Planning")))))
 
 (use-package evil-org
   :after org-mode
