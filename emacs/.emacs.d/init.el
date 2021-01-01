@@ -369,6 +369,10 @@
 (use-package nix-mode
   :mode "\\.nix\\'")
 
+;; Load LLVM mode directly from the vendored file. It isn't available on
+;; MELPA due to https://github.com/melpa/melpa/issues/5361
+(require 'llvm-mode "~/.emacs.d/llvm-mode.el")
+
 ;; Disable annoying indentation when typing `:` in assembly files.
 (use-package asm-mode
   :ensure nil
