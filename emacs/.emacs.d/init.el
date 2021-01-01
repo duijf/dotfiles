@@ -283,7 +283,16 @@
   :hook
   (after-init . org-roam-mode)
   :custom
-  (org-roam-directory "~/notes/kb"))
+  (org-roam-directory "~/notes/kb")
+
+  :config
+  (setq org-roam-capture-templates
+        '(("d" "default" plain #'org-roam-capture--get-point "%?"
+           :file-name "${slug}" :head "#+title: ${title}" :unarrowed t :kill-buffer)
+          ("t" "talk" plain #'org-roam-capture--get-point "%?\n\n[[${video_link}][Video]]"
+           :file-name "${slug}" :head "#+title: ${title}" :unarrowed t :kill-buffer)
+          ("b" "blog post" plain #'org-roam-capture--get-point "%?\n\n[[${blog_link}][Blog post]]"
+           :file-name "${slug}" :head "#+title: ${title}" :unarrowed t :kill-buffer))))
 
 (use-package evil-org
   :after org-mode
