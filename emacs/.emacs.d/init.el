@@ -270,9 +270,9 @@
 
   (setq org-capture-templates
         '(("i" "Task to Inbox" entry (file "~/notes/inbox.org")
-           "* TODO %?")
+           "* TODO %?" :kill-buffer t)
           ("j" "Journal entry" entry (file+datetree "~/notes/journal.org")
-           (file "~/notes/templates/journal.tmpl"))))
+           (file "~/notes/templates/journal.tmpl") :kill-buffer t)))
 
   ;; Save open org buffers after doing a refiling action.
   (advice-add 'org-refile :after
