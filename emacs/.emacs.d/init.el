@@ -266,7 +266,11 @@
   (setq org-refile-targets
       '(("~/notes/projects.org" :level . 1)
         ("~/notes/inbox.org" :level . 0)
+        ("~/notes/someday.org" :level . 1)
+        ("~/notes/tickler.org" :level . 0)
         ("~/notes/journal.org" :level . 3)))
+
+  (setq org-archive-location "~/notes/done.org::datetree/")
 
   (setq org-capture-templates
         '(("i" "Task to Inbox" entry (file "~/notes/inbox.org")
