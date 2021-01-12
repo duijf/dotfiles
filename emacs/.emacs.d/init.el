@@ -318,15 +318,6 @@
 ;; Makes *scratch* empty.
 (setq initial-scratch-message "")
 
-;; Removes *scratch* buffer after the mode has been set and there
-;; are other buffers besides *scratch*.
-(defun remove-scratch-buffer ()
-  (if (and
-        (get-buffer "*scratch*")
-        (< 1 (length (buffer-list))))
-      (kill-buffer "*scratch*")))
-(add-hook 'after-change-major-mode-hook 'remove-scratch-buffer)
-
 ;; Open the current directory in dired as the initial buffer
 ;; when starting emacs without any other arguments.
 (setq initial-buffer-choice ".")
