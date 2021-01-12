@@ -327,6 +327,10 @@
       (kill-buffer "*scratch*")))
 (add-hook 'after-change-major-mode-hook 'remove-scratch-buffer)
 
+;; Open the current directory in dired as the initial buffer
+;; when starting emacs without any other arguments.
+(setq initial-buffer-choice ".")
+
 ;; Removes *messages* from the buffer.
 (setq-default message-log-max nil)
 (kill-buffer "*Messages*")
