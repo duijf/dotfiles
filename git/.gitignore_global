@@ -7,13 +7,16 @@
 *.log
 *.sqlite
 
-# Vim files 
+# Vim files
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
 *.un~
 Session.vim
 .netrwhist
 *~
+
+# Emacs
+\#*\#
 
 # Default ignore directory for all repos for one-off tasks
 ignore/
