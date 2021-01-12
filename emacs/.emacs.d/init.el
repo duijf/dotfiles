@@ -281,7 +281,10 @@
   ;; Save open org buffers after doing a refiling action.
   (advice-add 'org-refile :after
               (lambda (&rest _)
-                (org-save-all-org-buffers))))
+                (org-save-all-org-buffers)))
+
+  ;; Save open org buffers after archiving a subtree.
+  (advice-add 'org-archive-subtree :after #'org-save-all-org-buffers))
 
 (use-package org-roam
   :hook
