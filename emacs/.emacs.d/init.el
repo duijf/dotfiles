@@ -206,6 +206,7 @@
 
 ;; Project management and stuff
 (use-package projectile
+  :demand t
   :init
   ;; Launch dired for the project root in the dired-single buffer.
   (defun duijf-projectile-dired ()
@@ -318,9 +319,15 @@
 ;; Makes *scratch* empty.
 (setq initial-scratch-message "")
 
-;; Open the current directory in dired as the initial buffer
-;; when starting emacs without any other arguments.
-(setq initial-buffer-choice ".")
+;; Open the projectile project root for the current directory
+;; in dired as the initial buffer when starting emacs or the
+;; emacs client without any other arguments. If we start a
+;; client outside of a current project, we get a file manager
+;; in the current project.
+(setq initial-buffer-choice
+      '(lambda ()
+         (dired-single-magic-buffer (projectile-project-root))
+         (seq-find '(lambda (elem) (equal (buffer-name elem) "*dired*")) (buffer-list))))
 
 ;; Removes *messages* from the buffer.
 (setq-default message-log-max nil)
@@ -351,7 +358,9 @@
 		      (define-key dired-mode-map [remap dired-mouse-find-file-other-window]
 			'dired-single-buffer-mouse)
 		      (define-key dired-mode-map [remap dired-up-directory]
-			'dired-single-up-directory))))
+			'dired-single-up-directory)))
+  :custom
+  (dired-single-use-magic-buffer t))
 
 (use-package dired
   :ensure nil
