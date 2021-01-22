@@ -398,3 +398,7 @@
   :ensure nil
   :config
   (define-key asm-mode-map ":" nil))
+
+(use-package yaml-mode)
+
+(use-package dockerfile-mode)
