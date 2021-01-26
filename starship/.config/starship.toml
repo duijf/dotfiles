@@ -30,7 +30,8 @@ format = "[$duration]($style) "
 disabled = true
 
 [python]
-disabled = true
+disabled = false
+symbol = "python "
 
 [java]
 disabled = true
