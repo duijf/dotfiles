@@ -36,6 +36,16 @@
 ;; Remove trailing whitespace on file save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; Autosave files when switching between buffers. `when buffer-file-name`
+;; is a check to avoid saving scratch, dired, magit buffers, or similar
+;; buffers.
+(defadvice switch-to-buffer (before save-buffer-now activate)
+  (when buffer-file-name (save-buffer)))
+(defadvice other-window (before other-window-now activate)
+  (when buffer-file-name (save-buffer)))
+(defadvice other-frame (before other-frame-now activate)
+  (when buffer-file-name (save-buffer)))
+
 ;; Always add a trailing newline
 (setq-default require-final-newline t)
 
