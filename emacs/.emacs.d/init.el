@@ -21,6 +21,9 @@
 ;; `~` character.) I don't have a usecase for this, so disable this feature.
 (setq make-backup-files nil)
 
+;; Enable reloading files on disk when they change.
+(global-auto-revert-mode t)
+
 ;; Better font.
 (set-face-attribute 'default nil :font "M+ 2m" :height 120)
 
@@ -329,16 +332,6 @@
 ;; Makes *scratch* empty.
 (setq initial-scratch-message "")
 
-;; Open the projectile project root for the current directory
-;; in dired as the initial buffer when starting emacs or the
-;; emacs client without any other arguments. If we start a
-;; client outside of a current project, we get a file manager
-;; in the current project.
-(setq initial-buffer-choice
-      '(lambda ()
-         (dired-single-magic-buffer (projectile-project-root))
-         (seq-find '(lambda (elem) (equal (buffer-name elem) "*dired*")) (buffer-list))))
-
 ;; Removes *messages* from the buffer.
 (setq-default message-log-max nil)
 (kill-buffer "*Messages*")
@@ -412,3 +405,14 @@
 (use-package yaml-mode)
 
 (use-package dockerfile-mode)
+
+(use-package haskell-mode)
+
+(use-package hledger-mode)
+
+(use-package markdown-mode
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
