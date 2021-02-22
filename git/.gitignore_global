@@ -21,3 +21,6 @@ Session.vim
 
 # Default ignore directory for all repos for one-off tasks
 ignore/
+
+# Stuff from Jetbrains IDEs
+.idea/
