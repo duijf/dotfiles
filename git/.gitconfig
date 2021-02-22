@@ -35,14 +35,11 @@
 	useConfigOnly = true
 [alias]
 	identity = "! git config user.name \"$(git config user.$1.name)\"; git config user.email \"$(git config user.$1.email)\"; :"
-[user "channable"]
-	email = laurens@channable.com
-	name = Laurens Duijvesteijn
 [user "personal"]
 	name = Laurens Duijvesteijn
 	email = git@duijf.io
-[user "laudon"]
+[user "iterative"]
+	email = laurens@iterative.ai
 	name = Laurens Duijvesteijn
-	email = laurens@laudon.nl
 [checkout]
 	defaultRemote = origin
