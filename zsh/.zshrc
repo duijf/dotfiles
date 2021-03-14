@@ -267,3 +267,7 @@ function nrt {
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(pyenv init -)"
+
+eval "$(direnv hook zsh)"
