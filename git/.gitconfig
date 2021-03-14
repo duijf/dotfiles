@@ -35,6 +35,9 @@
 	useConfigOnly = true
 [alias]
 	identity = "! git config user.name \"$(git config user.$1.name)\"; git config user.email \"$(git config user.$1.email)\"; :"
+[user]
+	name = Laurens Duijvesteijn
+	email = git@duijf.io
 [user "personal"]
 	name = Laurens Duijvesteijn
 	email = git@duijf.io
