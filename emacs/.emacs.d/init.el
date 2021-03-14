@@ -416,3 +416,11 @@
          ("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
+
+(use-package typescript-mode)
+
+(use-package rust-mode)
+
+(use-package purescript-mode
+  :init
+  (add-hook 'purescript-mode-hook 'turn-on-purescript-indentation))
