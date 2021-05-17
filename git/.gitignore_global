@@ -25,5 +25,8 @@ ignore/
 # Stuff from Jetbrains IDEs
 .idea/
 
-# Direnv
+# Direnv (force add for projects where we do want to keep this)
 .envrc
+
+# Local files that shouldn't be tracked
+*.local
