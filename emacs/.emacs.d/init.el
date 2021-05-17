@@ -21,6 +21,9 @@
 ;; `~` character.) I don't have a usecase for this, so disable this feature.
 (setq make-backup-files nil)
 
+;; Disable .# files.
+(setq create-lockfiles nil)
+
 ;; Enable reloading files on disk when they change.
 (global-auto-revert-mode t)
 
