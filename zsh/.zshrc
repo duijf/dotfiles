@@ -255,6 +255,10 @@ function nrp {
     nix run --unset PATH -c $@
 }
 
+function pwgen {
+    tr -dc A-Za-z0-9 </dev/urandom | head -c 20 ; echo ''
+}
+
 alias ns='nix-shell --command zsh'
 
 # Nix run while passing a target. This is useful when the
