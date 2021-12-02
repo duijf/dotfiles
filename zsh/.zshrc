@@ -236,6 +236,4 @@ function pwgen {
     tr -dc A-Za-z0-9 </dev/urandom | head -c 20 ; echo ''
 }
 
-eval "$(pyenv init -)"
-
 eval "$(direnv hook zsh)"
