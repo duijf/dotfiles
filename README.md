@@ -1,32 +1,26 @@
 # dotfiles
 
-This is a repository containing all my configuration files. On some UNIX systems
-these are called dotfiles, since their filenames start with a dot to make them
-hidden from the general file view.
+This is a repository containing my dotfiles. Features:
 
-## Installation and usage
+ - Nix for declarative package management.
+ - Stow for dotfile management / symlinks.
 
-The easiest way of using these it to use GNU Stow to create symlinks to the
-files that you want. You can find a tutorial [here].
+No overly complicated setup with `home-manager` or `nix-darwin`. Just the
+basics to set up some useable devtools.
 
 ## Bootstrap a new computer
 
 ```
+# Or download a zip from GitHub if you don't have `git`.
 $ git clone https://github.com/duijf/dotfiles.git
-$ ./bin/bootstrap-pacman.sh
+
+# Install the Nix package manager
+$ ./bin/install-nix.sh
+
+# Install all dependencies / tools
+$ ./bin/replace-nix-profile.sh
+
+# Get the dotfiles in place. This uses GNU stow to create
+# the symlinks.
 $ stow tmux zsh git ...
 ```
-
-## Wishes and todos
-
- - Port Nord for the `bat` syntax highlighter.
- - Fix the colors of the Tmux Nord theme.
- - Figure out a good FZF / skim configuration.
- - See if exa is worth using as an `ls` alternative.
- - Look into tmux-thumbs
- - Create a Gnome theme for my colors
- - Systemd user units for common things?
- - Language servers and Vim integration a la https://www.kieranbamforth.me/post/vim-lsp
- - iwd for wireless connections
-
-  [here]:http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html
