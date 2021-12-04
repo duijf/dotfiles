@@ -1,133 +1,104 @@
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'LnL7/vim-nix'
+Plug 'airblade/vim-gitgutter'
 Plug 'arcticicestudio/nord-vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'elixir-editors/vim-elixir'
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'leafgarland/typescript-vim'
+
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-lua/lsp_extensions.nvim'
+
+Plug 'LnL7/vim-nix'
+Plug 'elixir-editors/vim-elixir'
+Plug 'leafgarland/typescript-vim'
 Plug 'rust-lang/rust.vim'
 call plug#end()
 
-set nocompatible
-set hidden
+" Colorscheme / highlighting.
+colorscheme nord
+
+" Leader key for custom shortcuts.
 let mapleader = ","
 
+" Make searches case-insensitive by default. When an upper case
+" character is part of the search, do use case-sensitive search.
 set ignorecase
 set smartcase
 
+" Start searching when the user starts typing. Highlight matches
+" in the buffer while this is happening too.
 set incsearch
 set hlsearch
-set showmatch
+
+" Clear search highlighting.
 noremap <leader><space> :let @/=""<CR>
 
-set gdefault
+" Briefly jump back to previous paren / brace when closing one.
+" This makes it easy to gather context on what brace you're closing.
+set showmatch
 
-syntax on
-colorscheme nord
+" Substitute all matches in a line by default.
+set gdefault
 
 " Make comments the same color as strings so they stand out more.
 highlight Comment ctermfg=green
 
+" Use 4 spaces instead of tabs by default.
 set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-" Enable mouse support
+" Use different indentation level for some filetypes.
+autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType typescriptreact setlocal tabstop=2 softtabstop=2 shiftwidth=2
+
+" Disable automatic indentation for typescript.
+let g:typescript_indent_disable = 1
+
+" Remove trailing whitespace before saving a file.
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Show line numbers, and merge the signcolumn with the number column.
+" This removes jitter when warnings/errors appear due to e.g. IDE
+" specific tools.
+set signcolumn=number
+set number
+
+" Enable mouse support.
 set mouse=a
 
-set ttyfast
-
+" Quickly edit and reload this configuration file.
 nnoremap <leader>ce :edit ~/.config/nvim/init.vim<CR>
 nnoremap <leader>cs :source ~/.config/nvim/init.vim<CR>
-nnoremap <leader>ts :%sort<CR>
 
+" Write any changes to a file with ENTER.
 nnoremap <CR> :w<CR>
-nnoremap <TAB> :bn<CR>
-nnoremap <S-TAB> :bp<CR>
 
+" Flip between buffers with tab and shift tab.
+nnoremap <Tab> :bn<CR>
+nnoremap <S-Tab> :bp<CR>
+
+" Make line movement work accross visual lines, not buffer newlines by default.
 nnoremap j gj
 nnoremap k gk
 
-" Set completeopt to have a better completion experience
-" :help completeopt
-" menuone: popup even when there's only one match
-" noinsert: Do not insert text until a selection is made
-" noselect: Do not select, force user to select one from the menu
-set completeopt=menuone,noinsert,noselect
-
-" Avoid showing extra messages when using completion
-set shortmess+=c
-
-" Configure LSP
-" https://github.com/neovim/nvim-lspconfig#rust_analyzer
-lua <<EOF
-
--- nvim_lsp object
-local nvim_lsp = require'lspconfig'
-
--- function to attach completion when setting up lsp
-local on_attach = function(client)
-    require'completion'.on_attach(client)
-end
-
--- Enable rust_analyzer
-nvim_lsp.rust_analyzer.setup({ on_attach=on_attach })
-
--- Enable diagnostics
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    virtual_text = true,
-    signs = true,
-    update_in_insert = true,
-  }
-)
-EOF
-
-nnoremap <silent> ga    <cmd>lua vim.lsp.buf.code_action()<CR>
-" Set updatetime for CursorHold
-" 300ms of no cursor movement to trigger CursorHold
-set updatetime=300
-" Show diagnostic popup on cursor hold
-autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
-
-" Goto previous/next diagnostic warning/error
-nnoremap <silent> g[ <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <silent> g] <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
-
-" have a fixed column for the diagnostics to appear in
-" this removes the jitter when warnings/errors flow in
-set signcolumn=yes
-
-" Enable type inlay hints
-autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *
-\ lua require'lsp_extensions'.inlay_hints{ prefix = '', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }
-
-" Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" use <Tab> as trigger keys
-imap <Tab> <Plug>(completion_smart_tab)
-imap <S-Tab> <Plug>(completion_smart_s_tab)
-
-nnoremap <leader>f :RustFmt<CR>
-
-nnoremap <silent> ga    <cmd>lua vim.lsp.buf.code_action()<CR>
-
+" Search accross all git-tracked files easily.
 nnoremap <leader>p :GFiles<CR>
+
+" Disable GitGutter by default, but allow toggling
+let g:gitgutter_enabled = 0
+nnoremap <leader>gg :GitGutterToggle<CR>
+
+" Ensure fzf takes up the entire screen.
 let g:fzf_layout = { 'down': '100%' }
 
-let g:typescript_indent_disable = 1
-
-autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-autocmd FileType typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-autocmd FileType typescriptreact setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-
-autocmd BufWritePre * :%s/\s\+$//e
+" Autoformat buffers with <,f>.
+" TODO: add support for formatting other languages with the same mapping in
+" other buffers.
+nnoremap <leader>f :RustFmt<CR>
 
 " Use `#` to search for the word under the cursor in all files using ripgrep.
 "
@@ -137,3 +108,55 @@ autocmd BufWritePre * :%s/\s\+$//e
 " an expression to read from where we *can* use `expand()`. See
 " `:help c_CTRL_R` for other options.
 nnoremap # :Rg <C-r>=expand('<cword>')<CR><CR>
+
+" Better completion experience: always show a menu for completion options
+" (menuone), do not insert completion suggestions automatically (noinsert,
+" noselect).
+set completeopt=menuone,noinsert,noselect
+
+" Do not print stuff to the status bar when using completion.
+set shortmess+=c
+
+" Make <Tab> trigger a completion menu, and also use tab +
+" shift tab to navigate through it.
+imap <Tab> <Plug>(completion_smart_tab)
+imap <S-Tab> <Plug>(completion_smart_s_tab)
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Use `ga` in normal mode to show the language server code actions menu.
+nnoremap <silent> ga <cmd>lua vim.lsp.buf.code_action()<CR>
+
+" Show a line diagnostic popup when nothing has been typed for 300ms.
+set updatetime=300
+autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
+
+" Goto previous/next diagnostic warning/error
+nnoremap <silent> g[ <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <silent> g] <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+
+lua <<EOF
+-- Load the built in language server client.
+local nvim_lsp = require'lspconfig'
+
+-- Attach completion to a LSP client.
+local on_attach = function(client)
+    require'completion'.on_attach(client)
+end
+
+-- Enable rust_analyzer.
+nvim_lsp.rust_analyzer.setup({ on_attach=on_attach })
+
+-- Add a handler to publish LSP diagnostics to the document / sign column.
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    virtual_text = true,
+    signs = true,
+    update_in_insert = true,
+  }
+)
+EOF
+
+" Show / update type hints of variables when navigating through a file.
+autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *
+\ lua require'lsp_extensions'.inlay_hints{ prefix = '', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }
