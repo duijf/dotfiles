@@ -1,5 +1,5 @@
 # Replace a Nix profile with the tools from this file:
-# 
+#
 # nix-env --install --remove-all -f ./packages.nix
 # or use ./replace-profile.sh
 
@@ -19,6 +19,7 @@ in
       fd
       fzf
       git
+      htop
       neovim
       openssh
       ripgrep
