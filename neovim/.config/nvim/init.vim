@@ -12,7 +12,9 @@ Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'LnL7/vim-nix'
 Plug 'elixir-editors/vim-elixir'
 Plug 'leafgarland/typescript-vim'
+Plug 'neovimhaskell/haskell-vim'
 Plug 'rust-lang/rust.vim'
+Plug 'simrat39/rust-tools.nvim'
 call plug#end()
 
 " Colorscheme / highlighting.
@@ -137,26 +139,14 @@ nnoremap <silent> g] <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
 lua <<EOF
 -- Load the built in language server client.
-local nvim_lsp = require'lspconfig'
+local nvim_lsp = require('lspconfig')
 
 -- Attach completion to a LSP client.
 local on_attach = function(client)
-    require'completion'.on_attach(client)
+    require('completion').on_attach(client)
 end
 
--- Enable rust_analyzer.
-nvim_lsp.rust_analyzer.setup({ on_attach=on_attach })
-
--- Add a handler to publish LSP diagnostics to the document / sign column.
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    virtual_text = true,
-    signs = true,
-    update_in_insert = true,
-  }
-)
+-- Enable different language servers
+require('rust-tools').setup({})
+nvim_lsp.hls.setup({ on_attach=on_attach })
 EOF
-
-" Show / update type hints of variables when navigating through a file.
-autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *
-\ lua require'lsp_extensions'.inlay_hints{ prefix = '', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }
