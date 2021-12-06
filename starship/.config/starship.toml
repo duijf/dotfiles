@@ -1,3 +1,6 @@
+# Raise command timeout for git prompts in big repos
+command_timeout = 1000
+
 [character]
 success_symbol = "[\\$](bold purple)"
 error_symbol = "[\\$](bold red)"
@@ -35,3 +38,9 @@ symbol = "python "
 
 [java]
 disabled = true
+
+[package]
+disabled = true
+
+[rust]
+symbol = "rust "
