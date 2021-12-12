@@ -11,8 +11,11 @@ basics to set up some useable devtools.
 ## Bootstrap a new computer
 
 ```
-# Or download a zip from GitHub if you don't have `git`.
+# Get the repo
 $ git clone https://github.com/duijf/dotfiles.git
+
+# Initialize submodules
+$ git submodule update --init
 
 # Install the Nix package manager
 $ ./bin/install-nix.sh
