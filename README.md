@@ -27,3 +27,8 @@ $ ./bin/replace-nix-profile.sh
 # the symlinks.
 $ stow tmux zsh git ...
 ```
+
+## macOS apps
+
+ - Hammerspoon
+ - Vimac
