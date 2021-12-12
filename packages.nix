@@ -27,5 +27,6 @@ in
       stow
       tmux
       tree
+      wget
       zsh;
   }
