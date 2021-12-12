@@ -53,9 +53,8 @@ set softtabstop=4
 set shiftwidth=4
 
 " Use different indentation level for some filetypes.
-autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
-autocmd FileType typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2
-autocmd FileType typescriptreact setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType html,javascript,css,typescript,typescriptreact
+  \ setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 " Disable automatic indentation for typescript.
 let g:typescript_indent_disable = 1
