@@ -21,6 +21,7 @@ in
       git
       htop
       neovim
+      nix-direnv
       openssh
       ripgrep
       starship

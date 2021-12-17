@@ -27,3 +27,6 @@ ignore/
 
 # Local files that shouldn't be tracked
 *.local
+
+# Cached direnv output from new use nix
+.direnv
