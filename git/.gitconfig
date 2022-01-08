@@ -46,3 +46,5 @@
 	name = Laurens Duijvesteijn
 [checkout]
 	defaultRemote = origin
+[init]
+	defaultBranch = main
