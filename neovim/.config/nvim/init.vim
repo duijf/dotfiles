@@ -46,9 +46,11 @@ set hlsearch
 " Clear search highlighting.
 noremap <leader><space> :let @/=""<CR>
 
-" Remap :wq to save and close the buffer, not the editor.
+" Remap :wq to save and close the buffer, not the editor. Make q
+" close the buffer, not the editor. You can still exit with :quit.
 command! SaveAndCloseBuffer :w | :bd
 cnoreabbrev wq SaveAndCloseBuffer
+cnoreabbrev q bd
 
 " Briefly jump back to previous paren / brace when closing one.
 " This makes it easy to gather context on what brace you're closing.
