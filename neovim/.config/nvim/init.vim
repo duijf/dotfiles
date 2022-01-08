@@ -1,5 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'airblade/vim-gitgutter'
+Plug 'romgrk/barbar.nvim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf'
@@ -100,6 +101,23 @@ let g:fzf_layout = { 'down': '100%' }
 " TODO: add support for formatting other languages with the same mapping in
 " other buffers.
 nnoremap <leader>f :RustFmt<CR>
+
+" BarBar config
+let bufferline = get(g:, 'bufferline', {})
+
+" Give all buffers without a name the same title.
+let bufferline.no_name_title = "<new>"
+
+" Settings to disable warnings + ugly icons. Don't need this.
+let bufferline.icons = v:false
+let bufferline.closable = v:false
+
+" The animations are kind of janky and don't add much.
+let bufferline.animation = v:false
+
+" Make the highlighting work nicely with Nord.
+highlight BufferCurrentMod guifg=#e5ab0e
+highlight BufferInactiveMod guifg=#ad820c
 
 " Use `#` to search for the word under the cursor in all files using ripgrep.
 "
