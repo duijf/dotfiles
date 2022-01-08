@@ -18,6 +18,12 @@ Plug 'rust-lang/rust.vim'
 Plug 'simrat39/rust-tools.nvim'
 call plug#end()
 
+" Wishlist:
+" - Get autocomplete to work properly.
+" - Treesitter for syntax highlighting.
+" - Make rust-analyzer's go to definition work with the Nix source
+"   code.
+
 " Colorscheme / highlighting.
 colorscheme nord
 
