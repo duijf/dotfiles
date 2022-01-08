@@ -61,6 +61,10 @@ set shiftwidth=4
 autocmd FileType html,javascript,css,typescript,typescriptreact
   \ setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
+" Persistent undo between sessions.
+set undofile
+set undodir=~/.local/share/nvim/undodir
+
 " Disable automatic indentation for typescript.
 let g:typescript_indent_disable = 1
 
