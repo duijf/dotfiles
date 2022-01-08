@@ -21,6 +21,9 @@ call plug#end()
 " Colorscheme / highlighting.
 colorscheme nord
 
+" Use 24 bit colors
+set termguicolors
+
 " Leader key for custom shortcuts.
 let mapleader = ","
 
@@ -43,9 +46,6 @@ set showmatch
 
 " Substitute all matches in a line by default.
 set gdefault
-
-" Make comments the same color as strings so they stand out more.
-highlight Comment ctermfg=green
 
 " Use 4 spaces instead of tabs by default.
 set expandtab
