@@ -30,3 +30,5 @@ ignore/
 
 # Cached direnv output from new use nix
 .direnv
+
+.DS_Store
