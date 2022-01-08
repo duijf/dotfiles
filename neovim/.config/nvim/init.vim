@@ -136,23 +136,11 @@ set completeopt=menuone,noinsert,noselect
 " Do not print stuff to the status bar when using completion.
 set shortmess+=c
 
-" Make <Tab> trigger a completion menu, and also use tab +
-" shift tab to navigate through it.
-imap <Tab> <Plug>(completion_smart_tab)
-imap <S-Tab> <Plug>(completion_smart_s_tab)
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" Get docs + type definitions for symbol under cursor.
+nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 
-" Use `ga` in normal mode to show the language server code actions menu.
-nnoremap <silent> ga <cmd>lua vim.lsp.buf.code_action()<CR>
-
-" Show a line diagnostic popup when nothing has been typed for 300ms.
-set updatetime=300
-autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
-
-" Goto previous/next diagnostic warning/error
-nnoremap <silent> g[ <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <silent> g] <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+" Jump to defniition
+nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 
 lua <<EOF
 -- Load the built in language server client.
