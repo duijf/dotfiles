@@ -96,8 +96,10 @@ nnoremap <leader>cs :source ~/.config/nvim/init.vim<CR>
 nnoremap <CR> :w<CR>
 
 " Flip between buffers with tab and shift tab.
-nnoremap <Tab> :bn<CR>
-nnoremap <S-Tab> :bp<CR>
+nnoremap <silent> <S-Tab> :BufferPrevious<CR>
+nnoremap <silent> <Tab> :BufferNext<CR>
+
+nnoremap <leader>b :BufferPick<CR>
 
 " Make line movement work accross visual lines, not buffer newlines by default.
 nnoremap j gj
