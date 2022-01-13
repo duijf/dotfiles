@@ -51,7 +51,7 @@ function gtl {
 
 # Remove merged local branches
 function grmb {
-    git branch --merged | grep -v "master" | while read i; do git branch -d $i; done
+    git branch --merged | grep -v -E "master|develop|main" | while read i; do git branch -d $i; done
 }
 
 function pr {
