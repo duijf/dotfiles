@@ -67,7 +67,7 @@ set softtabstop=4
 set shiftwidth=4
 
 " Use different indentation level for some filetypes.
-autocmd FileType html,javascript,css,typescript,typescriptreact
+autocmd FileType html,javascript,css,typescript,typescriptreact,haskell
   \ setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 " Persistent undo between sessions.
