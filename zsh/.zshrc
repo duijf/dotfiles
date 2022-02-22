@@ -1,3 +1,10 @@
+# Load Nix. We do it here instead of in /etc/zshrc or other global config
+# since macOS overwrites that file during upgrades.
+
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+
 # Variables -------------------------------------------------------------------
 
 fpath=("$HOME/.zsh" $fpath)
