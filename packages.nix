@@ -16,10 +16,12 @@ in
     inherit
       coreutils
       direnv
+      cloc
       fd
       fzf
       git
       htop
+      jq
       neovim
       nix-direnv
       openssh
