@@ -49,6 +49,8 @@ alias grid='git rebase -i develop'
 alias gl='git log --oneline'
 alias glv='git log --patch'
 alias g-='git checkout -'
+alias guntrack='git update-index --assume-unchanged'
+alias gtrack='git update-index --no-assume-unchanged'
 
 function gtl {
   cd $(git rev-parse --show-toplevel)
