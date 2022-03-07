@@ -44,3 +44,6 @@ disabled = true
 
 [rust]
 symbol = "rust "
+
+[env_var.VAULT_STATUS]
+style = "bold red"
