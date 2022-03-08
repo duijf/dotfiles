@@ -11,6 +11,15 @@ let
     sha256 = "sha256:0s5f7j2akh3g0013880jfbigdaac1z76r9dv46yw6k254ba2r6nq";
   };
   pkgs = import tarball {};
+
+  aliases = {
+    nix-system-info = builtins.readFile ./bin/nix-system-info;
+  };
+
+  scripts = pkgs.symlinkJoin {
+    name = "scripts";
+    paths = pkgs.lib.attrValues (pkgs.lib.mapAttrs pkgs.writeScriptBin aliases);
+  };
 in
   with pkgs; {
     inherit
@@ -25,7 +34,9 @@ in
       neovim
       nix-direnv
       openssh
+      python39
       ripgrep
+      scripts
       starship
       stow
       tmux

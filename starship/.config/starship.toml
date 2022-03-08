@@ -47,3 +47,8 @@ symbol = "rust "
 
 [env_var.VAULT_STATUS]
 style = "bold red"
+
+[custom.nix_system]
+command = "nix-system-info"
+format = "for [$symbol($output )]($style)"
+extensions = ["nix"]
