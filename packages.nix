@@ -13,6 +13,8 @@ let
   pkgs = import tarball {};
 
   aliases = {
+    colortest = builtins.readFile ./bin/colortest;
+    nix-refresh-profile = builtins.readFile ./bin/nix-refresh-profile;
     nix-system-info = builtins.readFile ./bin/nix-system-info;
   };
 
