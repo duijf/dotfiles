@@ -39,6 +39,7 @@ in
       python39
       ripgrep
       scripts
+      shellcheck
       starship
       stow
       tmux
