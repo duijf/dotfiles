@@ -35,6 +35,7 @@ in
       jq
       neovim
       nix-direnv
+      nix_2_4
       openssh
       python39
       ripgrep
