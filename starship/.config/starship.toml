@@ -50,3 +50,6 @@ symbol = "rust "
 
 [env_var.VAULT_STATUS]
 style = "bold red"
+
+[gcloud]
+disabled = true
