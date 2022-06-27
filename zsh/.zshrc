@@ -121,6 +121,10 @@ function gm {
 
 # SSH and SCP -----------------------------------------------------------------
 
+function proxy() {
+  ssh -q -T -n -N -D 7890 $1 &
+}
+
 function gtunnel {
   gcloud compute ssh --ssh-flag="-C2qTnN -D 7890" $1
 }
