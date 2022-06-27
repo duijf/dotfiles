@@ -23,9 +23,11 @@ in
       direnv
       cloc
       fd
+      ffmpeg
       fzf
       git
       htop
+      jless
       jq
       neovim
       nix-direnv
