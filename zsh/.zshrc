@@ -23,7 +23,6 @@ eval $(dircolors ~/.dir_colors)
 
 # Basic Aliases ---------------------------------------------------------------
 
-alias vim='nvim'
 alias vimdiff='nvim -d'
 alias c='clear'
 alias ls="ls -F --color=auto --group-directories-first --ignore='.*.un~'"
