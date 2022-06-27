@@ -4,13 +4,7 @@
 # or use ./replace-profile.sh
 
 let
-  # nixpkgs-unstable @ 2021-12-02
-  rev = "391f93a83c3a486475d60eb4a569bb6afbf306ad";
-  tarball = fetchTarball {
-    url = "https://github.com/NixOS/nixpkgs/archive/${rev}.tar.gz";
-    sha256 = "sha256:0s5f7j2akh3g0013880jfbigdaac1z76r9dv46yw6k254ba2r6nq";
-  };
-  pkgs = import tarball {};
+  pkgs = import ./nixpkgs.nix {};
 
   aliases = {
     colortest = builtins.readFile ./bin/colortest;
