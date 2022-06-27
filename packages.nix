@@ -16,12 +16,22 @@ let
     name = "scripts";
     paths = pkgs.lib.attrValues (pkgs.lib.mapAttrs pkgs.writeScriptBin aliases);
   };
+
+  # Script on PATH instead of alias so this also works out of the
+  # box with things like `git` and `psql`
+  vim = pkgs.writeShellScriptBin "vim" ''
+    exec nvim $@
+  '';
 in
-  with pkgs; {
+  {
     inherit
+      vim
+      scripts;
+
+    inherit (pkgs)
+      cloc
       coreutils
       direnv
-      cloc
       fd
       ffmpeg
       fzf
@@ -35,7 +45,6 @@ in
       openssh
       python39
       ripgrep
-      scripts
       shellcheck
       starship
       stow
