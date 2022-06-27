@@ -12,6 +12,7 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-lua/lsp_extensions.nvim'
 
 Plug 'LnL7/vim-nix'
+Plug 'jvirtanen/vim-hcl'
 Plug 'elixir-editors/vim-elixir'
 Plug 'leafgarland/typescript-vim'
 Plug 'neovimhaskell/haskell-vim'
