@@ -1,7 +1,7 @@
 # Replace a Nix profile with the tools from this file:
 #
 # nix-env --install --remove-all -f ./packages.nix
-# or use ./replace-profile.sh
+# or use ./bin/nix-refresh-profile
 
 let
   pkgs = import ./nixpkgs.nix {};
