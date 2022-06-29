@@ -29,6 +29,7 @@ in
       scripts;
 
     inherit (pkgs)
+      cacert
       cloc
       coreutils
       direnv
