@@ -194,15 +194,15 @@ source "$HOME/.zsh/fzf-key-bindings.zsh"
 source "$HOME/.zsh/fzf-completion.zsh"
 
 # Use fd for file and directory completions with `**`
-_fzf_compgen_path() {
+function _fzf_compgen_path() {
   fd --hidden --follow --exclude ".git" . "$1"
 }
 
-_fzf_compgen_dir() {
+function _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 
-fzf-cd-from-home() {
+function fzf_cd_from_home() {
   setopt localoptions pipefail 2> /dev/null
   local dir="$(eval "fd --type d . '$HOME'" | fzf --prompt="cd > " --reverse +m)"
   if [[ -z "$dir" ]]; then
@@ -215,7 +215,7 @@ fzf-cd-from-home() {
   return $ret
 }
 
-fzf-git-branch-widget() {
+function fzf_git_branch_widget() {
   local branches branch
   branches=$(git --no-pager branch -vv) &&
   branch=$(echo "$branches" | fzf --prompt="git checkout > " --reverse +m) &&
@@ -224,11 +224,11 @@ fzf-git-branch-widget() {
   zle fzf-redraw-prompt
 }
 
-zle     -N   fzf-git-branch-widget
-bindkey '^B' fzf-git-branch-widget
+zle     -N   fzf_git_branch_widget
+bindkey '^B' fzf_git_branch_widget
 
-zle     -N   fzf-cd-from-home
-bindkey '^Y' fzf-cd-from-home
+zle     -N   fzf_cd_from_home
+bindkey '^Y' fzf_cd_from_home
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
