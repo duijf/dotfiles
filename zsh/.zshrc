@@ -1,3 +1,5 @@
+# Nix and direnv --------------------------------------------------------------
+
 # Load Nix. We do it here instead of in /etc/zshrc or other global config
 # since macOS overwrites that file during upgrades. We check if `NIX_PROFILES`
 # is defined to avoid execution when executing nested shells (e.g. through
@@ -9,6 +11,8 @@ if [[ ! -v NIX_PROFILES ]]; then
       . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
     fi
 fi
+
+eval "$(direnv hook zsh)"
 
 # Variables -------------------------------------------------------------------
 
@@ -28,6 +32,7 @@ alias c='clear'
 alias ls="ls -F --color=auto --group-directories-first --ignore='.*.un~'"
 alias lsa='ls -la'
 alias lk='i3lock -i ~/img/bulbs.png'
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
 # Force tmux to write UTF8. It doens't seem to detect LC_ stuff properly and
 # I don't want to figure out why.
@@ -227,33 +232,8 @@ bindkey '^Y' fzf-cd-from-home
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Nix and direnv --------------------------------------------------------------
-
-# Alias for `nix run -c`.
-function nr {
-    nix run -c "$@"
-}
-
-# Pure version of nr
-function nrp {
-    nix run --unset PATH -c $@
-}
-
-alias ns='nix-shell --command zsh'
-
-# Nix run while passing a target. This is useful when the
-# `default.nix` derivation expects an attrset with a `target`
-# member.
-function nrt {
-    target=$1
-    shift
-    nix run --argstr target $target -c $@
-}
+# Utils -----------------------------------------------------------------------
 
 function pwgen {
     tr -dc A-Za-z0-9 </dev/urandom | head -c 20 ; echo ''
 }
-
-eval "$(direnv hook zsh)"
-
-alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
