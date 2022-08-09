@@ -10,6 +10,7 @@ let
     colortest = builtins.readFile ./bin/colortest;
     nix-refresh-profile = builtins.readFile ./bin/nix-refresh-profile;
     nix-system-info = builtins.readFile ./bin/nix-system-info;
+    nix-store-path = builtins.readFile ./bin/nix-store-path;
   };
 
   scripts = pkgs.symlinkJoin {

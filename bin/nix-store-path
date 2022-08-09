@@ -1,0 +1,33 @@
+#!/usr/bin/env python
+"""
+Get the /nix/store path of a binary if it exists
+
+  $ nix-store-path git
+  /nix/store/l28xrcckx43sszcqqwx3nmys7s9dzzka-git-2.36.1
+"""
+
+import shutil
+import sys
+from pathlib import Path
+
+
+if len(sys.argv) != 2:
+    print("usage: nix-store-path BINARY", file=sys.stderr)
+    sys.exit(1)
+
+
+if (executable_path := shutil.which(sys.argv[1])) is None:
+    print(f"nix-store-path: command not found: {sys.argv[1]}", file=sys.stderr)
+    sys.exit(1)
+
+executable_path = Path(executable_path).resolve()
+
+
+nix_store = Path("/nix/store")
+if not executable_path.is_relative_to(nix_store):
+    print(f"nix-store-path: {sys.argv[1]} is not an executable in the Nix store")
+    sys.exit(1)
+
+# Find the first parent of the executable that has `/nix/store` as a parent
+# of itself. This is the path like `/nix/store/<hash>-foo` that we want to have.
+print(next(p for p in executable_path.parents if p.parent == nix_store))
