@@ -185,6 +185,9 @@ bindkey "^R" history-incremental-search-backward
 # Disable C-s as terminal freeze
 stty -ixon
 
+# Zsh by default has an alias for `r` = repeat last command. That can be pretty
+# dangerous if used accidentally.
+disable r
 
 # FZF -------------------------------------------------------------------------
 
