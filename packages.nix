@@ -42,7 +42,7 @@ in
       jless
       jq
       neovim
-      nix_2_4
+      nix
       openssh
       python39
       ripgrep

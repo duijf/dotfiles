@@ -1,9 +1,9 @@
 let
-  # nixpkgs-unstable @ 2022-06-16
-  rev = "29399e5ad1660668b61247c99894fc2fb97b4e74";
+  # nixos-22.11 @ 2023-02-27
+  rev = "7076110064c09f0b3942f609f2134c1358ef2e50";
   tarball = fetchTarball {
     url = "https://github.com/NixOS/nixpkgs/archive/${rev}.tar.gz";
-    sha256 = "sha256:0x8brwpxnj3hhz3fy0xrkx5jpm7g0jnm283m8317wal5k7gh6mwf";
+    sha256 = "sha256:0j7idx8vyb0spwxqb7rr8pk15wi7yfyf5hp608wkhaz7wjw8k9nf";
   };
 in
   import tarball
