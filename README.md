@@ -21,7 +21,7 @@ $ git submodule update --init
 $ ./bin/install-nix.sh
 
 # Install all dependencies / tools
-$ ./bin/replace-nix-profile.sh
+$ sudo nix profile install .
 
 # Get the dotfiles in place. This uses GNU stow to create
 # the symlinks.
