@@ -124,24 +124,6 @@ function gm {
     fi
 }
 
-# SSH and SCP -----------------------------------------------------------------
-
-function proxy() {
-  ssh -q -T -n -N -D 7890 $1 &
-}
-
-function gtunnel {
-  gcloud compute ssh --ssh-flag="-C2qTnN -D 7890" $1
-}
-
-function gssh {
-  gcloud compute ssh $@
-}
-
-function gscp {
-  gcloud compute scp $@
-}
-
 # History --------------------------------------------------------------------
 
 # TODO: make this handle multiple terminal windows better
