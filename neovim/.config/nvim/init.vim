@@ -173,5 +173,4 @@ end
 
 -- Enable different language servers
 require('rust-tools').setup({})
-nvim_lsp.hls.setup({ on_attach=on_attach })
 EOF
