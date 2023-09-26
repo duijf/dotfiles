@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-sudo nix-env --install --remove-all -f $HOME/dotfiles/packages.nix --profile /nix/var/nix/profiles/default

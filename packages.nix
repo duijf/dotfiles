@@ -6,18 +6,6 @@
 let
   pkgs = import ./nixpkgs.nix {};
 
-  aliases = {
-    colortest = builtins.readFile ./bin/colortest;
-    nix-refresh-profile = builtins.readFile ./bin/nix-refresh-profile;
-    nix-system-info = builtins.readFile ./bin/nix-system-info;
-    nix-store-path = builtins.readFile ./bin/nix-store-path;
-  };
-
-  scripts = pkgs.symlinkJoin {
-    name = "scripts";
-    paths = pkgs.lib.attrValues (pkgs.lib.mapAttrs pkgs.writeScriptBin aliases);
-  };
-
   # Script on PATH instead of alias so this also works out of the
   # box with things like `git` and `psql`
   vim = pkgs.writeShellScriptBin "vim" ''
