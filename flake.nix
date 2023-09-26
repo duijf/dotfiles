@@ -1,4 +1,8 @@
-# Install with: `sudo nix profile install .`
+# Usage:
+#
+#     sudo nix profile install .
+#     sudo nix profile upgrade .
+
 {
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
@@ -15,6 +19,11 @@
       name = "programs";
       paths = [
         vimAlias
+
+        # Important: if this isn't present, then Nix will no
+        # longer be able to load certificates, meaning downloads
+        # will fail.
+        pkgs.cacert
 
         pkgs.cloc
         pkgs.coreutils
