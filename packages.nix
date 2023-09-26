@@ -38,6 +38,7 @@ in
       ffmpeg
       fzf
       git
+      gh
       htop
       jless
       jq
@@ -51,6 +52,7 @@ in
       stow
       tmux
       tree
+      rustup
       wget
       zsh;
   }
