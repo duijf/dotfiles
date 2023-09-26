@@ -29,6 +29,7 @@ eval $(dircolors ~/.dir_colors)
 
 alias vimdiff='nvim -d'
 alias c='clear'
+alias r='direnv reload'
 alias ls="ls -F --color=auto --group-directories-first --ignore='.*.un~'"
 alias lsa='ls -la'
 alias lk='i3lock -i ~/img/bulbs.png'
