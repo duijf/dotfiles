@@ -37,6 +37,7 @@
         pkgs.neovim
         pkgs.nix
         pkgs.openssh
+        pkgs.openssl
         pkgs.pkg-config
         pkgs.ripgrep
         pkgs.shellcheck
