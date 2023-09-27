@@ -37,7 +37,6 @@
         pkgs.neovim
         pkgs.nix
         pkgs.openssh
-        pkgs.openssl
         pkgs.pkg-config
         pkgs.ripgrep
         pkgs.shellcheck
@@ -45,7 +44,6 @@
         pkgs.stow
         pkgs.tmux
         pkgs.tree
-        pkgs.rustup
         pkgs.wget
         pkgs.zsh
       ];
