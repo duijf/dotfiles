@@ -1,7 +1,17 @@
 # Usage:
 #
 #     sudo nix profile install .
-#     sudo nix profile upgrade .
+#
+# Upgrade later:
+#
+#     sudo nix profile upgrade '.*'
+#
+# The `.` and `'.*'` are different. The `.` is a "reference to a thing to
+# install" [^]. The `'.*'` means "upgrade all packages in my profile."
+# (And ideally, this flake is the only thing in your profile.)
+#
+# [^] In this example `.` means the current directory. You can also do
+# `nixpkgs#terraform` or `github:user/repo`.
 
 {
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
