@@ -46,6 +46,7 @@
         pkgs.jq
         pkgs.neovim
         pkgs.nix
+        pkgs.nushell
         pkgs.openssh
         pkgs.pkg-config
         pkgs.ripgrep
