@@ -22,7 +22,7 @@
     # Script on PATH instead of alias so this also works out of the
     # box with things like `git` and `psql`
     vimAlias = pkgs.writeShellScriptBin "vim" ''
-      exec nvim $@
+      exec nvim "$@"
     '';
   in {
     packages.aarch64-darwin.default = pkgs.buildEnv {
