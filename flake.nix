@@ -49,6 +49,7 @@
         pkgs.nushell
         pkgs.openssh
         pkgs.pkg-config
+        pkgs.postgresql_14
         pkgs.ripgrep
         pkgs.shellcheck
         pkgs.starship
