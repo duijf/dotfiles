@@ -34,6 +34,7 @@ alias ls="ls -F --color=auto --group-directories-first --ignore='.*.un~'"
 alias lsa='ls -la'
 alias lk='i3lock -i ~/img/bulbs.png'
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+alias tree='tree --gitignore'
 
 # Force tmux to write UTF8. It doens't seem to detect LC_ stuff properly and
 # I don't want to figure out why.
