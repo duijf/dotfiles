@@ -33,6 +33,8 @@ colorscheme nord
 " Use 24 bit colors
 set termguicolors
 
+set nofoldenable
+
 " Leader key for custom shortcuts.
 let mapleader = ","
 
