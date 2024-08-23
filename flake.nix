@@ -4,6 +4,7 @@
 #
 # Upgrade later:
 #
+#     nix flake lock --update-input nixpkgs
 #     sudo nix profile upgrade '.*'
 #
 # The `.` and `'.*'` are different. The `.` is a "reference to a thing to
