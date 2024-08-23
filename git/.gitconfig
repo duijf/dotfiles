@@ -41,9 +41,6 @@
 [user "personal"]
 	name = Laurens Duijvesteijn
 	email = git@duijf.io
-[user "iterative"]
-	email = laurens@iterative.ai
-	name = Laurens Duijvesteijn
 [checkout]
 	defaultRemote = origin
 [init]
