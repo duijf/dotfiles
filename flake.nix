@@ -38,6 +38,7 @@
         pkgs.cloc
         pkgs.coreutils
         pkgs.direnv
+        pkgs.exiftool
         pkgs.fd
         pkgs.fzf
         pkgs.git
@@ -55,6 +56,7 @@
         pkgs.starship
         pkgs.stow
         pkgs.tmux
+        pkgs.rustup
         pkgs.tree
         pkgs.wget
         pkgs.zsh
