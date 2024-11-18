@@ -61,6 +61,7 @@
         pkgs.tree
         pkgs.wget
         pkgs.zsh
+        pkgs.signalbackup-tools
       ];
     };
   };
