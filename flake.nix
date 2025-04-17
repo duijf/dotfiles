@@ -62,6 +62,7 @@
         pkgs.wget
         pkgs.zsh
         pkgs.signalbackup-tools
+        pkgs.colima
       ];
     };
   };
