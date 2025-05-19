@@ -12,6 +12,8 @@ if [[ ! -v NIX_PROFILES ]]; then
     fi
 fi
 
+export PATH="$HOME/dotfiles/bin:$PATH"
+
 eval "$(direnv hook zsh)"
 
 # Variables -------------------------------------------------------------------
@@ -56,7 +58,7 @@ alias gca='git commit --amend'
 alias gcf='git commit --fixup'
 alias grc='git rebase --continue'
 alias gri='git rebase -i'
-alias grim='git rebase -i master'
+alias grim='git rebase -i main'
 alias grid='git rebase -i develop'
 alias gl='git log --oneline'
 alias glv='git log --patch'
