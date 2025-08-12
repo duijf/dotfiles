@@ -1,6 +1,5 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'airblade/vim-gitgutter'
-Plug 'romgrk/barbar.nvim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf'
@@ -101,8 +100,8 @@ nnoremap <leader>cs :source ~/.config/nvim/init.vim<CR>
 nnoremap <CR> :w<CR>
 
 " Flip between buffers with tab and shift tab.
-nnoremap <silent> <S-Tab> :BufferPrevious<CR>
-nnoremap <silent> <Tab> :BufferNext<CR>
+nnoremap <silent> <S-Tab> :gp<CR>
+nnoremap <silent> <Tab> :bn<CR>
 
 nnoremap <leader>b :BufferPick<CR>
 
