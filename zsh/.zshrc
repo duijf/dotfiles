@@ -19,6 +19,9 @@ eval "$(direnv hook zsh)"
 # Variables -------------------------------------------------------------------
 
 fpath=("$HOME/.zsh" $fpath)
+autoload -Uz compinit
+compinit
+
 export EDITOR='vim'
 export VISUAL='vim'
 
@@ -65,6 +68,7 @@ alias glv='git log --patch'
 alias g-='git checkout -'
 alias guntrack='git update-index --assume-unchanged'
 alias gtrack='git update-index --no-assume-unchanged'
+alias grl="git reflog --format='%C(auto)%h %<|(17)%gd %<|(33)%C(blue)%cr%C(reset) %s'"
 
 function gtl {
   cd $(git rev-parse --show-toplevel)
