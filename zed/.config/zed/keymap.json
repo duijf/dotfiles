@@ -8,7 +8,10 @@
 [
   {
     "bindings": {
-      "cmd-shift-t": "workspace::ToggleBottomDock"
+      "cmd-shift-t": "workspace::ToggleBottomDock",
+      "cmd-ctrl-t": "editor::ToggleTabBar",
+      "ctrl-tab": "pane::ActivateNextItem",
+      "ctrl-shift-tab": "pane::ActivatePreviousItem"
     }
   },
   {

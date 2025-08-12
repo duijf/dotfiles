@@ -7,6 +7,12 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "agent": {
+    "inline_assistant_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-7-sonnet"
+    }
+  },
   "theme": "Nord",
   "telemetry": {
     "diagnostics": false,
@@ -18,7 +24,7 @@
   "buffer_font_size": 13,
   "buffer_font_family": "Monoid HalfTight",
   "tab_bar": {
-    "show": false,
+    "show": true,
     "show_nav_history_buttons": false,
     "show_tab_bar_buttons": false
   },
@@ -62,6 +68,12 @@
   "languages": {
     "Nix": {
       "language_servers": ["!nixd", "nil"]
+    },
+    "TypeScript": {
+      "format_on_save": "off"
+    },
+    "Dockerfile": {
+      "format_on_save": "off"
     }
   },
   "file_scan_exclusions": [
@@ -80,6 +92,8 @@
     "ignore",
     "result",
     ".venv",
-    ".terraform"
+    ".terraform",
+    "node_modules",
+    "dist"
   ]
 }
