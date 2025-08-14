@@ -13,7 +13,7 @@ Install Nix, then:
 $ git clone https://github.com/duijf/dotfiles.git
 
 $ cd dotfiles
-$ sudo nix run .#darwin-rebuild -- switch --flake flake.nix
+$ ./bin/rebuild.sh
 
 # Get the dotfiles in place. This uses GNU stow to create
 # the symlinks.
