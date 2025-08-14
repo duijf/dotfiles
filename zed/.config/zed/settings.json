@@ -53,8 +53,8 @@
   "terminal": {
     "shell": {
       "with_arguments": {
-        "program": "tmux",
-        "args": ["new-session", "-A", "-s", "tmux-zed"],
+        "program": "sh",
+        "args": ["-c", "tmux new-session -A -s \"zed-$(basename \"$PWD\")\""],
         "title_override": "tmux"
       }
     }
