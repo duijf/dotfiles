@@ -51,7 +51,6 @@
         pkgs.nushell
         pkgs.openssh
         pkgs.pkg-config
-        pkgs.postgresql_14
         pkgs.ripgrep
         pkgs.shellcheck
         pkgs.starship
@@ -63,6 +62,7 @@
         pkgs.zsh
         pkgs.signalbackup-tools
         pkgs.colima
+        pkgs.gitui
       ];
     };
   };
