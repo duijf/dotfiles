@@ -15,7 +15,13 @@
 
     darwinConfigurations.mbp = nix-darwin.lib.darwinSystem {
       modules = let
-        config = {pkgs, lib, ...}: {
+        config = {pkgs, lib, ...}: let
+          # Script on PATH instead of alias so this also works out of the
+          # box with things like `git` and `psql`
+          vimAlias = pkgs.writeShellScriptBin "vim" ''
+            exec nvim "$@"
+          '';
+        in {
           nixpkgs.hostPlatform = "aarch64-darwin";
           system.stateVersion = 6;
 
@@ -46,6 +52,7 @@
             pkgs.gitui
             pkgs.htop
             pkgs.jq
+            pkgs.neovim
             pkgs.nix
             pkgs.openssh
             pkgs.pkg-config
@@ -57,6 +64,8 @@
             pkgs.tree
             pkgs.wget
             pkgs.zsh
+
+            vimAlias
           ];
         };
       in [
