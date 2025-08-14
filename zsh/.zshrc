@@ -1,19 +1,6 @@
 # Nix and direnv --------------------------------------------------------------
 
-# Load Nix. We do it here instead of in /etc/zshrc or other global config
-# since macOS overwrites that file during upgrades. We check if `NIX_PROFILES`
-# is defined to avoid execution when executing nested shells (e.g. through
-# direnv), otherwise $PATH will always default to the one from the current
-# user.
-
-if [[ ! -v NIX_PROFILES ]]; then
-    if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-      . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-    fi
-fi
-
 export PATH="$HOME/dotfiles/bin:$PATH"
-
 eval "$(direnv hook zsh)"
 
 # Variables -------------------------------------------------------------------

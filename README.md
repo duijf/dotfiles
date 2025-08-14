@@ -5,30 +5,17 @@ This is a repository containing my dotfiles. Features:
  - Nix for declarative package management.
  - Stow for dotfile management / symlinks.
 
-No overly complicated setup with `home-manager` or `nix-darwin`. Just the
-basics to set up some useable devtools.
-
 ## Bootstrap a new computer
 
+Install Nix, then:
+
 ```
-# Get the repo
 $ git clone https://github.com/duijf/dotfiles.git
 
-# Initialize submodules
-$ git submodule update --init
-
-# Install the Nix package manager
-$ ./bin/install-nix.sh
-
-# Install all dependencies / tools
-$ sudo nix profile install .
+$ cd dotfiles
+$ sudo nix run .#darwin-rebuild -- switch --flake flake.nix
 
 # Get the dotfiles in place. This uses GNU stow to create
 # the symlinks.
 $ stow tmux zsh git ...
 ```
-
-## macOS apps
-
- - Hammerspoon
- - Vimac
