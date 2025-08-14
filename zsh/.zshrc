@@ -35,9 +35,8 @@ eval $(dircolors ~/.dir_colors)
 alias vimdiff='nvim -d'
 alias c='clear'
 alias r='direnv reload'
-alias ls="ls -F --color=auto --group-directories-first --ignore='.*.un~'"
+alias ls="ls -F --color=auto"
 alias lsa='ls -la'
-alias lk='i3lock -i ~/img/bulbs.png'
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 alias tree='tree --gitignore'
 
@@ -62,21 +61,13 @@ alias gcf='git commit --fixup'
 alias grc='git rebase --continue'
 alias gri='git rebase -i'
 alias grim='git rebase -i main'
-alias grid='git rebase -i develop'
 alias gl='git log --oneline'
 alias glv='git log --patch'
 alias g-='git checkout -'
-alias guntrack='git update-index --assume-unchanged'
-alias gtrack='git update-index --no-assume-unchanged'
 alias grl="git reflog --format='%C(auto)%h %<|(17)%gd %<|(33)%C(blue)%cr%C(reset) %s'"
 
 function gtl {
-  cd $(git rev-parse --show-toplevel)
-}
-
-# Remove merged local branches
-function grmb {
-    git branch --merged | grep -v -E "master|develop|main" | while read i; do git branch -d $i; done
+    cd $(git rev-parse --show-toplevel)
 }
 
 function pr {
@@ -168,33 +159,33 @@ source "$HOME/.zsh/fzf-completion.zsh"
 
 # Use fd for file and directory completions with `**`
 function _fzf_compgen_path() {
-  fd --hidden --follow --exclude ".git" . "$1"
+    fd --hidden --follow --exclude ".git" . "$1"
 }
 
 function _fzf_compgen_dir() {
-  fd --type d --hidden --follow --exclude ".git" . "$1"
+    fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 
 function fzf_cd_from_home() {
-  setopt localoptions pipefail 2> /dev/null
-  local dir="$(eval "fd --type d . '$HOME'" | fzf --prompt="cd > " --reverse +m)"
-  if [[ -z "$dir" ]]; then
+    setopt localoptions pipefail 2> /dev/null
+    local dir="$(eval "fd --type d . '$HOME'" | fzf --prompt="cd > " --reverse +m)"
+    if [[ -z "$dir" ]]; then
+        zle fzf-redraw-prompt
+        return 0
+    fi
+    cd "$dir"
+    local ret=$?
     zle fzf-redraw-prompt
-    return 0
-  fi
-  cd "$dir"
-  local ret=$?
-  zle fzf-redraw-prompt
-  return $ret
+    return $ret
 }
 
 function fzf_git_branch_widget() {
-  local branches branch
-  branches=$(git --no-pager branch -vv) &&
-  branch=$(echo "$branches" | fzf --prompt="git checkout > " --reverse +m) &&
-  printf "\n" &&
-  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
-  zle fzf-redraw-prompt
+    local branches branch
+    branches=$(git --no-pager branch -vv) &&
+    branch=$(echo "$branches" | fzf --prompt="git checkout > " --reverse +m) &&
+    printf "\n" &&
+    git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+    zle fzf-redraw-prompt
 }
 
 zle     -N   fzf_git_branch_widget
