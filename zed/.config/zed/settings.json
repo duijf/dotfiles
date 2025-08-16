@@ -7,6 +7,14 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "edit_predictions": {
+    "mode": "subtle",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null
+    },
+    "enabled_in_text_threads": false
+  },
   "agent": {
     "inline_assistant_model": {
       "provider": "zed.dev",
@@ -66,34 +74,51 @@
     "bash": ["sh", "envrc"]
   },
   "languages": {
+    "Dockerfile": {
+      "format_on_save": "off"
+    },
+    "Elixir": {
+      "language_servers": ["elixir-ls"],
+      "format_on_save": {
+        "external": {
+          "command": "mix",
+          "arguments": ["format", "--stdin-filename", "{buffer_path}", "-"]
+        }
+      }
+    },
     "Nix": {
       "language_servers": ["!nixd", "nil"]
     },
-    "TypeScript": {
-      "format_on_save": "off"
+    "Starlark": {
+      "language_servers": ["!starpls", "buck2-lsp"]
     },
-    "Dockerfile": {
+    "TypeScript": {
       "format_on_save": "off"
     }
   },
   "file_scan_exclusions": [
+    "**/.DS_Store",
+    "**/.classpath",
     "**/.git",
-    "**/.svn",
     "**/.hg",
     "**/.jj",
-    "**/CVS",
-    "**/.DS_Store",
-    "**/Thumbs.db",
-    "**/.classpath",
     "**/.settings",
+    "**/.svn",
+    "**/CVS",
+    "**/Thumbs.db",
+    ".claude",
     ".direnv",
+    ".elixir_ls",
     ".mypy_cache",
     ".ruff_cache",
-    "ignore",
-    "result",
-    ".venv",
     ".terraform",
+    ".venv",
+    "_build",
+    "buck-out",
+    "cover",
+    "dist",
+    "ignore",
     "node_modules",
-    "dist"
+    "result"
   ]
 }
