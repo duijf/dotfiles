@@ -1,0 +1,48 @@
+# Make eza use less fancy colors when outputting information about
+# file types, users, permissions, etc. These colors are taken from
+# the Nord theme and are a compromise between rendering in iTerm and
+# the Zed terminal emulator (with tmux embedded in it).
+#
+# Snow storm, dark:   #d8dee9
+# Snow storm, medium: #e5e9f0
+
+colourful: false
+
+perms:
+  user_read: { foreground: "#d8dee9", is_bold: false }
+  user_write: { foreground: "#d8dee9", is_bold: false }
+  user_execute_file: { foreground: "#d8dee9", is_bold: false }
+  user_execute_other: { foreground: "#d8dee9", is_bold: false }
+  group_read: { foreground: "#d8dee9", is_bold: false }
+  group_write: { foreground: "#d8dee9", is_bold: false }
+  group_execute: { foreground: "#d8dee9", is_bold: false }
+  other_read: { foreground: "#d8dee9", is_bold: false }
+  other_write: { foreground: "#d8dee9", is_bold: false }
+  other_execute: { foreground: "#d8dee9", is_bold: false }
+  special_user_file: { foreground: "#d8dee9", is_bold: false }
+  special_other: { foreground: "#d8dee9", is_bold: false }
+  attribute: { foreground: "#d8dee9", is_bold: false }
+
+size:
+  major: { foreground: "#d8dee9" }
+  minor: { foreground: "#d8dee9" }
+  number_byte: { foreground: "#d8dee9" }
+  number_kilo: { foreground: "#d8dee9" }
+  number_mega: { foreground: "#d8dee9" }
+  number_giga: { foreground: "#d8dee9" }
+  number_huge: { foreground: "#d8dee9" }
+  unit_byte: { foreground: "#d8dee9" }
+  unit_kilo: { foreground: "#d8dee9" }
+  unit_mega: { foreground: "#d8dee9" }
+  unit_giga: { foreground: "#d8dee9" }
+  unit_huge: { foreground: "#d8dee9" }
+
+users:
+  user_you: { foreground: "#d8dee9", is_dimmed: true }
+  user_root: { foreground: "#d8dee9", is_dimmed: true }
+  user_other: { foreground: "#d8dee9", is_dimmed: true }
+  group_yours: { foreground: "#d8dee9", is_dimmed: true }
+  group_other: { foreground: "#d8dee9", is_dimmed: true }
+  group_root: { foreground: "#d8dee9", is_dimmed: true }
+
+date: { foreground: "#e5e9f0", is_dimmed: true }

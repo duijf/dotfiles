@@ -45,6 +45,7 @@
             pkgs.coreutils
             pkgs.direnv
             pkgs.exiftool
+            pkgs.eza
             pkgs.fd
             pkgs.fzf
             pkgs.gh
@@ -54,6 +55,7 @@
             pkgs.jq
             pkgs.neovim
             pkgs.nix
+            pkgs.nix-direnv
             pkgs.openssh
             pkgs.pkg-config
             pkgs.ripgrep
@@ -62,6 +64,7 @@
             pkgs.stow
             pkgs.tmux
             pkgs.tree
+            pkgs.vivid
             pkgs.wget
             pkgs.zsh
 

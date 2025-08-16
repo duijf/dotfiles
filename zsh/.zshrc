@@ -15,15 +15,18 @@ export VISUAL='vim'
 # Prompt and theme ------------------------------------------------------------
 
 eval "$(starship init zsh)"
-eval $(dircolors ~/.dir_colors)
+export LS_COLORS="$(vivid generate $HOME/dotfiles/vivid/nord-tweaked.yml)";
+export EZA_CONFIG_DIR="$HOME/.config/eza"
 
 # Basic Aliases ---------------------------------------------------------------
 
 alias vimdiff='nvim -d'
 alias c='clear'
 alias r='direnv reload'
-alias ls="ls -F --color=auto"
-alias lsa='ls -la'
+alias ls='eza --group-directories-first'
+alias lsa='eza --group-directories-first -la'
+alias lst='eza --group-directories-first --tree'
+alias lsta='eza --all --group-directories-first --tree'
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 alias tree='tree --gitignore'
 
