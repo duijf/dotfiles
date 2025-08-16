@@ -112,12 +112,17 @@ function gm {
 
 # History --------------------------------------------------------------------
 
-# TODO: make this handle multiple terminal windows better
 export HISTSIZE=20000000
 export HISTFILE="$HOME/.history"
 export SAVEHIST=20000000
-setopt hist_ignore_all_dups
-setopt hist_ignore_space
+
+setopt HIST_EXPIRE_DUPS_FIRST  # Expire duplicates first when trimming history
+setopt HIST_FIND_NO_DUPS       # Don't display duplicates when searching
+setopt HIST_IGNORE_ALL_DUPS    # Ignore duplicate commands in history
+setopt HIST_IGNORE_SPACE       # Don't store commands prefixed with a space
+setopt HIST_REDUCE_BLANKS      # Remove extra blanks from commands
+setopt HIST_VERIFY             # Show command with history expansion before running
+setopt INC_APPEND_HISTORY      # Immediately write to history file instead of waiting for shell exit
 
 # Bindkeys -------------------------------------------------------------------
 
